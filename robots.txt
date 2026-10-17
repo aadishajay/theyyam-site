@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://aadishajay.github.io/theyyam-site/sitemap.xml
