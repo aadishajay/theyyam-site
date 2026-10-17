@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Theyyam Journal | LGFC Theyyam</title>
+<meta name="description" content="Guides to the gods, costumes and etiquette of north Kerala’s ritual art, written by people who live alongside it.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="The Theyyam Journal | LGFC Theyyam"><meta property="og:description" content="Guides to the gods, costumes and etiquette of north Kerala’s ritual art, written by people who live alongside it."><meta property="og:type" content="website">
+<meta name="theme-color" content="#4A0E12">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+*{box-sizing:border-box}
+body{margin:0;font-family:'Poppins',system-ui,sans-serif;color:#1a0a08;background:#fff;line-height:1.65;font-size:16px}
+img{display:block;max-width:100%}
+a{color:#D7261E}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:800;line-height:1.1;letter-spacing:-.02em}
+h1{font-size:clamp(2.2rem,9.5vw,4.4rem)}h2{font-size:clamp(1.6rem,6vw,2.4rem)}h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em}
+.w{max-width:1200px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:999px;background:#FFB400;color:#1a0a08;font-weight:700;text-decoration:none;border:2px solid #FFB400}
+.btn:hover{background:#fff;border-color:#fff}
+.btn.red{background:#D7261E;color:#fff;border-color:#D7261E}.btn.red:hover{background:#4A0E12;border-color:#4A0E12}
+.kal{height:24px;background:url(assets/kalam-border.svg) repeat-x;background-size:auto 24px}
+.hd{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid #eee}
+.hd .w{display:flex;align-items:center;justify-content:space-between;height:64px}
+.lg{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:#1a0a08;text-decoration:none}
+.nv{display:none;align-items:center;gap:28px}
+.nv a{color:#1a0a08;text-decoration:none;font-weight:500}.nv a:hover{color:#D7261E}
+.nv a.btn{color:#fff}
+.mm{position:relative}
+.mm summary{list-style:none;cursor:pointer;min-height:44px;display:flex;align-items:center;font-weight:700;padding:0 18px;border:2px solid #1a0a08;border-radius:999px}
+.mm summary::-webkit-details-marker{display:none}
+.mm div{position:absolute;right:0;top:54px;background:#fff;border:2px solid #1a0a08;border-radius:20px;padding:8px;min-width:220px;display:flex;flex-direction:column}
+.mm a{padding:12px 16px;color:#1a0a08;text-decoration:none;font-weight:600}
+.cats{display:flex;gap:10px;overflow-x:auto;padding:2px 20px 12px;margin:24px -20px 0}
+.cat{flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border:2px solid #fff;border-radius:999px;color:#fff;text-decoration:none;font-weight:600;white-space:nowrap}
+.cat.on{background:#FFB400;border-color:#FFB400;color:#1a0a08}
+.feat{display:block;text-decoration:none;color:#1a0a08;border:2px solid #1a0a08;border-radius:28px;overflow:hidden}
+.feat img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.feat .b{padding:24px}
+.grid{display:grid;grid-template-columns:1fr;gap:24px}
+.pc{display:block;text-decoration:none;color:#1a0a08}
+.pc img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:24px}
+.pc:hover h3{color:#D7261E}
+.k{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#D7261E}
+.foot a{color:#fff}.foot nav a{display:inline-flex;align-items:center;min-height:44px}[id]{scroll-margin-top:88px}
+@media(min-width:768px){
+.w{padding:0 40px}.cats{margin:24px 0 0;padding:2px 0 12px}
+.feat{display:flex}.feat>*{flex:1}.feat img{aspect-ratio:auto;height:100%;min-height:380px}.feat .b{padding:48px;display:flex;flex-direction:column;justify-content:center}
+.grid{grid-template-columns:repeat(3,1fr);gap:40px 28px}
+.nv{display:flex}.mm{display:none}
+}
+
+.skip{position:absolute;left:-999px;top:0;background:#FFB400;color:#1a0a08;padding:12px 16px;z-index:50}.skip:focus{left:0}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div>
+<header class="hd"><div class="w">
+<a class="lg" href="index.html"><img src="assets/flame.svg" width="24" height="30" alt="">LGFC Theyyam</a>
+<nav class="nv" aria-label="Main"><a href="trips.html">Guided trips</a><a href="journal.html" aria-current="page" style="color:#D7261E">Journal</a><a href="index.html#faq">FAQ</a><a class="btn red" href="enquire.html">Enquire</a></nav>
+<details class="mm"><summary>Menu</summary><div><a href="trips.html">Guided trips</a><a href="journal.html">Journal</a><a href="index.html#faq">FAQ</a><a href="enquire.html">Enquire</a></div></details>
+</div></header>
+
+<main id="main">
+<section style="background:#4A0E12;color:#fff"><div class="w" style="padding-top:36px;padding-bottom:40px">
+<nav aria-label="Breadcrumb" style="font-size:14px;margin-bottom:18px;opacity:.85"><a href="index.html" style="color:#fff">Home</a> / Journal</nav>
+<h1>The Theyyam Journal</h1>
+<p style="font-size:18px;margin-top:18px;max-width:640px;opacity:.92">Guides to the gods, costumes and etiquette of north Kerala’s ritual art, written by people who live alongside it.</p>
+<div class="cats" role="list" aria-label="Categories"><a class="cat on" href="journal.html" role="listitem">All</a><a class="cat" href="journal.html" role="listitem">Culture</a><a class="cat" href="journal.html" role="listitem">Etiquette</a><a class="cat" href="journal.html" role="listitem">Planning</a><a class="cat" href="journal.html" role="listitem">Theyyam types</a></div>
+</div><div class="kal"></div></section>
+
+<section style="padding:40px 0 24px"><div class="w">
+<a class="feat" href="what-is-theyyam.html"><img src="assets/p-gold-detail.jpg" alt="Red and gold ornaments on a Theyyam face and headdress" width="900" height="675"><div class="b"><p class="k">Featured · Culture · 9 min read</p><h2 style="margin:10px 0 12px">What is Theyyam? A first-timer’s guide to Kerala’s living ritual</h2><p>The gods, the performers, the fire and the families, explained before you arrive.</p><p style="margin-top:18px;font-weight:700;color:#D7261E">Read the guide →</p></div></a>
+</div></section>
+
+<section style="padding:24px 0 64px"><div class="w">
+<h2 style="margin-bottom:24px">Latest articles</h2>
+<div class="grid">
+<a class="pc" href="what-is-theyyam.html"><img src="assets/p-portrait-dark.jpg" alt="A performer in red and gold face paint, shadowed" width="600" height="400"><p class="k" style="margin-top:14px">Etiquette · 6 min</p><h3 style="margin-top:4px">Theyyam etiquette: do’s and don’ts for visitors</h3></a>
+<a class="pc" href="what-is-theyyam.html"><img src="assets/p-village-palms.jpg" alt="A Theyyam in a red headdress among coconut palms" width="600" height="400"><p class="k" style="margin-top:14px">Planning · 7 min</p><h3 style="margin-top:4px">Theyyam season: the best months to visit North Malabar</h3></a>
+<a class="pc" href="what-is-theyyam.html"><img src="assets/p-drum-crowd.jpg" alt="A Theyyam performer dancing beside a drummer" width="600" height="400"><p class="k" style="margin-top:14px">Planning · 6 min</p><h3 style="margin-top:4px">Why Theyyam is hard to plan on your own</h3></a>
+<a class="pc" href="what-is-theyyam.html"><img src="assets/p-body-paint.jpg" alt="A performer having body paint applied" width="600" height="400"><p class="k" style="margin-top:14px">Theyyam types · 8 min</p><h3 style="margin-top:4px">Muthappan, Pottan and Vishnumoorthi: the main Theyyams</h3></a>
+<a class="pc" href="what-is-theyyam.html"><img src="assets/p-gold-detail.jpg" alt="Gold and red ornaments of a Theyyam costume" width="600" height="400"><p class="k" style="margin-top:14px">Culture · 5 min</p><h3 style="margin-top:4px">Costume and craft: how a Theyyam is made</h3></a>
+<a class="pc" href="what-is-theyyam.html"><img src="assets/p-body-paint.jpg" alt="A performer having body paint applied before the ritual" width="600" height="480"><p class="k" style="margin-top:14px">Etiquette · 6 min</p><h3 style="margin-top:4px">Cameras and ritual: why some Theyyams allow no photos or video</h3></a>
+</div>
+<div style="text-align:center;margin-top:40px"><a class="btn red" href="journal.html">Load more articles</a></div>
+</div></section>
+
+<section style="background:#D7261E;color:#fff;text-align:center;padding:72px 0 0"><div class="w"><h2>Read it. Then go with someone who knows.</h2><p style="font-size:18px;margin:16px auto 28px;max-width:520px">Our guided trips put everything in these articles into practice.</p><a class="btn" href="trips.html">See guided trips</a></div><img src="assets/palms-maroon.svg" alt="" width="1440" height="220" style="width:100%;height:auto;margin-top:40px"></section>
+</main>
+
+<footer class="foot" style="background:#4A0E12;color:#fff;padding:48px 0 32px"><div class="w">
+<div style="display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between"><div style="max-width:340px"><div style="font-weight:800;font-size:22px">LGFC Theyyam</div><p style="opacity:.85;margin-top:8px">Guided Theyyam journeys across North Malabar. [LGFC LEGAL NAME, ADDRESS]</p></div><nav aria-label="Footer" style="display:flex;flex-direction:column"><a href="trips.html">Guided trips</a><a href="journal.html">Journal</a><a href="enquire.html">Enquire</a></nav><p style="opacity:.85">[PHONE]<br>[EMAIL]<br>[INSTAGRAM]</p></div>
+<p style="font-size:13px;opacity:.85;margin-top:32px">Placeholder photos: Wikimedia Commons (CC BY / BY-SA), Krishna9941, Shagil Kannur, VIJAY KRISHNA K S and others. Replace before launch.</p><p style="font-size:13px;margin:12px 0 0;opacity:.7">Powered by letsgoforacamp</p></div></footer>
+</div>
+</body>
+</html>
