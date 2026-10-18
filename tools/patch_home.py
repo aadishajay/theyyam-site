@@ -3,17 +3,17 @@ import re,json,sys,html
 sys.path.insert(0,'tools')
 import theyyams_data as d
 names={t['slug']:t['name'] for t in d.T}
-order=['vishnumoorthi','panjuruli','muchilot-bhagavathi','bhairavan','poomaruthan','kurathi','kundora-chamundi','uchitta','bappiriyan','vasoorimala','kandanar-kelan','puliyoor-kali','kadangot-makkam','daivathar','pulikandan','kathivanoor-veeran']  # curated: sharp, clear, well framed
+order=['vishnumoorthi','kundora-chamundi','gulikan','muchilot-bhagavathi','panjuruli']  # five traced closeups (assets/faces-svg), see tools/BACKLOG.md
 import os
-order=[s for s in order if os.path.exists(f'assets/faces/{s}.jpg')]
+order=[s for s in order if os.path.exists(f'assets/faces-svg/{s}.svg')]
 E=html.escape
 slides=''
 for i,s in enumerate(order):
     n=names[s]
-    img=f'<img src="assets/faces/{s}.jpg" alt="{E(n)} Theyyam, face and headdress" width="480" height="600"'+('' if i==0 else ' loading="lazy"')+'>'
-    slides+=f'<a class="fslide{" on" if i==0 else ""}" href="theyyams/{s}.html" data-n="{E(n)}"'+('' if i==0 else ' aria-hidden="true" tabindex="-1"')+f'>{img}</a>'
+    img=f'<img src="assets/faces-svg/{s}.svg" alt="Illustrated face of a Theyyam" width="720" height="900"'+('' if i==0 else ' loading="lazy"')+'>'
+    slides+=f'<div class="fslide{" on" if i==0 else ""}"'+('' if i==0 else ' aria-hidden="true"')+f'>{img}</div>'
 block=f'''<!--faces:start-->
-<div class="faces" role="group" aria-label="Faces of the Theyyams in our guide"><div class="fstack">{slides}</div><p class="fcap"><a href="theyyams/{order[0]}.html">{E(names[order[0]])}</a></p></div>
+<div class="faces" role="group" aria-label="Faces of the Theyyams in our guide"><div class="fstack">{slides}</div></div>
 <!--faces:end-->'''
 css='''.strip span{display:inline-block;padding-left:100%;animation:strip-run 20s linear infinite}.strip:hover span{animation-play-state:paused}@keyframes strip-run{to{transform:translateX(-100%)}}@media(prefers-reduced-motion:reduce){.strip{text-align:center;white-space:normal}.strip span{padding-left:0;animation:none}}
 .fstack{position:relative;width:100%;max-width:460px;aspect-ratio:4/5;border-radius:999px 999px 24px 24px;border:6px solid #FFB400;margin:0 auto;overflow:hidden;background:#4A0E12}
@@ -21,13 +21,12 @@ css='''.strip span{display:inline-block;padding-left:100%;animation:strip-run 20
 .fslide.on{opacity:1;z-index:1}
 .fslide img{width:100%;height:100%;object-fit:cover;transform:scale(1.07);transition:transform 7s ease-out}
 .fslide.on img{transform:scale(1)}
-.fcap{transition:opacity .7s ease;text-align:center;margin:14px 0 0;font-weight:600;min-height:28px;letter-spacing:.02em}.fcap a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}.fcap a:hover{border-color:#FFB400}
 @media(prefers-reduced-motion:reduce){.fslide,.fslide img{transition:none}.fslide img{transform:none}}'''
 js='''<script>
-(function(){var st=document.querySelector('.fstack');if(!st)return;var s=[].slice.call(st.querySelectorAll('.fslide')),n=s.length,i=0,cap=document.querySelector('.fcap a'),timer=null;
+(function(){var st=document.querySelector('.fstack');if(!st)return;var s=[].slice.call(st.querySelectorAll('.fslide')),n=s.length,i=0,timer=null;
 if(n<2||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
 function load(k){var im=s[k%n].querySelector('img');if(im&&im.loading==='lazy'){im.loading='eager';}}
-function show(k){var o=s[i],c=s[k];o.classList.remove('on');o.setAttribute('aria-hidden','true');o.tabIndex=-1;c.classList.add('on');c.removeAttribute('aria-hidden');c.tabIndex=0;i=k;cap.parentNode.style.opacity=0;setTimeout(function(){cap.textContent=c.getAttribute('data-n');cap.href=c.getAttribute('href');cap.parentNode.style.opacity=1;},700);load(k+1);load(k+2);}
+function show(k){var o=s[i],c=s[k];o.classList.remove('on');o.setAttribute('aria-hidden','true');c.classList.add('on');c.removeAttribute('aria-hidden');i=k;load(k+1);}
 function next(){show((i+1)%n);}
 function start(){if(!timer&&!document.hidden)timer=setInterval(next,3800);}
 function stop(){clearInterval(timer);timer=null;}

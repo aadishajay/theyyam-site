@@ -26,3 +26,6 @@ K.K.N. Kurup, The Cult of Teyyam and Hero Worship in Kerala (1973); Kurup, Teyya
 ## Photos
 - Placeholder Wikimedia photos on landing/trips/journal pages were replaced with LGFC trip photos (assets/lgfc-*.jpg), taken from the Theyyam trip Google Photos albums linked in the Notion "Trip Calendar" database (Feb 2026, Mar 2025 and Feb 2025 albums). Ritual photos only; guest faces and fire-led shots avoided. Still to check: consent for any devotees visible in frame, and per-shrine photo rules.
 - Unused strong candidates: orig a1_09/a1_17 (tall striped cone headdress), a4_226, a2_161.
+
+## Hero carousel
+- Homepage carousel now shows 5 traced SVG closeups (assets/faces-svg/, made from assets/faces/*.jpg with vtracer after edge-preserving k-means posterisation). No caption or links. tools/patch_home.py holds the order. Original JPG face crops remain for the Theyyam pages.
