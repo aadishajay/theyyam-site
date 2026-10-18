@@ -11,3 +11,9 @@ Names only: Padarkulangara Bhagavathy, Karinthiri Nair, Kuttikol Thamburatti, Ch
 
 ## Sources to check next
 K.K.N. Kurup, The Cult of Teyyam and Hero Worship in Kerala (1973); Kurup, Teyyam of Kerala (Sangeet Natak Akademi, 1979); Kerala Folklore Academy publications; Kerala Tourism brochures.
+
+## Added later / still open
+- Mentioned on the site but no page yet: Koyi Mammad, Naithiyar, Beevi (Mappila Theyyams named in Wikipedia; too little found). Poomala Bhagavathi has no Theyyam form per Wikipedia.
+- "Kudidaivam": no source found. Closest is Kudiveeran (listed by Kerala Tourism; only an NFT listing describes it). Need the user's source or spelling.
+- Kallurti (Bhuta Kola, Tulu Nadu) deliberately left out for now.
+- Pages with no photo yet: Angakkaran, Bappuran, Police Theyyam, Rakta Chamundi, Veerakali, Cheerumba Bhagavathi, Aali Theyyam, Kalanthan Mukri, Yogyar Akampadi, Pulimaruthan, Marapuli.

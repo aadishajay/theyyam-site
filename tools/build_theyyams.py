@@ -84,6 +84,21 @@ def tcard(t,pre=''):
     pic=f'<img src="../assets/theyyam/{f1}" alt="{E(t["name"])} Theyyam performer in costume" width="400" height="500" loading="lazy">' if f1 else ph(t,'tcp')
     return f'<a class="tc" href="{pre}{t["slug"]}.html">{pic}<h3>{E(t["name"])}</h3><p class="m">{E(t["ml"])} · {E(catl[t["cat"]])}</p><p class="t">{E(t["tag"])}</p></a>'
 def bc(items): return {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":i+1,"name":n,"item":B+u} for i,(n,u) in enumerate(items)]}
+
+LINKS={'muthappan':['Muthappan'],'vishnumoorthi':['Vishnumoorthi','Vishnumurthy','Narasimhamoorthi'],'pottan':['Pottan'],'gulikan':['Gulikan','Guliga'],'kuttichathan':['Kuttichathan'],'poomaruthan':['Poomaruthan'],'muchilot-bhagavathi':['Muchilot Bhagavathi'],'uchitta':['Uchitta Bhagavathy','Uchitta'],'vasoorimala':['Vasoorimala'],'arya-poonkani':['Arya Poonkani'],'chamundi':['Chamundi'],'kathivanoor-veeran':['Kathivanoor Veeran'],'pulimaranja-thondachan':['Pulimaranja Thondachan'],'kadangot-makkam':['Kadangot Makkam'],'bappiriyan':['Bappiriyan'],'theechamundi':['Theechamundi'],'karimchamundi':['Karimchamundi','Karinchamundi'],'kurathi':['Kurathi Amma','Kurathi'],'kandanar-kelan':['Kandanar Kelan'],'vayanattu-kulavan':['Vayanattu Kulavan'],'bhairavan':['Bhairavan'],'puli-daivam':['Puli Daivam'],'vishakandan':['Vishakandan'],'puthiya-bhagavathi':['Puthiya Bhagavathi'],'mappila-theyyam':['Mappila Theyyams','Mappila Theyyam'],'ummachi':['Ummachi'],'police-theyyam':['Police Theyyam'],'panjuruli':['Panjuruli'],'angakkaran':['Angakkaran'],'daivathar':['Daivathar'],'bappuran':['Bappuran'],'madayil-chamundi':['Madayil Chamundi'],'kundora-chamundi':['Kundora Chamundi'],'padarkulangara-bhagavathy':['Padarkulangara Bhagavathy','Padarkulangara','Padakulangara Veeran'],'puliyoor-kali':['Puliyoor Kali'],'pulikandan':['Pulikandan'],'pulikarinkali':['Pulikarinkali'],'veerakali':['Veerakali'],'cheerumba-bhagavathi':['Cheerumba Bhagavathi','Cheerumba','Cheerumbas'],'aali-theyyam':['Aali Theyyam'],'kalanthan-mukri':['Kalanthan Mukri','Kalanthan'],'yogyar-akampadi':['Yogyar Akampadi'],'rakta-chamundi':['Rakta Chamundi'],'puliyoor-kannan':['Puliyoor Kannan'],'pulimaruthan':['Pulimaruthan'],'marapuli':['Marapuli']}
+_terms=sorted({(t,s) for s,L in LINKS.items() for t in L},key=lambda x:-len(x[0]))
+_tmap={t:s for t,s in _terms}
+_re=re.compile(r'(?<![A-Za-z])('+'|'.join(re.escape(t) for t,_ in _terms)+r')(?![A-Za-z])')
+def linkify(text,self_slug,used,pre=''):
+    """escape text and link the first mention of each other Theyyam"""
+    out=[];pos=0
+    for m in _re.finditer(text):
+        t=m.group(1);s=_tmap[t]
+        if s==self_slug or s in used: continue
+        used.add(s)
+        out.append(E(text[pos:m.start()]));out.append(f'<a href="{pre}{s}.html">{E(t)}</a>');pos=m.end()
+    out.append(E(text[pos:]));return ''.join(out)
+
 os.makedirs('theyyams',exist_ok=True)
 # detail pages
 for t in T:
@@ -100,14 +115,15 @@ for t in T:
     h=head(f'{t["name"]} Theyyam: Story, Meaning & What to Expect | LGFC Theyyam',desc,f'theyyams/{t["slug"]}.html',ld,first(t) or '../p-headdress-tall.jpg')
     h+=header_t+'\n<main id="main"><article>\n<div class="w">\n'
     h+=f'<nav aria-label="Breadcrumb" style="font-size:14px;padding-top:24px"><a href="../index.html">Home</a> / <a href="./">Theyyams</a> / {E(t["name"])}</nav>\n'
-    h+=f'<div class="hero">{(f'<img class="h" src="../assets/theyyam/{first(t)}" alt="{E(alts[0])}" width="760" height="950">' if first(t) else ph(t,'h'))}<div><a class="chip" href="./#{t["cat"]}">{E(catl[t["cat"]])}</a><h1 style="margin-top:14px">{E(t["name"])}</h1><p class="ml" lang="ml">{E(t["ml"])}</p><p style="font-size:1.15em;font-weight:500;margin:18px 0 22px">{E(t["tag"])}</p><div class="facts"><dl>'+''.join(f'<div><dt>{E(a)}</dt><dd>{E(b)}</dd></div>' for a,b in t['facts'])+'</dl></div></div></div>\n'
+    h+=f'<div class="hero">{(f'<img class="h" src="../assets/theyyam/{first(t)}" alt="{E(alts[0])}" width="760" height="950">' if first(t) else ph(t,'h'))}<div><a class="chip" href="./#{t["cat"]}">{E(catl[t["cat"]])}</a><h1 style="margin-top:14px">{E(t["name"])}</h1><p class="ml" lang="ml">{E(t["ml"])}</p><p style="font-size:1.15em;font-weight:500;margin:18px 0 22px">{E(t["tag"])}</p><div class="facts"><dl>'+''.join(f'<div><dt>{E(a)}</dt><dd>{linkify(b,t["slug"],set())}</dd></div>' for a,b in t['facts'])+'</dl></div></div></div>\n'
     h+='<div class="art sec" style="padding-bottom:8px">\n'
-    h+=f'<h2>Who is {E(t["name"])}?</h2><p>{E(t["who"])}</p>\n<h2>The story</h2>'+''.join(f'<p>{E(x)}</p>' for x in t['story'])+'\n'
+    used=set()
+    h+=f'<h2>Who is {E(t["name"])}?</h2><p>{linkify(t["who"],t["slug"],used)}</p>\n<h2>The story</h2>'+''.join(f'<p>{linkify(x,t["slug"],used)}</p>' for x in t['story'])+'\n'
     if len(cr)>1:
         h+='<div class="gal">'+''.join(f'<figure><img src="../assets/theyyam/{c["file"]}" alt="{E(alts[i+1])}" width="{c["w"]}" height="{c["h"]}" loading="lazy"><figcaption>Photo: {E(c["artist"])}, {E(c["lic"])}, via Wikimedia Commons</figcaption></figure>' for i,c in enumerate(cr[1:3]))+'</div>\n'
     if cr:
         h+=f'<p style="font-size:12px;opacity:.7;margin:-12px 0 20px">Hero photo: {E(cr[0]["artist"])}, {E(cr[0]["lic"])}, via Wikimedia Commons</p>\n'
-    h+=f'<h2>What you will see</h2><p>{E(t["look"])}</p>\n<h2>In the tradition</h2><p>{E(t["trad"])}</p>\n<div class="note"><b>A note for visitors</b><p style="margin:8px 0 0">{E(t["note"])} Photography and video are not allowed at some rituals, so ask your guide first.</p></div>\n'
+    h+=f'<h2>What you will see</h2><p>{linkify(t["look"],t["slug"],used)}</p>\n<h2>In the tradition</h2><p>{linkify(t["trad"],t["slug"],used)}</p>\n<div class="note"><b>A note for visitors</b><p style="margin:8px 0 0">{linkify(t["note"],t["slug"],used)} Photography and video are not allowed at some rituals, so ask your guide first.</p></div>\n'
     h+='<h2>Quick answers</h2>'+''.join(f'<details><summary><h3>{E(q)}</h3></summary><p style="margin-top:0">{E(a)}</p></details>' for q,a in faq)
     h+='\n<div class="cta" style="margin-top:36px"><h3>Learn about the Theyyams with a local guide</h3><p>Our guided trips explain each deity’s story as you see it, and are planned with you on enquiry. We never publish ritual dates or venues, and confirm the right nights with you closer to travel.</p><a class="btn" href="../enquire.html">Enquire about a trip</a></div>\n'
     h+='<p class="srcs"><b>Sources and further reading:</b> '+', '.join(f'<a href="{u}" rel="noopener">{E(n)}{" (Wikipedia)" if "wikipedia" in u else ""}</a>' for n,u in t['src'])+'. Stories vary by shrine, family and teller; this is a general summary, not a definitive version.</p>\n'
@@ -177,3 +193,26 @@ open('theyyam-glossary.html','w').write(g)
 sm=open('sitemap.xml').read()
 if B+'theyyam-glossary.html' not in sm: sm=sm.replace('</urlset>',f'<url><loc>{B}theyyam-glossary.html</loc></url>\n</urlset>')
 open('sitemap.xml','w').write(sm)
+
+# ---- link Theyyam names inside journal posts (root pages) ----
+POSTS=['what-is-theyyam.html','theyyam-etiquette.html','theyyam-season.html','planning-theyyam-on-your-own.html','main-theyyams.html','costume-and-craft.html','cameras-and-ritual.html']
+for f in POSTS:
+    s=open(f).read();used=set(re.findall(r'href="theyyams/([a-z-]+)\.html"',s))
+    def fix(m):
+        tokens=re.split(r'(<[^>]+>)',m.group(2));depth=0;res=[]
+        for tok in tokens:
+            if tok.startswith('<'):
+                if re.match(r'<a[\s>]',tok): depth+=1
+                elif tok=='</a>': depth=max(0,depth-1)
+                res.append(tok);continue
+            if depth or not tok.strip(): res.append(tok);continue
+            pos=0;out=[]
+            for mm in _re.finditer(tok):
+                sl=_tmap[mm.group(1)]
+                if sl in used: continue
+                used.add(sl);out.append(tok[pos:mm.start()]);out.append(f'<a href="theyyams/{sl}.html">{mm.group(1)}</a>');pos=mm.end()
+            out.append(tok[pos:]);res.append(''.join(out))
+        return m.group(1)+''.join(res)+m.group(3)
+    head_,sep,body_=s.partition('<main id="main">')
+    body_=re.sub(r'(<(?:p|li)(?:\s[^>]*)?>)(.*?)(</(?:p|li)>)',fix,body_,flags=re.S)
+    open(f,'w').write(head_+sep+body_)
