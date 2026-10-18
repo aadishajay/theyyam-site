@@ -20,7 +20,7 @@ ORG_DESC = {
  'en': 'Guided Theyyam tours and cultural journeys in North Malabar, Kerala: small-group and private trips in Kannur, Kasaragod, Thalassery, Payyannur, Thaliparamba and Kanhangad.',
  'de': 'Geführte Theyyam-Reisen und Kulturreisen in Nord-Malabar, Kerala: Kleingruppen- und Privatreisen in Kannur, Kasaragod, Thalassery, Payyannur, Thaliparamba und Kanhangad.',
  'fr': 'Voyages Theyyam accompagnés et voyages culturels dans le Malabar du Nord, Kerala : petits groupes et voyages privés à Kannur, Kasaragod, Thalassery, Payyannur, Thaliparamba et Kanhangad.',
- 'es': 'Viajes guiados al Theyyam y viajes culturales en el Malabar del Norte, Kerala: grupos reducidos y viajes privados en Kannur, Kasaragod, Thalassery, Payyannur, Thaliparamba y Kanhangad.'}
+ 'es': 'Viajes culturales para descubrir el Theyyam en el Malabar del Norte, Kerala: grupos reducidos y viajes privados en Kannur, Kasaragod, Thalassery, Payyannur, Thaliparamba y Kanhangad.'}
 E = html.escape
 
 def hero_images(s, prefix):
