@@ -14,6 +14,24 @@ export const featured = {
 
 export const latest: JournalCard[] = [
   {
+    "slug": "kantara-and-theyyam",
+    "img": "lgfc-headdress-portrait.jpg",
+    "alt": "A Theyyam in a tall red headdress, face and ornaments",
+    "width": 600,
+    "height": 400,
+    "k": "Culture · 7 min",
+    "title": "Kantara and Theyyam: what the film shows and what it does not"
+  },
+  {
+    "slug": "is-theyyam-a-dance",
+    "img": "lgfc-portrait-ritual.jpg",
+    "alt": "Portrait of a Theyyam in a red headdress during the ritual",
+    "width": 600,
+    "height": 400,
+    "k": "Culture · 6 min",
+    "title": "Is Theyyam a dance? No, it is a ritual"
+  },
+  {
     "slug": "steps-of-a-theyyam",
     "img": "lgfc-headdress-shrine.jpg",
     "alt": "A Theyyam in a large red and silver headdress with flowers, at a shrine in Kannur",
