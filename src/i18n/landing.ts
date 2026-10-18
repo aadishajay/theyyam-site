@@ -112,7 +112,7 @@ export const landing: Record<"en" | "de" | "fr" | "es", LandingCopy> = {
   "finalH2": "Ready to meet the gods of Malabar?",
   "finalP": "Tell us when you can travel. We reply within two working days.",
   "finalBtn": "Enquire about a trip",
-  "about": "Guided Theyyam journeys across Kannur, Thalassery, Payyannur, Thaliparamba and Kanhangad. [LGFC LEGAL NAME, ADDRESS]",
+  "about": "Guided Theyyam journeys across Kannur, Thalassery, Payyannur, Thaliparamba and Kanhangad.",
   "credit": "Photographs: LetsGoForACamp trips. Some Theyyam pages use Wikimedia Commons images (CC BY / BY-SA), credited on each page."
  },
  "de": {
@@ -226,7 +226,7 @@ export const landing: Record<"en" | "de" | "fr" | "es", LandingCopy> = {
   "finalH2": "Bereit, Theyyam hautnah und respektvoll zu erleben?",
   "finalP": "Sagen Sie uns, wann Sie reisen können. Wir antworten innerhalb von zwei Werktagen.",
   "finalBtn": "Reise anfragen",
-  "about": "Geführte Theyyam-Reisen in Kannur, Thalassery, Payyannur, Thaliparamba und Kanhangad. [LGFC LEGAL NAME, ADDRESS]",
+  "about": "Geführte Theyyam-Reisen in Kannur, Thalassery, Payyannur, Thaliparamba und Kanhangad.",
   "credit": "Fotos: Reisen von LetsGoForACamp. Manche Theyyam-Seiten nutzen Bilder von Wikimedia Commons (CC BY / BY-SA), die auf jeder Seite genannt sind."
  },
  "fr": {
@@ -340,7 +340,7 @@ export const landing: Record<"en" | "de" | "fr" | "es", LandingCopy> = {
   "finalH2": "Prêt à découvrir les traditions sacrées du Malabar ?",
   "finalP": "Indiquez-nous vos dates de voyage. Nous vous répondrons sous deux jours ouvrés.",
   "finalBtn": "Demander un voyage",
-  "about": "Voyages Theyyam accompagnés à Kannur, Thalassery, Payyannur, Thaliparamba et Kanhangad. [LGFC LEGAL NAME, ADDRESS]",
+  "about": "Voyages Theyyam accompagnés à Kannur, Thalassery, Payyannur, Thaliparamba et Kanhangad.",
   "credit": "Photos : voyages de LetsGoForACamp. Certaines pages Theyyam utilisent des images de Wikimedia Commons (CC BY / BY-SA), créditées sur chaque page."
  },
  "es": {
@@ -454,7 +454,7 @@ export const landing: Record<"en" | "de" | "fr" | "es", LandingCopy> = {
   "finalH2": "¿Listo para conocer a los dioses del Malabar?",
   "finalP": "Díganos cuándo puede viajar. Respondemos en dos días laborables.",
   "finalBtn": "Consultar un viaje",
-  "about": "Viajes culturales para descubrir el Theyyam por Kannur, Thalassery, Payyannur, Thaliparamba y Kanhangad. [LGFC LEGAL NAME, ADDRESS]",
+  "about": "Viajes culturales para descubrir el Theyyam por Kannur, Thalassery, Payyannur, Thaliparamba y Kanhangad.",
   "credit": "Fotos: viajes de LetsGoForACamp. Algunas páginas de Theyyam usan imágenes de Wikimedia Commons (CC BY / BY-SA), con crédito en cada página."
  }
 };
