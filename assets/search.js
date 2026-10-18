@@ -98,7 +98,7 @@
     load().then(function(){
       var raw=inp.value.trim(),r=search(raw),sug=dlg.querySelector('#tss');
       var shown=r.list.slice(0,8);
-      list.innerHTML=shown.map(function(e,i){return '<li role="presentation"><a role="option" id="tso'+i+'" aria-selected="false" href="'+root+'theyyams/'+e.s+'.html"><img src="'+base+'theyyam/'+e.i+'-1.jpg" alt="" loading="lazy" width="56" height="56"><span><b>'+hl(e.n,raw)+' <span lang="ml" style="font-weight:400;opacity:.8">'+esc(e.m)+'</span></b><small>'+esc(e.cl)+' · '+esc(e.t)+'</small></span></a></li>'}).join('');
+      list.innerHTML=shown.map(function(e,i){return '<li role="presentation"><a role="option" id="tso'+i+'" aria-selected="false" href="'+root+'theyyams/'+e.s+'.html">'+(e.f?'<img src="'+base+'theyyam/'+e.f+'" alt="" loading="lazy" width="56" height="56">':'<span style="width:56px;height:56px;border-radius:14px;background:#4A0E12;flex:none"></span>')+'<span><b>'+hl(e.n,raw)+' <span lang="ml" style="font-weight:400;opacity:.8">'+esc(e.m)+'</span></b><small>'+esc(e.cl)+' · '+esc(e.t)+'</small></span></a></li>'}).join('');
       items=[].slice.call(list.querySelectorAll('a'));sel=-1;
       if(!raw){hint.textContent='Popular: start typing, or pick one.';sug.innerHTML=['Muthappan','Vishnumoorthi','Pottan','Goddess','Hero','Harmony'].map(function(w){return '<button type="button">'+w+'</button>'}).join('');}
       else{sug.innerHTML='';hint.textContent=shown.length?(r.fuzzy?'Closest matches for “'+raw+'”':r.list.length+' Theyyam'+(r.list.length>1?'s':'')+' found'):'No match for “'+raw+'”. Try a name, “goddess”, “hero” or “harmony”.';}

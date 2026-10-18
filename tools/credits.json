@@ -582,5 +582,52 @@
    "lic": "CC BY-SA 3.0",
    "page": "https://commons.wikimedia.org/wiki/File:Puthiya_bhavathi_thirumudi_3.jpg"
   }
- ]
+ ],
+ "ummachi": [
+  {
+   "file": "ummachi-1.jpg",
+   "w": 760,
+   "h": 1013,
+   "artist": "Mithunrajkeekkamkot",
+   "lic": "CC BY-SA 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:%E0%B4%89%E0%B4%AE%E0%B5%8D%E0%B4%AE%E0%B4%9A%E0%B5%8D%E0%B4%9A%E0%B4%BF_%E0%B4%A4%E0%B5%86%E0%B4%AF%E0%B5%8D%E0%B4%AF%E0%B4%82.jpg"
+  }
+ ],
+ "panjuruli": [
+  {
+   "file": "panjuruli-1.jpg",
+   "w": 760,
+   "h": 506,
+   "artist": "Balakrishnan Koyyal",
+   "lic": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Theyyam_Panchuruli.jpg"
+  },
+  {
+   "file": "panjuruli-2.jpg",
+   "w": 760,
+   "h": 504,
+   "artist": "Uajith",
+   "lic": "CC BY-SA 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Panchuruli_Theyyam_Kanathur_Kerala.jpg"
+  }
+ ],
+ "mappila-theyyam": [
+  {
+   "file": "ummachi-1.jpg",
+   "w": 760,
+   "h": 1013,
+   "artist": "Mithunrajkeekkamkot",
+   "lic": "CC BY-SA 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:%E0%B4%89%E0%B4%AE%E0%B5%8D%E0%B4%AE%E0%B4%9A%E0%B5%8D%E0%B4%9A%E0%B4%BF_%E0%B4%A4%E0%B5%86%E0%B4%AF%E0%B5%8D%E0%B4%AF%E0%B4%82.jpg"
+  },
+  {
+   "file": "bappiriyan-1.jpg",
+   "w": 760,
+   "h": 1140,
+   "artist": "Shagil Muzhappilangad",
+   "lic": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Bappiriyan_Theyyan_(15).jpg"
+  }
+ ],
+ "police-theyyam": []
 }

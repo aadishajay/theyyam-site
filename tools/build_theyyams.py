@@ -48,6 +48,7 @@ extra_css='''
 .hubsearch{position:relative;margin-top:22px;max-width:560px}
 .hubsearch input{width:100%;min-height:56px;border-radius:999px;border:2px solid #fff;padding:0 24px;font:inherit;font-size:17px;background:#fff;color:#1a0a08}
 .hubsearch input:focus{outline:4px solid #FFB400}
+.ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:#4A0E12;color:#FFB400;border-radius:20px;text-align:center;aspect-ratio:4/5}.ph span{font-size:1.6rem;font-weight:700;padding:0 12px}.ph small{color:#fff;opacity:.8;font-size:12px}.ph.h{border:2px solid #1a0a08;border-radius:28px;width:100%}
 .empty{padding:28px;border:2px dashed #1a0a08;border-radius:20px;margin:24px 0}
 @media(min-width:768px){.hero{grid-template-columns:5fr 6fr;align-items:start;gap:48px;padding-top:48px}.gal{grid-template-columns:repeat(2,1fr)}.cardg{grid-template-columns:repeat(4,1fr);gap:24px}}
 '''
@@ -73,14 +74,20 @@ def head(title,desc,url,ld,extra=''):
 <a class="skip" href="#main">Skip to content</a>
 '''
 def img(t): return IMG.get(t['slug'],t['slug'])
+def first(t):
+    c=cred.get(img(t)) or []
+    return c[0]['file'] if c else None
+def ph(t,cls):
+    return f'<div class="ph {cls}" role="img" aria-label="{E(t["name"])}: photograph to come"><span lang="ml">{E(t["ml"])}</span><small>Photo to come</small></div>'
 def tcard(t,pre=''):
-    p=img(t)
-    return f'<a class="tc" href="{pre}{t["slug"]}.html"><img src="../assets/theyyam/{p}-1.jpg" alt="{E(t["name"])} Theyyam performer in costume" width="400" height="500" loading="lazy"><h3>{E(t["name"])}</h3><p class="m">{E(t["ml"])} · {E(catl[t["cat"]])}</p><p class="t">{E(t["tag"])}</p></a>'
+    p=img(t);f1=first(t)
+    pic=f'<img src="../assets/theyyam/{f1}" alt="{E(t["name"])} Theyyam performer in costume" width="400" height="500" loading="lazy">' if f1 else ph(t,'tcp')
+    return f'<a class="tc" href="{pre}{t["slug"]}.html">{pic}<h3>{E(t["name"])}</h3><p class="m">{E(t["ml"])} · {E(catl[t["cat"]])}</p><p class="t">{E(t["tag"])}</p></a>'
 def bc(items): return {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":i+1,"name":n,"item":B+u} for i,(n,u) in enumerate(items)]}
 os.makedirs('theyyams',exist_ok=True)
 # detail pages
 for t in T:
-    p=img(t); cr=cred[p]
+    p=img(t); cr=cred.get(p) or []
     alts=[f'{t["name"]} Theyyam performer in costume',f'Close view of the {t["name"]} Theyyam face and headdress',f'{t["name"]} Theyyam during a ritual in North Malabar, Kerala']
     desc=f'{t["name"]} Theyyam: {t["tag"]} Story, meaning and what to expect.'
     if len(desc)>155: desc=f'{t["name"]} Theyyam of North Malabar: story, meaning, appearance and what to expect when you watch.'
@@ -88,16 +95,18 @@ for t in T:
     rel=others[:4]
     faq=[(f'Who is {t["name"]} in Theyyam?',t['who']),(f'What does {t["name"]} Theyyam look like?',t['look'])]
     ld=[bc([("Home",""),("Theyyams","theyyams/"),(t['name'],f'theyyams/{t["slug"]}.html')]),
-        {"@type":"Article","headline":f'{t["name"]} Theyyam: story, meaning and what to expect',"description":desc,"author":{"@id":B+"#org"},"publisher":{"@id":B+"#org"},"mainEntityOfPage":f'{B}theyyams/{t["slug"]}.html',"image":f'{B}assets/theyyam/{p}-1.jpg',"about":{"@type":"Thing","name":f'{t["name"]} Theyyam',"alternateName":[t['ml']]+t['alias']}},
+        {"@type":"Article","headline":f'{t["name"]} Theyyam: story, meaning and what to expect',"description":desc,"author":{"@id":B+"#org"},"publisher":{"@id":B+"#org"},"mainEntityOfPage":f'{B}theyyams/{t["slug"]}.html',"image":(f'{B}assets/theyyam/{first(t)}' if first(t) else B+'assets/p-headdress-tall.jpg'),"about":{"@type":"Thing","name":f'{t["name"]} Theyyam',"alternateName":[t['ml']]+t['alias']}},
         {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faq]}]
-    h=head(f'{t["name"]} Theyyam: Story, Meaning & What to Expect | LGFC Theyyam',desc,f'theyyams/{t["slug"]}.html',ld,f'{p}-1.jpg')
+    h=head(f'{t["name"]} Theyyam: Story, Meaning & What to Expect | LGFC Theyyam',desc,f'theyyams/{t["slug"]}.html',ld,first(t) or '../p-headdress-tall.jpg')
     h+=header_t+'\n<main id="main"><article>\n<div class="w">\n'
     h+=f'<nav aria-label="Breadcrumb" style="font-size:14px;padding-top:24px"><a href="../index.html">Home</a> / <a href="./">Theyyams</a> / {E(t["name"])}</nav>\n'
-    h+=f'<div class="hero"><img class="h" src="../assets/theyyam/{p}-1.jpg" alt="{E(alts[0])}" width="760" height="950"><div><a class="chip" href="./#{t["cat"]}">{E(catl[t["cat"]])}</a><h1 style="margin-top:14px">{E(t["name"])}</h1><p class="ml" lang="ml">{E(t["ml"])}</p><p style="font-size:1.15em;font-weight:500;margin:18px 0 22px">{E(t["tag"])}</p><div class="facts"><dl>'+''.join(f'<div><dt>{E(a)}</dt><dd>{E(b)}</dd></div>' for a,b in t['facts'])+'</dl></div></div></div>\n'
+    h+=f'<div class="hero">{(f'<img class="h" src="../assets/theyyam/{first(t)}" alt="{E(alts[0])}" width="760" height="950">' if first(t) else ph(t,'h'))}<div><a class="chip" href="./#{t["cat"]}">{E(catl[t["cat"]])}</a><h1 style="margin-top:14px">{E(t["name"])}</h1><p class="ml" lang="ml">{E(t["ml"])}</p><p style="font-size:1.15em;font-weight:500;margin:18px 0 22px">{E(t["tag"])}</p><div class="facts"><dl>'+''.join(f'<div><dt>{E(a)}</dt><dd>{E(b)}</dd></div>' for a,b in t['facts'])+'</dl></div></div></div>\n'
     h+='<div class="art sec" style="padding-bottom:8px">\n'
     h+=f'<h2>Who is {E(t["name"])}?</h2><p>{E(t["who"])}</p>\n<h2>The story</h2>'+''.join(f'<p>{E(x)}</p>' for x in t['story'])+'\n'
     if len(cr)>1:
         h+='<div class="gal">'+''.join(f'<figure><img src="../assets/theyyam/{c["file"]}" alt="{E(alts[i+1])}" width="{c["w"]}" height="{c["h"]}" loading="lazy"><figcaption>Photo: {E(c["artist"])}, {E(c["lic"])}, via Wikimedia Commons</figcaption></figure>' for i,c in enumerate(cr[1:3]))+'</div>\n'
+    if cr:
+        h+=f'<p style="font-size:12px;opacity:.7;margin:-12px 0 20px">Hero photo: {E(cr[0]["artist"])}, {E(cr[0]["lic"])}, via Wikimedia Commons</p>\n'
     h+=f'<h2>What you will see</h2><p>{E(t["look"])}</p>\n<h2>In the tradition</h2><p>{E(t["trad"])}</p>\n<div class="note"><b>A note for visitors</b><p style="margin:8px 0 0">{E(t["note"])} Photography and video are not allowed at some rituals, so ask your guide first.</p></div>\n'
     h+='<h2>Quick answers</h2>'+''.join(f'<details><summary><h3>{E(q)}</h3></summary><p style="margin-top:0">{E(a)}</p></details>' for q,a in faq)
     h+='\n<div class="cta" style="margin-top:36px"><h3>Learn about the Theyyams with a local guide</h3><p>Our guided trips explain each deity’s story as you see it, and are planned with you on enquiry. We never publish ritual dates or venues, and confirm the right nights with you closer to travel.</p><a class="btn" href="../enquire.html">Enquire about a trip</a></div>\n'
@@ -120,11 +129,11 @@ for c in CATS:
     items=[t for t in T if t['cat']==c[0]]
     h+=f'<section class="cg" id="{c[0]}" data-c="{c[0]}" style="margin-top:36px"><h2>{E(c[1])}</h2><p style="margin:8px 0 20px;max-width:640px">{E(c[2])}</p><div class="cardg">'+''.join(tcard(t).replace('<a class="tc"',f'<a class="tc" data-s="{t["slug"]}"') for t in items)+'</div></section>'
 h+='</div><div id="hubempty" class="empty" hidden><b>No match yet.</b><p style="margin:8px 0 0" id="hubdym"></p><p style="margin:8px 0 0">This list is growing. <a href="../enquire.html">Ask us</a> about a Theyyam you have heard of.</p></div>'
-h+='<div style="margin-top:56px;max-width:720px"><h2>How we group them</h2><p style="margin-top:12px">This grouping is ours, to help readers. Scholars use other divisions, and many Theyyams fit more than one. Stories also differ from shrine to shrine and teller to teller. We have not included dates or places of performance, and the rituals are worship, not shows. See our <a href="../theyyam-etiquette.html">etiquette guide</a> before you go.</p></div>'
+h+='<div style="margin-top:56px;max-width:720px"><h2>How we group them</h2><p style="margin-top:12px">This grouping is ours, to help readers. Scholars use other divisions, and many Theyyams fit more than one. Stories also differ from shrine to shrine and teller to teller. We have not included dates or places of performance, and the rituals are worship, not shows. See our <a href="../theyyam-etiquette.html">etiquette guide</a> before you go. Unsure of a word such as ottakolam or kaliyattam? See <a href="../theyyam-glossary.html">Theyyam words explained</a>.</p></div>'
 h+='</div></section>\n</main>\n'+footer_t+'\n<script src="../assets/search.js" defer></script>\n</body>\n</html>\n'
 open('theyyams/index.html','w').write(h)
 # search index
-idx=[dict(s=t['slug'],n=t['name'],m=t['ml'],c=t['cat'],cl=catl[t['cat']],t=t['tag'],a=t['alias'],g=t['tags'],i=img(t),x=t['who'][:240]) for t in T]
+idx=[dict(s=t['slug'],n=t['name'],m=t['ml'],c=t['cat'],cl=catl[t['cat']],t=t['tag'],a=t['alias'],g=t['tags'],f=first(t) or '',x=t['who'][:240]) for t in T]
 json.dump(idx,open('assets/theyyams.json','w'),ensure_ascii=False)
 # patch root pages
 for f in ['index.html','trips.html','enquire.html','journal.html','what-is-theyyam.html','theyyam-etiquette.html','theyyam-season.html','planning-theyyam-on-your-own.html','main-theyyams.html','costume-and-craft.html','cameras-and-ritual.html']:
@@ -138,3 +147,33 @@ for u in ['theyyams/']+[f'theyyams/{t["slug"]}.html' for t in T]:
     if B+u not in sm: sm=sm.replace('</urlset>',f'<url><loc>{B}{u}</loc></url>\n</urlset>')
 open('sitemap.xml','w').write(sm)
 print('built',len(T))
+
+# ---- glossary page (root level) ----
+GL=[
+('Theyyam','From the word <i>daivam</i>, god. The ritual in which a performer, after hours of preparation, is believed to become a deity. Also called Kaliyattam, which is more often used for the festival.','Theyyam','https://en.wikipedia.org/wiki/Theyyam'),
+('Kolam','The costumed form of a Theyyam, as in <i>Theyyakkolam</i>. People may speak of someone “taking the kolam”, which means performing in costume.',None,None),
+('Kaliyattam','The yearly festival at a family shrine or grove in which Theyyams are performed. The word is also used for Theyyam itself. Several sources note that the season runs from about late October to May.','Theyyam','https://en.wikipedia.org/wiki/Theyyam'),
+('Perumkaliyattam','A very large festival, held at long intervals, in which many Theyyams are performed. Sources give different intervals; Kerala Tourism says twelve years or more.','Kerala Tourism','https://keralatourism.org/bekal/theyyam-various-types.php'),
+('Ottakolam','A Theyyam that appears on its own, commonly explained as “a single kolam”, rather than together with other Theyyams. The word is often used for fire-linked forms such as Theechamundi and Vishnumoorthi, where the performer enters a bed of embers. We found this meaning in a Wikipedia article and in general usage, not in a scholarly source, so please check it with a local guide.','Vishnumoorthy Theyyam','https://en.wikipedia.org/wiki/Vishnumoorthy_Theyyam'),
+('Thottam and Vellattam','The first part of a Theyyam, performed without full make-up or costume, with only a small red headdress. The performer sings or recites the story of the deity with the drummers.','Theyyam','https://en.wikipedia.org/wiki/Theyyam'),
+('Mudi','The sacred headdress. Placing it on the performer is described as the moment the deity enters. Night performances may use a smaller mudi than the day performance.','Theyyam','https://en.wikipedia.org/wiki/Theyyam'),
+('Mukhathezhuthu','Face painting, done by specialists in patterns that belong to each Theyyam, using natural colours.','Kerala Folklore: Bhairavan Theyyam','https://keralafolklore.com/bhairavan-theyyam.html'),
+('Kavu','A sacred grove or small shrine, often the setting for a Theyyam.','Theyyam','https://en.wikipedia.org/wiki/Theyyam'),
+('Tharavad','An ancestral family home. Many Theyyams are kept by a tharavad as its family deity.','Theyyam','https://en.wikipedia.org/wiki/Theyyam'),
+('Madappura','A shrine of Muthappan. It has no idol or flagstaff and is open to people of all communities.','Muthappan','https://en.wikipedia.org/wiki/Muthappan'),
+('Banku','The Muslim call to prayer. Some Mappila Theyyams begin with it.','Mappila Theyyam','https://en.wikipedia.org/wiki/Mappila_Theyyam'),
+]
+gdesc='Plain-English meanings of Theyyam words you will hear in North Malabar: kaliyattam, perumkaliyattam, ottakolam, thottam, mudi, kavu and more.'
+ld=[bc([("Home",""),("Theyyam words explained","theyyam-glossary.html")]),{"@type":"DefinedTermSet","name":"Theyyam words explained","hasDefinedTerm":[{"@type":"DefinedTerm","name":n,"description":re.sub('<[^>]+>','',d)} for n,d,_,_ in GL]}]
+g=head('Theyyam Words Explained: Kaliyattam, Ottakolam, Mudi & More | LGFC Theyyam',gdesc,'theyyam-glossary.html',ld,'p-headdress-tall.jpg')
+# root-level page: undo the ../ prefixes used by theyyams/ pages
+g=g.replace('{B}assets/theyyam/','')  # no-op safety
+g=g.replace(B+'assets/theyyam/p-headdress-tall.jpg',B+'assets/p-headdress-tall.jpg')
+g+=header.replace(' aria-current="page" style="color:#D7261E"','')+'\n<main id="main"><article><div class="w"><div class="art sec">\n<nav aria-label="Breadcrumb" style="font-size:14px;margin:24px 0 18px"><a href="index.html">Home</a> / Theyyam words explained</nav>\n<h1>Theyyam words explained</h1><p style="font-size:1.15em;font-weight:500;margin-top:18px">The words you will hear around a ritual in North Malabar, in plain English. Meanings can vary by shrine and family, so treat these as a starting point and ask your guide.</p>\n'
+for n,d,sn,su in GL:
+    g+=f'<h2 id="{re.sub("[^a-z]","-",n.lower())}">{n}</h2><p>{d}'+(f' <span style="font-size:13px;opacity:.75">Source: <a href="{su}" rel="noopener">{E(sn)}{" (Wikipedia)" if "wikipedia" in su else ""}</a>.</span>' if sn else '')+'</p>\n'
+g+='<div class="cta" style="margin-top:36px"><h3>Hear the stories in person</h3><p>Our guided trips explain each word and each deity as you see it. <a href="theyyams/">Browse the Theyyams</a> or enquire about a trip.</p><a class="btn" href="enquire.html">Enquire about a trip</a></div>\n</div></div></article></main>\n'+footer+'\n<script src="assets/search.js" defer></script>\n</body>\n</html>\n'
+open('theyyam-glossary.html','w').write(g)
+sm=open('sitemap.xml').read()
+if B+'theyyam-glossary.html' not in sm: sm=sm.replace('</urlset>',f'<url><loc>{B}theyyam-glossary.html</loc></url>\n</urlset>')
+open('sitemap.xml','w').write(sm)
