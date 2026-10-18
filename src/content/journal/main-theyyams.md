@@ -6,8 +6,8 @@ description: "A guide to three well-known Theyyam forms of North Malabar: Muthap
 category: "Theyyam types"
 readTime: "8 min read"
 hero:
-  src: "lgfc-headdress-shrine.jpg"
-  alt: "A Theyyam in a large red and silver headdress with flowers, at a shrine in Kannur"
+  src: "blog/main-theyyams.jpg"
+  alt: "A Theyyam in a tall red headdress with a red and white painted face"
   width: 1200
   height: 675
 lead: "Hundreds of Theyyams exist, each with its own story. Three of the best known are [Muthappan](theyyams/muthappan.html), [Pottan](theyyams/pottan.html) and [Vishnumoorthi](theyyams/vishnumoorthi.html). This is a short introduction, not a complete list."
@@ -15,21 +15,21 @@ ld:
   headline: "Muthappan, Pottan and Vishnumoorthi: the main Theyyams"
   description: "A guide to three well-known Theyyam forms of North Malabar: Muthappan, Pottan and Vishnumoorthi. Who they are and what they mean."
   about: "Theyyam"
-  image: "lgfc-headdress-shrine.jpg"
+  image: "blog/main-theyyams.jpg"
 related:
   - slug: "planning-theyyam-on-your-own"
-    img: "lgfc-shrine-night.jpg"
-    alt: "A North Malabar shrine at night, decorated with marigold garlands and lamps"
+    img: "blog/planning-theyyam-on-your-own.jpg"
+    alt: "A shrine ground at night with a palm-leaf flagstaff, lights and devotees at the edge"
     k: "Planning"
     title: "Why Theyyam is hard to plan on your own"
   - slug: "attire-and-craft"
-    img: "lgfc-ornaments.jpg"
-    alt: "Close view of a Theyyam face with red and silver ornaments"
+    img: "blog/attire-and-craft.jpg"
+    alt: "A craftsman weaving yellow palm fibre for Theyyam attire"
     k: "Culture"
     title: "Attire and craft: how a Theyyam’s attire is made"
   - slug: "cameras-and-ritual"
-    img: "lgfc-headdress-shrine.jpg"
-    alt: "A Theyyam in a large red and silver headdress with flowers, at a shrine in Kannur"
+    img: "blog/cameras-and-ritual.jpg"
+    alt: "Close view of a Theyyam with a green palm-frond headdress"
     k: "Etiquette"
     title: "Cameras and ritual at Theyyam"
 faq:
@@ -55,7 +55,7 @@ Vishnumoorthi is linked to the Narasimha avatar of Vishnu, the half-man, half-li
 
 ## Many more to know
 
-Besides gods, Theyyam honours goddesses, heroes, ancestors and local spirits. Which forms you see depends on the shrine, and your guide will introduce them in context. Browse our [guide to the Theyyams](theyyams/), with the story and images for each. Our [North Malabar Deep Dive](trips.html) is built for travellers who want to see the variety.
+Besides gods, Theyyam honours goddesses, heroes, ancestors and local spirits. Which forms you see depends on the shrine, and your guide will introduce them in context. Browse our [guide to the Theyyams](theyyams/), with the story and images for each. Our [North Malabar Deep Immersion](trips.html) is built for travellers who want to see the variety.
 
 ## Quick answers
 

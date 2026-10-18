@@ -3,8 +3,8 @@ export interface JournalCard { slug: string; img: string; alt: string; width: nu
 // Cards shown on the journal index (image, label and headline are chosen for the index and can differ from the article itself).
 export const featured = {
   "slug": "what-is-theyyam",
-  "img": "lgfc-ornaments.jpg",
-  "alt": "Close view of a Theyyam face with red and silver ornaments",
+    "img": "blog/what-is-theyyam.jpg",
+    "alt": "Close portrait of a Theyyam with a yellow painted face, silver crown and flower garlands",
   "width": 900,
   "height": 675,
   "k": "Featured · Culture · 9 min read",
@@ -15,8 +15,8 @@ export const featured = {
 export const latest: JournalCard[] = [
   {
     "slug": "kantara-and-theyyam",
-    "img": "lgfc-headdress-portrait.jpg",
-    "alt": "A Theyyam in a tall red headdress, face and ornaments",
+    "img": "blog/kantara-and-theyyam.jpg",
+    "alt": "A Theyyam with a red and white painted face holding a sword",
     "width": 600,
     "height": 400,
     "k": "Culture · 7 min",
@@ -24,8 +24,8 @@ export const latest: JournalCard[] = [
   },
   {
     "slug": "is-theyyam-a-dance",
-    "img": "lgfc-portrait-ritual.jpg",
-    "alt": "Portrait of a Theyyam in a red headdress during the ritual",
+    "img": "blog/is-theyyam-a-dance.jpg",
+    "alt": "A Theyyam with a dotted white face mask and flower garlands",
     "width": 600,
     "height": 400,
     "k": "Culture · 6 min",
@@ -33,8 +33,8 @@ export const latest: JournalCard[] = [
   },
   {
     "slug": "steps-of-a-theyyam",
-    "img": "lgfc-headdress-shrine.jpg",
-    "alt": "A Theyyam in a large red and silver headdress with flowers, at a shrine in Kannur",
+    "img": "blog/steps-of-a-theyyam.jpg",
+    "alt": "A koladhari’s yellow face being made up and the crown fitted before the ritual",
     "width": 600,
     "height": 400,
     "k": "Culture · 8 min",
@@ -42,8 +42,8 @@ export const latest: JournalCard[] = [
   },
   {
     "slug": "theyyam-etiquette",
-    "img": "lgfc-portrait-ritual.jpg",
-    "alt": "Portrait of a Theyyam in a red headdress during the ritual",
+    "img": "blog/theyyam-etiquette.jpg",
+    "alt": "A village shrine at night with a flagstaff of palm leaves and marigold garlands",
     "width": 600,
     "height": 400,
     "k": "Etiquette · 6 min",
@@ -51,8 +51,8 @@ export const latest: JournalCard[] = [
   },
   {
     "slug": "theyyam-season",
-    "img": "lgfc-daytime-theyyam.jpg",
-    "alt": "A Theyyam in a red cone headdress at a family shrine by day in Kannur",
+    "img": "blog/theyyam-season.jpg",
+    "alt": "Profile of a Theyyam in a silver crown and red and green attire against a green background",
     "width": 600,
     "height": 400,
     "k": "Planning · 7 min",
@@ -60,8 +60,8 @@ export const latest: JournalCard[] = [
   },
   {
     "slug": "planning-theyyam-on-your-own",
-    "img": "lgfc-shrine-night.jpg",
-    "alt": "A North Malabar shrine at night, decorated with marigold garlands and lamps",
+    "img": "blog/planning-theyyam-on-your-own.jpg",
+    "alt": "A shrine ground at night with a palm-leaf flagstaff, lights and devotees at the edge",
     "width": 600,
     "height": 400,
     "k": "Planning · 6 min",
@@ -69,8 +69,8 @@ export const latest: JournalCard[] = [
   },
   {
     "slug": "main-theyyams",
-    "img": "lgfc-headdress-shrine.jpg",
-    "alt": "A Theyyam in a large red and silver headdress with flowers, at a shrine in Kannur",
+    "img": "blog/main-theyyams.jpg",
+    "alt": "A Theyyam in a tall red headdress with a red and white painted face",
     "width": 600,
     "height": 400,
     "k": "Theyyam types · 8 min",
@@ -78,8 +78,8 @@ export const latest: JournalCard[] = [
   },
   {
     "slug": "attire-and-craft",
-    "img": "lgfc-ornaments.jpg",
-    "alt": "Close view of a Theyyam face with red and silver ornaments",
+    "img": "blog/attire-and-craft.jpg",
+    "alt": "A craftsman weaving yellow palm fibre for Theyyam attire",
     "width": 600,
     "height": 400,
     "k": "Culture · 5 min",
@@ -87,8 +87,8 @@ export const latest: JournalCard[] = [
   },
   {
     "slug": "cameras-and-ritual",
-    "img": "lgfc-headdress-shrine.jpg",
-    "alt": "A Theyyam in a large red and silver headdress with flowers, at a shrine in Kannur",
+    "img": "blog/cameras-and-ritual.jpg",
+    "alt": "Close view of a Theyyam with a green palm-frond headdress",
     "width": 600,
     "height": 480,
     "k": "Etiquette · 6 min",

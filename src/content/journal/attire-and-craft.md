@@ -6,8 +6,8 @@ description: "How Theyyam attire and the face are made in North Kerala: face pai
 category: "Culture"
 readTime: "5 min read"
 hero:
-  src: "lgfc-ornaments.jpg"
-  alt: "Close view of a Theyyam face with red and silver ornaments"
+  src: "blog/attire-and-craft.jpg"
+  alt: "A craftsman weaving yellow palm fibre for Theyyam attire"
   width: 1200
   height: 675
 lead: "Before the deity appears, hours of craft take place out of sight. The attire is made largely from natural materials by people who have learned the work from their families."
@@ -15,21 +15,21 @@ ld:
   headline: "Attire and craft: how a Theyyam’s attire is made"
   description: "How Theyyam attire and the face are made in North Kerala: face painting, headdress, palm-leaf skirts and the hands that craft them."
   about: "Theyyam"
-  image: "lgfc-ornaments.jpg"
+  image: "blog/attire-and-craft.jpg"
 related:
   - slug: "main-theyyams"
-    img: "lgfc-headdress-shrine.jpg"
-    alt: "A Theyyam in a large red and silver headdress with flowers, at a shrine in Kannur"
+    img: "blog/main-theyyams.jpg"
+    alt: "A Theyyam in a tall red headdress with a red and white painted face"
     k: "Theyyam types"
     title: "Muthappan, Pottan and Vishnumoorthi"
   - slug: "cameras-and-ritual"
-    img: "lgfc-headdress-shrine.jpg"
-    alt: "A Theyyam in a large red and silver headdress with flowers, at a shrine in Kannur"
+    img: "blog/cameras-and-ritual.jpg"
+    alt: "Close view of a Theyyam with a green palm-frond headdress"
     k: "Etiquette"
     title: "Cameras and ritual at Theyyam"
   - slug: "what-is-theyyam"
-    img: "lgfc-ornaments.jpg"
-    alt: "Close view of a Theyyam face with red and silver ornaments"
+    img: "blog/what-is-theyyam.jpg"
+    alt: "Close portrait of a Theyyam with a yellow painted face, silver crown and flower garlands"
     k: "Culture"
     title: "What is Theyyam?"
 faq:
@@ -59,7 +59,7 @@ Makers of the attire, musicians and the family that keeps the Theyyam each hold 
 
 ## See the craft
 
-Our [Craft & Attire Journey](trips.html) is planned around meeting these people, subject to what families are comfortable with. [Ask about it](enquire.html).
+Our [North Malabar Deep Immersion](trips.html) is planned around meeting these people, subject to what families are comfortable with. [Ask about it](enquire.html).
 
 ## Quick answers
 

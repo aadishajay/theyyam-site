@@ -20,7 +20,7 @@ const ld = [
       '@type': 'ListItem', position: i + 1,
       item: {
         '@type': 'TouristTrip', name: t.name, description: t.blurb, touristType: ['Culture', 'Heritage'],
-        duration: `P${t.nights}D`, provider: { '@id': abs('') + '#org' },
+        ...(t.duration ? { duration: t.duration } : {}), provider: { '@id': abs('') + '#org' },
         itinerary: { '@type': 'Place', name: t.itinerary }, url: abs('enquire.html'),
       },
     })),
@@ -37,7 +37,7 @@ const includes = [
 ---
 <Base
   title="Theyyam Tour Packages in North Kerala | LGFC Theyyam"
-  description="Guided Theyyam tour packages in North Malabar: 3, 4 and 5 night journeys with stay and transfers, and a local guide if you want one. Group or private. Enquire for a quote."
+  description="Guided Theyyam tour packages in North Malabar: 1 night, 2 night and 3+ day journeys with stay and transfers, and a local guide if you want one. Group or private. Enquire for a quote."
   path="trips.html"
   ld={ld}
 >
@@ -53,7 +53,7 @@ const includes = [
     <section class="sec"><div class="w" style="display:flex;flex-direction:column;gap:32px">
       {trips.map((t) => (
         <article class="tr"><img src={u('assets/' + t.img)} alt={t.alt} width={t.width} height={t.height} /><div class="b">
-          <div><span class="tag">{t.nights} nights</span><span class="tag">{t.base}</span><span class="tag">{t.level}</span></div>
+          <div><span class="tag">{t.length}</span><span class="tag">{t.base}</span><span class="tag">{t.level}</span></div>
           <h2 style="font-size:clamp(1.8rem,6vw,2.6rem)">{t.name}</h2>
           <p style="margin-top:12px">{t.blurb}</p>
           <ul>{t.bullets.map((b) => <li>{b}</li>)}</ul>

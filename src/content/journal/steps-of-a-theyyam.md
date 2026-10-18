@@ -7,8 +7,8 @@ category: "Culture"
 readTime: "8 min read"
 toc: true
 hero:
-  src: "lgfc-headdress-shrine.jpg"
-  alt: "A Theyyam in a large red and silver headdress with flowers, at a shrine in Kannur"
+  src: "blog/steps-of-a-theyyam.jpg"
+  alt: "A koladhari’s yellow face being made up and the crown fitted before the ritual"
   width: 1200
   height: 675
 lead: "A Theyyam is not a single moment but a sequence of ritual steps, each with its own name. Knowing them helps you understand what is happening, and when to stay quietly at the edge. Names, order and length vary by shrine, family and deity, so please treat this as a general outline and ask your guide how it goes at the place you visit."
@@ -16,16 +16,16 @@ ld:
   headline: "The steps of a Theyyam: thottam, vellattam, purappadu and more explained"
   description: "The stages of a Theyyam ritual in order, with meanings: aniyara, thottam, vellattam, mudi, purappadu, kalasham, kuri and more, in plain English."
   about: "Theyyam ritual stages"
-  image: "lgfc-headdress-shrine.jpg"
+  image: "blog/steps-of-a-theyyam.jpg"
 related:
   - slug: "theyyam-etiquette"
-    img: "lgfc-portrait-ritual.jpg"
-    alt: "Portrait of a Theyyam in a red headdress during the ritual"
+    img: "blog/theyyam-etiquette.jpg"
+    alt: "A village shrine at night with a flagstaff of palm leaves and marigold garlands"
     k: "Etiquette"
     title: "Theyyam etiquette: do’s and don’ts for visitors"
   - slug: "attire-and-craft"
-    img: "lgfc-ornaments.jpg"
-    alt: "Close view of a Theyyam face with red and silver ornaments"
+    img: "blog/attire-and-craft.jpg"
+    alt: "A craftsman weaving yellow palm fibre for Theyyam attire"
     k: "Culture"
     title: "Attire and craft: how a Theyyam’s attire is made"
   - slug: "theyyam-glossary"
