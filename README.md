@@ -76,6 +76,10 @@ Body sections, in order: `## Who is <name>?`, `## The story`, `::gallery`, `## W
 `## In the tradition`, `:::note ... :::`. Add the name (and any spellings) to `src/data/theyyam-terms.json` so other
 pages link to it automatically (the first mention of each other Theyyam is linked).
 
+## Testimonials
+`src/content/testimonials.md` is the single source. The first item with `published: true` and `theyyam: true` appears on
+every landing page (quote kept in its original wording). While none is published, the translated placeholder shows.
+
 ## Translations
 Landing page copy for every language is in `src/i18n/landing.ts` (same keys per language). Only the landing page is
 translated; the other pages are English with a note pointing to browser translation.

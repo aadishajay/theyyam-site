@@ -46,4 +46,22 @@ const theyyams = defineCollection({
   }),
 });
 
-export const collections = { journal, theyyams };
+const testimonials = defineCollection({
+  loader: glob({ pattern: 'testimonials.md', base: './src/content' }),
+  schema: z.object({
+    items: z.array(z.object({
+      id: z.string(),
+      quote: z.string(),
+      name: z.string(),
+      country: z.string(),
+      trip: z.string(),
+      source: z.enum(['google', 'email', 'whatsapp', 'other']),
+      sourceUrl: z.string().url().optional(),
+      date: z.string().optional(),
+      published: z.boolean().default(false),
+      theyyam: z.boolean().default(false), // about a Theyyam trip
+    })),
+  }),
+});
+
+export const collections = { journal, theyyams, testimonials };
