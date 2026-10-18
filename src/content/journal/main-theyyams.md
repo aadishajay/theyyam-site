@@ -5,6 +5,7 @@ crumb: "Muthappan, Pottan and Vishnumoorthi"
 description: "A guide to three well-known Theyyam forms of North Malabar: Muthappan, Pottan and Vishnumoorthi. Who they are and what they mean."
 category: "Theyyam types"
 readTime: "8 min read"
+author: "Sankeerth"
 hero:
   src: "blog/main-theyyams.jpg"
   alt: "A Theyyam in a tall red headdress with a red and white painted face"

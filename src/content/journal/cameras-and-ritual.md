@@ -5,6 +5,7 @@ crumb: "Cameras and ritual at Theyyam"
 description: "Why photography and video are not allowed at some Theyyam rituals in North Kerala, and how to be a respectful guest with a phone."
 category: "Etiquette"
 readTime: "6 min read"
+author: "Abhina"
 hero:
   src: "blog/cameras-and-ritual.jpg"
   alt: "Close view of a Theyyam with a green palm-frond headdress"

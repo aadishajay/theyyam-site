@@ -5,6 +5,7 @@ crumb: "What is Theyyam?"
 description: "What Theyyam is, who keeps it, what you will see and how to be a good guest at a ritual in North Malabar, Kerala."
 category: "Culture"
 readTime: "9 min read"
+author: "Sankeerth"
 toc: true
 hero:
   src: "blog/what-is-theyyam.jpg"

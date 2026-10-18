@@ -5,6 +5,7 @@ crumb: "Theyyam season in North Malabar"
 description: "When is the Theyyam season in Kerala? The season runs from late October to May. What each part of it feels like and how to choose your months."
 category: "Planning"
 readTime: "7 min read"
+author: "Abhina"
 hero:
   src: "blog/theyyam-season.jpg"
   alt: "Profile of a Theyyam in a silver crown and red and green attire against a green background"

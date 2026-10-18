@@ -5,6 +5,7 @@ crumb: "The steps of a Theyyam"
 description: "The stages of a Theyyam ritual in order, with meanings: aniyara, thottam, vellattam, mudi, purappadu, kalasham, kuri and more, in plain English."
 category: "Culture"
 readTime: "8 min read"
+author: "Aadi"
 toc: true
 hero:
   src: "blog/steps-of-a-theyyam.jpg"

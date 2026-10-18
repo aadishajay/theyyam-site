@@ -5,6 +5,7 @@ crumb: "Attire and craft: how a Theyyam’s attire is made"
 description: "How Theyyam attire and the face are made in North Kerala: face painting, headdress, palm-leaf skirts and the hands that craft them."
 category: "Culture"
 readTime: "5 min read"
+author: "Geethu"
 hero:
   src: "blog/attire-and-craft.jpg"
   alt: "A craftsman weaving yellow palm fibre for Theyyam attire"

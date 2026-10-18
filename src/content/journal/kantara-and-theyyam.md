@@ -5,6 +5,7 @@ crumb: "Kantara and Theyyam"
 description: "Kantara shows Bhoota Kola, a ritual closely related to Theyyam. What Panjurli and Guliga are, how they connect to North Malabar, and what a film cannot show."
 category: "Culture"
 readTime: "7 min read"
+author: "Geethu"
 hero:
   src: "blog/kantara-and-theyyam.jpg"
   alt: "A Theyyam with a red and white painted face holding a sword"

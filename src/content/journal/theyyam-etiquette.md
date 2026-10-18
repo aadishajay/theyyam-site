@@ -5,6 +5,7 @@ crumb: "Theyyam etiquette for visitors"
 description: "How to behave at a Theyyam ritual in North Kerala: dress, footwear, where to stand, blessings and offerings, and when to ask your guide."
 category: "Etiquette"
 readTime: "6 min read"
+author: "Geethu"
 hero:
   src: "blog/theyyam-etiquette.jpg"
   alt: "A village shrine at night with a flagstaff of palm leaves and marigold garlands"

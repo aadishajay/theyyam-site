@@ -23,7 +23,7 @@ const ld = [
   breadcrumb([['Home', ''], ['Journal', 'journal.html'], [d.crumb, path]]),
   {
     '@type': 'Article', headline: d.ld.headline, description: d.ld.description,
-    author: { '@id': abs('') + '#org' }, publisher: { '@id': abs('') + '#org' },
+    author: { '@type': 'Person', name: d.author, worksFor: { '@id': abs('') + '#org' } }, publisher: { '@id': abs('') + '#org' },
     mainEntityOfPage: abs(path), image: abs('assets/' + d.ld.image), about: { '@type': 'Thing', name: d.ld.about },
   },
   faqNode(d.faq.map((f) => ({ q: f.q, a: plain(f.a) }))),
@@ -38,7 +38,7 @@ const ld = [
           <Breadcrumb items={[['Home', 'index.html'], ['Journal', 'journal.html'], [d.category]]} />
           <p class="k" style="margin-bottom:10px">{d.category} · {d.readTime}</p>
           <h1>{d.h1}</h1>
-          <p style="margin:20px 0 0;font-size:15px;opacity:.75">By [AUTHOR NAME] · Updated [DATE] · LGFC local guides</p>
+          <p style="margin:20px 0 0;font-size:15px;opacity:.75">By {d.author} · Updated [DATE] · LGFC local guides</p>
         </div>
         <img src={u('assets/' + d.hero.src)} alt={d.hero.alt} width={d.hero.width} height={d.hero.height} style="width:100%;max-width:1100px;margin:28px auto 0;border-radius:28px;aspect-ratio:16/9;object-fit:cover" />
       </div>

@@ -5,6 +5,7 @@ crumb: "Is Theyyam a dance?"
 description: "Many sites call Theyyam a dance or a show. For the families who keep it, it is worship. Here is the difference, and the right words to use."
 category: "Culture"
 readTime: "6 min read"
+author: "Sankeerth"
 toc: true
 hero:
   src: "blog/is-theyyam-a-dance.jpg"
