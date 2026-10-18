@@ -364,5 +364,109 @@
    "lic": "CC BY-SA 4.0",
    "page": "https://commons.wikimedia.org/wiki/File:Bappiriyan_Theyyan_(3).jpg"
   }
+ ],
+ "theechamundi": [
+  {
+   "file": "theechamundi-1.jpg",
+   "w": 760,
+   "h": 1688,
+   "artist": "Dusk.Orpia",
+   "lic": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Thee_Chamundi_or_Ottakolam_Theyyam_(%E0%B4%A4%E0%B5%80_%E0%B4%9A%E0%B4%BE%E0%B4%AE%E0%B5%81%E0%B4%A3%E0%B5%8D%E0%B4%9F%E0%B4%BF_%E0%B4%A4%E0%B5%86%E0%B4%AF%E0%B5%8D%E0%B4%AF%E0%B4%82)_Fire_Theyyam_(42276).jpg"
+  },
+  {
+   "file": "theechamundi-2.jpg",
+   "w": 760,
+   "h": 1688,
+   "artist": "Dusk.Orpia",
+   "lic": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Thee_Chamundi_or_Ottakolam_Theyyam_(%E0%B4%A4%E0%B5%80_%E0%B4%9A%E0%B4%BE%E0%B4%AE%E0%B5%81%E0%B4%A3%E0%B5%8D%E0%B4%9F%E0%B4%BF_%E0%B4%A4%E0%B5%86%E0%B4%AF%E0%B5%8D%E0%B4%AF%E0%B4%82)_Fire_Theyyam_(34604).jpg"
+  },
+  {
+   "file": "theechamundi-3.jpg",
+   "w": 760,
+   "h": 1688,
+   "artist": "Dusk.Orpia",
+   "lic": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Thee_Chamundi_or_Ottakolam_Theyyam_(%E0%B4%A4%E0%B5%80_%E0%B4%9A%E0%B4%BE%E0%B4%AE%E0%B5%81%E0%B4%A3%E0%B5%8D%E0%B4%9F%E0%B4%BF_%E0%B4%A4%E0%B5%86%E0%B4%AF%E0%B5%8D%E0%B4%AF%E0%B4%82)_Fire_Theyyam.jpg"
+  }
+ ],
+ "karimchamundi": [
+  {
+   "file": "karimchamundi-1.jpg",
+   "w": 760,
+   "h": 1155,
+   "artist": "Sreejithk2000 at Malayalam Wikipedia",
+   "lic": "CC BY-SA 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Karimchamundi_Theyyam.jpg"
+  },
+  {
+   "file": "karimchamundi-2.jpg",
+   "w": 760,
+   "h": 490,
+   "artist": "LalkrishnaNambiar",
+   "lic": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Karinchamundi_Theyyam.jpg"
+  },
+  {
+   "file": "karimchamundi-3.jpg",
+   "w": 760,
+   "h": 1351,
+   "artist": "Vaikoovery",
+   "lic": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Karinchamundi_Theyyam,_Koovery.jpg"
+  }
+ ],
+ "kurathi": [
+  {
+   "file": "kurathi-1.jpg",
+   "w": 760,
+   "h": 570,
+   "artist": "Vijayakumarblathur",
+   "lic": "CC BY-SA 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Kurathi_theyyam.jpg"
+  },
+  {
+   "file": "kurathi-2.jpg",
+   "w": 760,
+   "h": 1118,
+   "artist": "Mullookkaaran",
+   "lic": "CC BY-SA 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Kurathi_Theyyam.jpg"
+  },
+  {
+   "file": "kurathi-3.jpg",
+   "w": 760,
+   "h": 1009,
+   "artist": "Kuttappan Chettan",
+   "lic": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:%E0%B4%95%E0%B5%81%E0%B4%B1%E0%B4%A4%E0%B5%8D%E0%B4%A4%E0%B4%BF_%E0%B4%85%E0%B4%AE%E0%B5%8D%E0%B4%AE.jpg"
+  }
+ ],
+ "kandanar-kelan": [
+  {
+   "file": "kandanar-kelan-1.jpg",
+   "w": 760,
+   "h": 1140,
+   "artist": "Artoffabhi",
+   "lic": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Face_of_Theyyam.jpg"
+  },
+  {
+   "file": "kandanar-kelan-2.jpg",
+   "w": 760,
+   "h": 506,
+   "artist": "Shagil Kannur",
+   "lic": "CC BY-SA 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Face_art_of_Kandanaar_Kelan_Theyyam_by_Shagil_Kannur.jpg"
+  },
+  {
+   "file": "kandanar-kelan-3.jpg",
+   "w": 760,
+   "h": 1228,
+   "artist": "Avinash P C",
+   "lic": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Fierce_and_divine.jpg"
+  }
  ]
 }
