@@ -3,14 +3,14 @@ import re,json,sys,html
 sys.path.insert(0,'tools')
 import theyyams_data as d
 names={t['slug']:t['name'] for t in d.T}
-order=['vishnumoorthi','kundora-chamundi','gulikan','muchilot-bhagavathi','panjuruli']  # five traced closeups (assets/faces-svg), see tools/BACKLOG.md
+order=['vishnumoorthi','kundora-chamundi','gulikan','muchilot-bhagavathi']  # hand-built vector faces, see tools/build_face_svgs.py
 import os
 order=[s for s in order if os.path.exists(f'assets/faces-svg/{s}.svg')]
 E=html.escape
 slides=''
 for i,s in enumerate(order):
     n=names[s]
-    img=f'<img src="assets/faces-svg/{s}.svg" alt="Illustrated face of a Theyyam" width="720" height="900"'+('' if i==0 else ' loading="lazy"')+'>'
+    img=f'<img src="assets/faces-svg/{s}.svg" alt="Illustrated face of a Theyyam" width="400" height="500"'+('' if i==0 else ' loading="lazy"')+'>'
     slides+=f'<div class="fslide{" on" if i==0 else ""}"'+('' if i==0 else ' aria-hidden="true"')+f'>{img}</div>'
 block=f'''<!--faces:start-->
 <div class="faces" role="group" aria-label="Faces of the Theyyams in our guide"><div class="fstack">{slides}</div></div>
