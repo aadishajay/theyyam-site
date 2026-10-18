@@ -81,7 +81,7 @@ def ph(t,cls):
     return f'<div class="ph {cls}" role="img" aria-label="{E(t["name"])}: photograph to come"><span lang="ml">{E(t["ml"])}</span><small>Photo to come</small></div>'
 def tcard(t,pre=''):
     p=img(t);f1=first(t)
-    pic=f'<img src="../assets/theyyam/{f1}" alt="{E(t["name"])} Theyyam performer in costume" width="400" height="500" loading="lazy">' if f1 else ph(t,'tcp')
+    pic=f'<img src="../assets/theyyam/{f1}" alt="{E(t["name"])} Theyyam in ritual attire" width="400" height="500" loading="lazy">' if f1 else ph(t,'tcp')
     return f'<a class="tc" href="{pre}{t["slug"]}.html">{pic}<h3>{E(t["name"])}</h3><p class="m">{E(t["ml"])} · {E(catl[t["cat"]])}</p><p class="t">{E(t["tag"])}</p></a>'
 def bc(items): return {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":i+1,"name":n,"item":B+u} for i,(n,u) in enumerate(items)]}
 
@@ -103,9 +103,9 @@ os.makedirs('theyyams',exist_ok=True)
 # detail pages
 for t in T:
     p=img(t); cr=cred.get(p) or []
-    alts=[f'{t["name"]} Theyyam performer in costume',f'Close view of the {t["name"]} Theyyam face and headdress',f'{t["name"]} Theyyam during a ritual in North Malabar, Kerala']
+    alts=[f'{t["name"]} Theyyam in ritual attire',f'Close view of the {t["name"]} Theyyam face and headdress',f'{t["name"]} Theyyam during a ritual in North Malabar, Kerala']
     desc=f'{t["name"]} Theyyam: {t["tag"]} Story, meaning and what to expect.'
-    if len(desc)>155: desc=f'{t["name"]} Theyyam of North Malabar: story, meaning, appearance and what to expect when you watch.'
+    if len(desc)>155: desc=f'{t["name"]} Theyyam of North Malabar: story, meaning, appearance and what to expect when you attend.'
     others=[x for x in T if x['cat']==t['cat'] and x is not t]+[x for x in T if x['cat']!=t['cat']]
     rel=others[:4]
     faq=[(f'Who is {t["name"]} in Theyyam?',t['who']),(f'What does {t["name"]} Theyyam look like?',t['look'])]
@@ -123,7 +123,9 @@ for t in T:
         h+='<div class="gal">'+''.join(f'<figure><img src="../assets/theyyam/{c["file"]}" alt="{E(alts[i+1])}" width="{c["w"]}" height="{c["h"]}" loading="lazy"><figcaption>Photo: {E(c["artist"])}, {E(c["lic"])}, via Wikimedia Commons</figcaption></figure>' for i,c in enumerate(cr[1:3]))+'</div>\n'
     if cr:
         h+=f'<p style="font-size:12px;opacity:.7;margin:-12px 0 20px">Hero photo: {E(cr[0]["artist"])}, {E(cr[0]["lic"])}, via Wikimedia Commons</p>\n'
-    h+=f'<h2>What you will see</h2><p>{linkify(t["look"],t["slug"],used)}</p>\n<h2>In the tradition</h2><p>{linkify(t["trad"],t["slug"],used)}</p>\n<div class="note"><b>A note for visitors</b><p style="margin:8px 0 0">{linkify(t["note"],t["slug"],used)} Photography and video are not allowed at some rituals, so ask your guide first.</p></div>\n'
+    h+=f'<h2>What you will see</h2><p>{linkify(t["look"],t["slug"],used)}</p>\n'
+    if 'koladhari' in (t['look']+t['trad']+t['note']+t['who']+' '.join(t['story'])+' '.join(v for _,v in t['facts'])): h+='<p style="font-size:13px;opacity:.75;margin-top:-4px">Koladhari: the person who takes on the kolam, the deity’s form. See <a href="../theyyam-glossary.html#koladhari">Theyyam words explained</a>.</p>\n'
+    h+=f'<h2>In the tradition</h2><p>{linkify(t["trad"],t["slug"],used)}</p>\n<div class="note"><b>A note for visitors</b><p style="margin:8px 0 0">{linkify(t["note"],t["slug"],used)} Photography and video are not allowed at some rituals, so ask your guide first.</p></div>\n'
     h+='<h2>Quick answers</h2>'+''.join(f'<details><summary><h3>{E(q)}</h3></summary><p style="margin-top:0">{E(a)}</p></details>' for q,a in faq)
     h+='\n<div class="cta" style="margin-top:36px"><h3>Learn about the Theyyams with a local guide</h3><p>Our guided trips explain each deity’s story as you see it, and are planned with you on enquiry. We never publish ritual dates or venues, and confirm the right nights with you closer to travel.</p><a class="btn" href="../enquire.html">Enquire about a trip</a></div>\n'
     h+='<p class="srcs"><b>Sources and further reading:</b> '+', '.join(f'<a href="{u}" rel="noopener">{E(n)}{" (Wikipedia)" if "wikipedia" in u else ""}</a>' for n,u in t['src'])+'. Stories vary by shrine, family and teller; this is a general summary, not a definitive version.</p>\n'
@@ -145,14 +147,14 @@ for c in CATS:
     items=[t for t in T if t['cat']==c[0]]
     h+=f'<section class="cg" id="{c[0]}" data-c="{c[0]}" style="margin-top:36px"><h2>{E(c[1])}</h2><p style="margin:8px 0 20px;max-width:640px">{E(c[2])}</p><div class="cardg">'+''.join(tcard(t).replace('<a class="tc"',f'<a class="tc" data-s="{t["slug"]}"') for t in items)+'</div></section>'
 h+='</div><div id="hubempty" class="empty" hidden><b>No match yet.</b><p style="margin:8px 0 0" id="hubdym"></p><p style="margin:8px 0 0">This list is growing. <a href="../enquire.html">Ask us</a> about a Theyyam you have heard of.</p></div>'
-h+='<div style="margin-top:56px;max-width:720px"><h2>How we group them</h2><p style="margin-top:12px">This grouping is ours, to help readers. Scholars use other divisions, and many Theyyams fit more than one. Stories also differ from shrine to shrine and teller to teller. We have not included dates or places of performance, and the rituals are worship, not shows. See our <a href="../theyyam-etiquette.html">etiquette guide</a> before you go. Unsure of a word such as ottakolam or kaliyattam? See <a href="../theyyam-glossary.html">Theyyam words explained</a>.</p></div>'
+h+='<div style="margin-top:56px;max-width:720px"><h2>How we group them</h2><p style="margin-top:12px">This grouping is ours, to help readers. Scholars use other divisions, and many Theyyams fit more than one. Stories also differ from shrine to shrine and teller to teller. We do not publish dates or places, because Theyyam is worship kept by families and communities. See our <a href="../theyyam-etiquette.html">etiquette guide</a> before you go. Unsure of a word such as ottakolam or kaliyattam? See <a href="../theyyam-glossary.html">Theyyam words explained</a>.</p></div>'
 h+='</div></section>\n</main>\n'+footer_t+'\n<script src="../assets/search.js" defer></script>\n</body>\n</html>\n'
 open('theyyams/index.html','w').write(h)
 # search index
 idx=[dict(s=t['slug'],n=t['name'],m=t['ml'],c=t['cat'],cl=catl[t['cat']],t=t['tag'],a=t['alias'],g=t['tags'],f=first(t) or '',x=t['who'][:240]) for t in T]
 json.dump(idx,open('assets/theyyams.json','w'),ensure_ascii=False)
 # patch root pages
-for f in ['index.html','trips.html','enquire.html','journal.html','what-is-theyyam.html','theyyam-etiquette.html','theyyam-season.html','planning-theyyam-on-your-own.html','main-theyyams.html','costume-and-craft.html','cameras-and-ritual.html']:
+for f in ['index.html','trips.html','enquire.html','journal.html','what-is-theyyam.html','theyyam-etiquette.html','theyyam-season.html','planning-theyyam-on-your-own.html','main-theyyams.html','attire-and-craft.html','cameras-and-ritual.html']:
     s=open(f).read()
     if 'href="theyyams/"' not in s:
         s=s.replace('<a href="trips.html">Guided trips</a>','<a href="trips.html">Guided trips</a><a href="theyyams/">Theyyams</a>')
@@ -166,19 +168,19 @@ print('built',len(T))
 
 # ---- glossary page (root level) ----
 GL=[
-('Theyyam','From the word <i>daivam</i>, god. The ritual in which a performer, after hours of preparation, is believed to become a deity. Also called Kaliyattam, which is more often used for the festival.','Theyyam','https://en.wikipedia.org/wiki/Theyyam'),
-('Kolam','The costumed form of a Theyyam, as in <i>Theyyakkolam</i>. People may speak of someone “taking the kolam”, which means performing in costume.',None,None),
-('Kaliyattam','The yearly festival at a family shrine or grove in which Theyyams are performed. The word is also used for Theyyam itself. Several sources note that the season runs from about late October to May.','Theyyam','https://en.wikipedia.org/wiki/Theyyam'),
-('Perumkaliyattam','A very large festival, held at long intervals, in which many Theyyams are performed. Sources give different intervals; Kerala Tourism says twelve years or more.','Kerala Tourism','https://keralatourism.org/bekal/theyyam-various-types.php'),
-('Ottakolam','A Theyyam that appears on its own, commonly explained as “a single kolam”, rather than together with other Theyyams. The word is often used for fire-linked forms such as Theechamundi and Vishnumoorthi, where the performer enters a bed of embers. We found this meaning in a Wikipedia article and in general usage, not in a scholarly source, so please check it with a local guide.','Vishnumoorthy Theyyam','https://en.wikipedia.org/wiki/Vishnumoorthy_Theyyam'),
-('Thottam and Vellattam','The first part of a Theyyam, performed without full make-up or costume, with only a small red headdress. The performer sings or recites the story of the deity with the drummers.','Theyyam','https://en.wikipedia.org/wiki/Theyyam'),
-('Mudi','The sacred headdress. Placing it on the performer is described as the moment the deity enters. Night performances may use a smaller mudi than the day performance.','Theyyam','https://en.wikipedia.org/wiki/Theyyam'),
+('Theyyam','From the word <i>daivam</i>, god. The ritual in which the koladhari, after hours of preparation, is believed to become the deity. Also called Kaliyattam, which is more often used for the festival.','Theyyam','https://en.wikipedia.org/wiki/Theyyam'),
+('Kolam','The form of the deity that a Theyyam takes, as in <i>Theyyakkolam</i>. People speak of someone “taking the kolam”, which means bearing the deity’s form.',None,None),
+('Kaliyattam','The yearly festival at a family shrine or grove in which Theyyams are held. The word is also used for Theyyam itself. Several sources note that the season runs from about late October to May.','Theyyam','https://en.wikipedia.org/wiki/Theyyam'),
+('Perumkaliyattam','A very large festival, held at long intervals, in which many Theyyams are held. Sources give different intervals; Kerala Tourism says twelve years or more.','Kerala Tourism','https://keralatourism.org/bekal/theyyam-various-types.php'),
+('Ottakolam','A Theyyam that appears on its own, commonly explained as “a single kolam”, rather than together with other Theyyams. The word is often used for fire-linked forms such as Theechamundi and Vishnumoorthi, where the koladhari goes through a rite with embers. We found this meaning in a Wikipedia article and in general usage, not in a scholarly source, so please check it with a local guide.','Vishnumoorthy Theyyam','https://en.wikipedia.org/wiki/Vishnumoorthy_Theyyam'),
+('Thottam and Vellattam','The first part of a Theyyam, held without full make-up or attire, with only a small red headdress. The koladhari sings or recites the story of the deity with the drummers.','Theyyam','https://en.wikipedia.org/wiki/Theyyam'),
+('Mudi','The sacred headdress. Placing it on the koladhari is described as the moment the deity enters. Night rituals may use a smaller mudi than the day ritual.','Theyyam','https://en.wikipedia.org/wiki/Theyyam'),
 ('Mukhathezhuthu','Face painting, done by specialists in patterns that belong to each Theyyam, using natural colours.','Kerala Folklore: Bhairavan Theyyam','https://keralafolklore.com/bhairavan-theyyam.html'),
-('Aniyara','The green room, a simple shelter near the grove where the performer is made up and dressed. A lamp is kept there, and in one account it is understood as the presence of God.','Polika: Theyyam rituals','https://polika.co.in/en/article/kerala/culture/theyyam/theyyam-articles/theyyam-rituals/'),
+('Aniyara','The green room, a simple shelter near the grove where the koladhari is made up and dressed. A lamp is kept there, and in one account it is understood as the presence of God.','Polika: Theyyam rituals','https://polika.co.in/en/article/kerala/culture/theyyam/theyyam-articles/theyyam-rituals/'),
 ('Purappadu','Roughly “coming forth”: the moment the fully dressed deity sets out from the green room towards the shrine ground. We found this word only in a few popular sources, so its use may vary.',None,None),
-('Kalasam / kalasham','A word with more than one use. In some sources it is the closing stage, when the deity departs. In another it is a vessel with offerings placed on one side of the grove. In Wikipedia’s article, <i>kalaasams</i> are the eight sets of dance footwork.','Theyyam','https://en.wikipedia.org/wiki/Theyyam'),
+('Kalasam / kalasham','A word with more than one use. In some sources it is the closing stage, when the deity departs. In another it is a vessel with offerings placed on one side of the grove. In Wikipedia’s article, <i>kalaasams</i> are the eight sets of ritual footwork.','Theyyam','https://en.wikipedia.org/wiki/Theyyam'),
 ('Kuri','A mark of blessing given by the deity, described in one account as dried turmeric and rice powder. Some deities use sacred ash instead.','Polika: Theyyam rituals','https://polika.co.in/en/article/kerala/culture/theyyam/theyyam-articles/theyyam-rituals/'),
-('Koladhari','The person who wears the kolam, the performer.','Polika: Theyyam rituals','https://polika.co.in/en/article/kerala/culture/theyyam/theyyam-articles/theyyam-rituals/'),
+('Koladhari','The person who wears the kolam: the one through whom the deity is understood to appear.','Polika: Theyyam rituals','https://polika.co.in/en/article/kerala/culture/theyyam/theyyam-articles/theyyam-rituals/'),
 ('Kavu','A sacred grove or small shrine, often the setting for a Theyyam.','Theyyam','https://en.wikipedia.org/wiki/Theyyam'),
 ('Tharavad','An ancestral family home. Many Theyyams are kept by a tharavad as its family deity.','Theyyam','https://en.wikipedia.org/wiki/Theyyam'),
 ('Madappura','A shrine of Muthappan. It has no idol or flagstaff and is open to people of all communities.','Muthappan','https://en.wikipedia.org/wiki/Muthappan'),
@@ -200,7 +202,7 @@ if B+'theyyam-glossary.html' not in sm: sm=sm.replace('</urlset>',f'<url><loc>{B
 open('sitemap.xml','w').write(sm)
 
 # ---- link Theyyam names inside journal posts (root pages) ----
-POSTS=['steps-of-a-theyyam.html','what-is-theyyam.html','theyyam-etiquette.html','theyyam-season.html','planning-theyyam-on-your-own.html','main-theyyams.html','costume-and-craft.html','cameras-and-ritual.html']
+POSTS=['steps-of-a-theyyam.html','what-is-theyyam.html','theyyam-etiquette.html','theyyam-season.html','planning-theyyam-on-your-own.html','main-theyyams.html','attire-and-craft.html','cameras-and-ritual.html']
 for f in POSTS:
     s=open(f).read();used=set(re.findall(r'href="theyyams/([a-z-]+)\.html"',s))
     def fix(m):
