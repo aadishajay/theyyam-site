@@ -19,12 +19,12 @@ def hreflang():
     out += f'<link rel="alternate" hreflang="x-default" href="{SITE}"><!--hl:end-->'
     return out
 def switcher(cur, prefix):
+    # prefix is '' on the English page and '../' on a language page
     names = {'en': 'EN', 'de': 'DE', 'fr': 'FR', 'es': 'ES'}
-    full = {'en': 'English', 'de': 'Deutsch', 'fr': 'Français', 'es': 'Español'}
+    full = {'en': 'English', 'de': 'Deutsch', 'fr': 'Fran\u00e7ais', 'es': 'Espa\u00f1ol'}
     a = ''
     for l in LANGS:
-        href = (prefix + 'index.html') if l == 'en' else (prefix + l + '/' if prefix == '' else '../' + l + '/')
-        if l == 'en': href = 'index.html' if prefix == '' else '../index.html'
+        href = prefix + ('index.html' if l == 'en' else l + '/')
         if l == cur: a += f'<span aria-current="true" style="font-weight:800">{names[l]}</span>'
         else: a += f'<a href="{href}" hreflang="{l}" lang="{l}" title="{full[l]}" style="color:#1a0a08;text-decoration:none">{names[l]}</a>'
     return ('<!--lang:start--><div class="lang" role="navigation" aria-label="Language" style="display:flex;gap:10px;font-size:13px;'
@@ -333,7 +333,7 @@ def build(code):
     s = s.replace('url(assets/', 'url(../assets/')
     s = re.sub(r'<link rel="canonical"[^>]*>', '', s)
     s = s.replace('</head>', hreflang() + f'<link rel="canonical" href="{SITE}{code}/">' + '</head>', 1)
-    s = s.replace('<nav class="nv"', switcher(code, '') + '<nav class="nv"', 1)
+    s = s.replace('<nav class="nv"', switcher(code, '../') + '<nav class="nv"', 1)
     # note under the footer
     s = s.replace('<div class="bar">', f'<p style="background:#4A0E12;color:#fff;opacity:.9;font-size:13px;margin:0;padding:0 20px 20px;text-align:center">{t["switchnote"]}</p><div class="bar">', 1)
     os.makedirs(code, exist_ok=True)
