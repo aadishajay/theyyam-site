@@ -1,5 +1,4 @@
 import { abs } from './site';
-import google from '../data/google-rating.json';
 
 export const orgNode = (description?: string, extra: Record<string, unknown> = {}) => ({
   '@type': ['TravelAgency', 'Organization'],
@@ -15,7 +14,6 @@ export const orgNode = (description?: string, extra: Record<string, unknown> = {
   knowsAbout: ['Theyyam', 'North Malabar', 'Kannur', 'Kasaragod', 'Kerala ritual tradition'],
   slogan: 'A living ritual, shared with respect.',
   image: abs('assets/lgfc-og.jpg'),
-  sameAs: [google.url],
   ...extra,
 });
 

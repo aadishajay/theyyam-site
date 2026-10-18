@@ -68,7 +68,7 @@ const mosaic: { img: string; alt: K; w: number; h: number; span?: boolean }[] = 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:32px">
 {[1, 2, 3, 4].map((n) => <div class="card" style="padding:22px"><h3>{t[`card${n}h` as keyof typeof t]}</h3><p style="margin-top:8px">{t[`card${n}p` as keyof typeof t]}</p></div>)}
 </div>
-<ul style="list-style:none;margin:24px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px;font-size:14px">{regChips.map((c) => <li style="border:1.5px dashed #1a0a08;border-radius:999px;padding:6px 14px">{c}</li>)}<li style="border:1.5px solid #1a0a08;border-radius:999px;padding:6px 14px;font-weight:600"><a href={google.url} rel="noopener" style="color:inherit;text-decoration:none">★ {ratingText}</a></li></ul>
+<ul style="list-style:none;margin:24px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px;font-size:14px">{regChips.map((c) => <li style="border:1.5px dashed #1a0a08;border-radius:999px;padding:6px 14px">{c}</li>)}<li style="border:1.5px solid #1a0a08;border-radius:999px;padding:6px 14px;font-weight:600">★ {ratingText}</li></ul>
 </div></section>
 <TwoWays cls="sec" pad="padding:40px 0 8px" eyebrow={t.twEyebrow} heading={t.twH2} group={{ title: t.twGroupH, text: t.twGroupP, cta: t.twGroupCta }} custom={{ title: t.twCustomH, text: t.twCustomP, cta: t.twCustomCta }} /><section class="sec"><div class="w">
 <p class="eyebrow" style="color:#D7261E;margin:0 0 12px">{t.whyEyebrow}</p>
