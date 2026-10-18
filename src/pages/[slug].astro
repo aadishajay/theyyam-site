@@ -25,7 +25,7 @@ const ld = [
   {
     '@type': 'Article', headline: d.ld.headline, description: d.ld.description,
     author: { '@type': 'Person', name: d.author, worksFor: { '@id': abs('') + '#org' } }, publisher: { '@id': abs('') + '#org' },
-    datePublished: d.date, dateModified: d.date, mainEntityOfPage: abs(path), image: abs('assets/' + d.ld.image), about: { '@type': 'Thing', name: d.ld.about },
+    mainEntityOfPage: abs(path), image: abs('assets/' + d.ld.image), about: { '@type': 'Thing', name: d.ld.about },
   },
   faqNode(d.faq.map((f) => ({ q: f.q, a: plain(f.a) }))),
 ];
