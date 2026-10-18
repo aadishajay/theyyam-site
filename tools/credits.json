@@ -468,5 +468,119 @@
    "lic": "CC BY-SA 4.0",
    "page": "https://commons.wikimedia.org/wiki/File:Fierce_and_divine.jpg"
   }
+ ],
+ "vayanattu-kulavan": [
+  {
+   "file": "vayanattu-kulavan-1.jpg",
+   "w": 760,
+   "h": 1309,
+   "artist": "Vk1110",
+   "lic": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Shree_Vayanattu_kulavan.jpg"
+  },
+  {
+   "file": "vayanattu-kulavan-2.jpg",
+   "w": 760,
+   "h": 1013,
+   "artist": "Kannanshanmugam,shanmugamstudio,Kollam",
+   "lic": "CC BY 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Theyyam_mask_DSCN0031.JPG"
+  },
+  {
+   "file": "vayanattu-kulavan-3.jpg",
+   "w": 760,
+   "h": 1140,
+   "artist": "Jinoy Tom Jacob",
+   "lic": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Thondachan_and_Gulikan_Theyyam_Ettikulam,_Kannur_0.jpg"
+  }
+ ],
+ "bhairavan": [
+  {
+   "file": "bhairavan-1.jpg",
+   "w": 760,
+   "h": 1143,
+   "artist": "Sreejithk2000",
+   "lic": "CC BY-SA 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Bhairavan_(1).JPG"
+  },
+  {
+   "file": "bhairavan-2.jpg",
+   "w": 760,
+   "h": 570,
+   "artist": "Vaikoovery",
+   "lic": "CC BY 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Bhairavan(2).jpg"
+  },
+  {
+   "file": "bhairavan-3.jpg",
+   "w": 760,
+   "h": 1013,
+   "artist": "Vaikoovery",
+   "lic": "CC BY 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Bhairavan_Face.jpg"
+  }
+ ],
+ "puli-daivam": [
+  {
+   "file": "puli-daivam-1.jpg",
+   "w": 760,
+   "h": 921,
+   "artist": "Kuttappan Chettan",
+   "lic": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Puliyoorkaali.jpg"
+  },
+  {
+   "file": "puli-daivam-2.jpg",
+   "w": 760,
+   "h": 554,
+   "artist": "Mullookkaaran",
+   "lic": "CC BY-SA 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Puliyooru_Kaali_-_Thamburatti_Theyyam.JPG"
+  },
+  {
+   "file": "puli-daivam-3.jpg",
+   "w": 760,
+   "h": 1040,
+   "artist": "Vaikoovery",
+   "lic": "CC BY 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Pulikkandan_(1).jpg"
+  }
+ ],
+ "vishakandan": [
+  {
+   "file": "vishakandan-1.jpg",
+   "w": 760,
+   "h": 1547,
+   "artist": "Anoopan",
+   "lic": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Chathamballi_Vishakandan_Theyyam.jpg"
+  }
+ ],
+ "puthiya-bhagavathi": [
+  {
+   "file": "puthiya-bhagavathi-1.jpg",
+   "w": 760,
+   "h": 1013,
+   "artist": "Vaikoovery",
+   "lic": "CC BY 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Puthiya_Bhagavathi.jpg"
+  },
+  {
+   "file": "puthiya-bhagavathi-2.jpg",
+   "w": 760,
+   "h": 673,
+   "artist": "Challiyan at Malayalam Wikipedia",
+   "lic": "CC BY-SA 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Puthiya_bhagavathi2a.jpg"
+  },
+  {
+   "file": "puthiya-bhagavathi-3.jpg",
+   "w": 760,
+   "h": 627,
+   "artist": "User:Anoopan",
+   "lic": "CC BY-SA 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Puthiya_bhavathi_thirumudi_3.jpg"
+  }
  ]
 }
