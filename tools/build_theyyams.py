@@ -110,9 +110,9 @@ for t in T:
     rel=others[:4]
     faq=[(f'Who is {t["name"]} in Theyyam?',t['who']),(f'What does {t["name"]} Theyyam look like?',t['look'])]
     ld=[bc([("Home",""),("Theyyams","theyyams/"),(t['name'],f'theyyams/{t["slug"]}.html')]),
-        {"@type":"Article","headline":f'{t["name"]} Theyyam: story, meaning and what to expect',"description":desc,"author":{"@id":B+"#org"},"publisher":{"@id":B+"#org"},"mainEntityOfPage":f'{B}theyyams/{t["slug"]}.html',"image":(f'{B}assets/theyyam/{first(t)}' if first(t) else B+'assets/p-headdress-tall.jpg'),"about":{"@type":"Thing","name":f'{t["name"]} Theyyam',"alternateName":[t['ml']]+t['alias']}},
+        {"@type":"Article","headline":f'{t["name"]} Theyyam: story, meaning and what to expect',"description":desc,"author":{"@id":B+"#org"},"publisher":{"@id":B+"#org"},"mainEntityOfPage":f'{B}theyyams/{t["slug"]}.html',"image":(f'{B}assets/theyyam/{first(t)}' if first(t) else B+'assets/lgfc-headdress-portrait.jpg'),"about":{"@type":"Thing","name":f'{t["name"]} Theyyam',"alternateName":[t['ml']]+t['alias']}},
         {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faq]}]
-    h=head(f'{t["name"]} Theyyam: Story, Meaning & What to Expect | LGFC Theyyam',desc,f'theyyams/{t["slug"]}.html',ld,first(t) or '../p-headdress-tall.jpg')
+    h=head(f'{t["name"]} Theyyam: Story, Meaning & What to Expect | LGFC Theyyam',desc,f'theyyams/{t["slug"]}.html',ld,first(t) or '../lgfc-headdress-portrait.jpg')
     h+=header_t+'\n<main id="main"><article>\n<div class="w">\n'
     h+=f'<nav aria-label="Breadcrumb" style="font-size:14px;padding-top:24px"><a href="../index.html">Home</a> / <a href="./">Theyyams</a> / {E(t["name"])}</nav>\n'
     h+=f'<div class="hero">{(f'<img class="h" src="../assets/theyyam/{first(t)}" alt="{E(alts[0])}" width="760" height="950">' if first(t) else ph(t,'h'))}<div><a class="chip" href="./#{t["cat"]}">{E(catl[t["cat"]])}</a><h1 style="margin-top:14px">{E(t["name"])}</h1><p class="ml" lang="ml">{E(t["ml"])}</p><p style="font-size:1.15em;font-weight:500;margin:18px 0 22px">{E(t["tag"])}</p><div class="facts"><dl>'+''.join(f'<div><dt>{E(a)}</dt><dd>{linkify(b,t["slug"],set())}</dd></div>' for a,b in t['facts'])+'</dl></div></div></div>\n'
@@ -188,10 +188,10 @@ GL=[
 ]
 gdesc='Plain-English meanings of Theyyam words you will hear in North Malabar: kaliyattam, perumkaliyattam, ottakolam, thottam, mudi, kavu and more.'
 ld=[bc([("Home",""),("Theyyam words explained","theyyam-glossary.html")]),{"@type":"DefinedTermSet","name":"Theyyam words explained","hasDefinedTerm":[{"@type":"DefinedTerm","name":n,"description":re.sub('<[^>]+>','',d)} for n,d,_,_ in GL]}]
-g=head('Theyyam Words Explained: Kaliyattam, Ottakolam, Mudi & More | LGFC Theyyam',gdesc,'theyyam-glossary.html',ld,'p-headdress-tall.jpg')
+g=head('Theyyam Words Explained: Kaliyattam, Ottakolam, Mudi & More | LGFC Theyyam',gdesc,'theyyam-glossary.html',ld,'lgfc-headdress-portrait.jpg')
 # root-level page: undo the ../ prefixes used by theyyams/ pages
 g=g.replace('{B}assets/theyyam/','')  # no-op safety
-g=g.replace(B+'assets/theyyam/p-headdress-tall.jpg',B+'assets/p-headdress-tall.jpg')
+g=g.replace(B+'assets/theyyam/lgfc-headdress-portrait.jpg',B+'assets/lgfc-headdress-portrait.jpg')
 g+=header.replace(' aria-current="page" style="color:#D7261E"','')+'\n<main id="main"><article><div class="w"><div class="art sec">\n<nav aria-label="Breadcrumb" style="font-size:14px;margin:24px 0 18px"><a href="index.html">Home</a> / Theyyam words explained</nav>\n<h1>Theyyam words explained</h1><p style="font-size:1.15em;font-weight:500;margin-top:18px">The words you will hear around a ritual in North Malabar, in plain English. Meanings can vary by shrine and family, so treat these as a starting point and ask your guide.</p>\n'
 for n,d,sn,su in GL:
     g+=f'<h2 id="{re.sub("[^a-z]","-",n.lower())}">{n}</h2><p>{d}'+(f' <span style="font-size:13px;opacity:.75">Source: <a href="{su}" rel="noopener">{E(sn)}{" (Wikipedia)" if "wikipedia" in su else ""}</a>.</span>' if sn else '')+'</p>\n'

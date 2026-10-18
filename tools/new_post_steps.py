@@ -45,7 +45,7 @@ h=re.sub(r'<meta property="og:title" content="[^"]*"><meta property="og:descript
 m=re.search(r'<script type="application/ld\+json">(.*?)</script>',h,re.S)
 j=json.loads(m.group(1));org=j['@graph'][:2]
 ld=org+[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":i+1,"name":n,"item":B+u} for i,(n,u) in enumerate([("Home",""),("Journal","journal.html"),("The steps of a Theyyam",slug)])]},
- {"@type":"Article","headline":title,"description":desc,"author":{"@id":B+"#org"},"publisher":{"@id":B+"#org"},"mainEntityOfPage":B+slug,"image":B+"assets/p-body-paint.jpg","about":{"@type":"Thing","name":"Theyyam ritual stages"}},
+ {"@type":"Article","headline":title,"description":desc,"author":{"@id":B+"#org"},"publisher":{"@id":B+"#org"},"mainEntityOfPage":B+slug,"image":B+"assets/lgfc-headdress-shrine.jpg","about":{"@type":"Thing","name":"Theyyam ritual stages"}},
  {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faq]}]
 h=h[:m.start()]+'<script type="application/ld+json">'+json.dumps({"@context":"https://schema.org","@graph":ld},ensure_ascii=False)+'</script>'+h[m.end():]
 art=f'''<main id="main"><article>
@@ -56,7 +56,7 @@ art=f'''<main id="main"><article>
 <h1>{E(title)}</h1>
 <p style="margin:20px 0 0;font-size:15px;opacity:.75">By [AUTHOR NAME] · Updated [DATE] · LGFC local guides</p>
 </div>
-<img src="assets/p-body-paint.jpg" alt="A person having face paint applied in the green room before a Theyyam" width="1200" height="675" style="width:100%;max-width:1100px;margin:28px auto 0;border-radius:28px;aspect-ratio:16/9;object-fit:cover">
+<img src="assets/lgfc-headdress-shrine.jpg" alt="A Theyyam in a large red and silver headdress with flowers, at a shrine in Kannur" width="1200" height="675" style="width:100%;max-width:1100px;margin:28px auto 0;border-radius:28px;aspect-ratio:16/9;object-fit:cover">
 </div>
 <div class="w"><div class="art">
 <p style="font-size:1.15em;margin-top:32px;font-weight:500">{lead}</p>
@@ -71,9 +71,9 @@ art+='</div></div>\n</article>'
 kr='''<section style="padding:64px 0 72px"><div class="w">
 <h2 style="margin:0 0 24px">Keep reading</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px">
-<a class="pc" href="theyyam-etiquette.html"><img src="assets/p-portrait-dark.jpg" alt="Portrait of a Theyyam in red and gold face paint" width="600" height="400"><p class="k" style="margin:12px 0 0">Etiquette</p><h3>Theyyam etiquette: do’s and don’ts for visitors</h3></a>
-<a class="pc" href="attire-and-craft.html"><img src="assets/p-gold-detail.jpg" alt="Gold and red ornaments of a handmade Theyyam attire" width="600" height="400"><p class="k" style="margin:12px 0 0">Culture</p><h3>Attire and craft: how a Theyyam’s attire is made</h3></a>
-<a class="pc" href="theyyam-glossary.html"><img src="assets/p-drum-crowd.jpg" alt="A Theyyam appearing beside a drummer" width="600" height="400"><p class="k" style="margin:12px 0 0">Culture</p><h3>Theyyam words explained</h3></a>
+<a class="pc" href="theyyam-etiquette.html"><img src="assets/lgfc-portrait-ritual.jpg" alt="Portrait of a Theyyam in a red headdress during the ritual" width="600" height="400"><p class="k" style="margin:12px 0 0">Etiquette</p><h3>Theyyam etiquette: do’s and don’ts for visitors</h3></a>
+<a class="pc" href="attire-and-craft.html"><img src="assets/lgfc-ornaments.jpg" alt="Close view of a Theyyam face with red and silver ornaments" width="600" height="400"><p class="k" style="margin:12px 0 0">Culture</p><h3>Attire and craft: how a Theyyam’s attire is made</h3></a>
+<a class="pc" href="theyyam-glossary.html"><img src="assets/lgfc-shrine-night.jpg" alt="A North Malabar shrine at night, decorated with marigold garlands and lamps" width="600" height="400"><p class="k" style="margin:12px 0 0">Culture</p><h3>Theyyam words explained</h3></a>
 </div></div></section>
 </main>'''
 t2=re.sub(r'\n<section style="padding:64px 0 72px">.*?</main>','\n'+kr,tail,flags=re.S)

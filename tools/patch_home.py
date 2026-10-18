@@ -43,7 +43,7 @@ if '<!--faces:start-->' in s:
     s=re.sub(r'<style id="faces-css">.*?</style>','<style id="faces-css">'+css+'</style>',s,flags=re.S)
     s=re.sub(r'<script id="faces-js">.*?</script>','',s,flags=re.S)
 else:
-    old=re.search(r'<div style="position:relative;width:100%"><img class="arch" src="assets/p-headdress-tall.jpg"[^>]*></div>',s)
+    old=re.search(r'<div style="position:relative;width:100%"><img class="arch" src="assets/lgfc-headdress-portrait.jpg"[^>]*></div>',s)
     assert old
     s=s.replace(old.group(0),block,1)
     s=s.replace('</head>','<style id="faces-css">'+css+'</style>\n</head>',1)
