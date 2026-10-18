@@ -3,17 +3,23 @@ import re,json,sys,html
 sys.path.insert(0,'tools')
 import theyyams_data as d
 names={t['slug']:t['name'] for t in d.T}
-order=['vishnumoorthi','kundora-chamundi','gulikan','muchilot-bhagavathi','panjuruli']  # traced closeups, see tools/trace_faces.py
 import os
-order=[s for s in order if os.path.exists(f'assets/faces-svg/{s}.svg')]
 E=html.escape
+# LGFC trip photos (assets/hero/). Culture first; the Kandanar Kelan fire frames sit among them, never first.
+slides_def=[('face-closeup','Close portrait of a Theyyam with orange face, silver ornaments and a white fringe'),
+ ('portrait-ritual','Portrait of a Theyyam in a red headdress during the ritual'),
+ ('kandanar-kelan-1','Kandanar Kelan Theyyam leaping across the fire at a shrine in Kannur'),
+ ('daytime-shrine','A Theyyam in a red cone headdress at a family shrine by day in Kannur'),
+ ('headdress-shrine','A Theyyam in a large red and silver headdress with flowers, at a shrine in Kannur'),
+ ('kandanar-kelan-2','The Kandanar Kelan ritual: the Theyyam crosses the burning pit with devotees close by'),
+ ('headdress-portrait','A Theyyam in a red and gold circular headdress among devotees'),
+ ('profile-night','Profile of a Theyyam in a red and gold headdress')]
 slides=''
-for i,s in enumerate(order):
-    n=names[s]
-    img=f'<img src="assets/faces-svg/{s}.svg" alt="Illustrated face of a Theyyam" width="720" height="900"'+('' if i==0 else ' loading="lazy"')+'>'
+for i,(f,alt) in enumerate(slides_def):
+    img=f'<img src="assets/hero/{f}.jpg" alt="{E(alt)}" width="800" height="1000"'+('' if i==0 else ' loading="lazy"')+'>'
     slides+=f'<div class="fslide{" on" if i==0 else ""}"'+('' if i==0 else ' aria-hidden="true"')+f'>{img}</div>'
 block=f'''<!--faces:start-->
-<div class="faces" role="group" aria-label="Faces of the Theyyams in our guide"><div class="fstack">{slides}</div></div>
+<div class="faces" role="group" aria-label="Photographs from our Theyyam trips"><div class="fstack">{slides}</div></div>
 <!--faces:end-->'''
 css='''.strip span{display:inline-block;padding-left:100%;animation:strip-run 20s linear infinite}.strip:hover span{animation-play-state:paused}@keyframes strip-run{to{transform:translateX(-100%)}}@media(prefers-reduced-motion:reduce){.strip{text-align:center;white-space:normal}.strip span{padding-left:0;animation:none}}
 .fstack{position:relative;width:100%;max-width:460px;aspect-ratio:4/5;border-radius:999px 999px 24px 24px;border:6px solid #FFB400;margin:0 auto;overflow:hidden;background:#4A0E12}
@@ -50,4 +56,4 @@ js=js.replace('<script>','<script id="faces-js">',1)
 s=re.sub(r'<script id="faces-js">.*?</script>','',s,flags=re.S)
 s=s.replace('</body>',js+'\n</body>',1)
 open('index.html','w').write(s)
-print('patched',len(order),'faces')
+print('patched',len(slides_def),'photos')

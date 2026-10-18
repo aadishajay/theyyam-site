@@ -28,6 +28,6 @@ K.K.N. Kurup, The Cult of Teyyam and Hero Worship in Kerala (1973); Kurup, Teyya
 - Unused strong candidates: orig a1_09/a1_17 (tall striped cone headdress), a4_226, a2_161.
 
 ## Hero carousel
-- Homepage carousel shows five traced SVG closeups (assets/faces-svg/): faithful traces of the face photos made by tools/trace_faces.py (OpenCV smoothing + VTracer CLI). No caption or links. Order is in tools/patch_home.py; after changes run patch_home.py then build_langs.py. Each SVG is ~1 MB (about 350-400 KB gzipped); the first slide loads first, the rest lazily.
-- Hand-drawn illustrations were rejected as disrespectful; do not redraw faces, only trace real photos.
-- Have someone who knows the traditions review before launch.
+- Homepage carousel: eight LGFC trip photos (assets/hero/, 800x1000, 4:5) cropped from the Theyyam trip Google Photos albums linked in Notion (Feb 2026, Mar 2025, Feb 2025). Two are the Kandanar Kelan fire frames (assumed from the trip notes: Kadanarkelan appears at night on those trips) - confirm the identification. Culture shots come first; fire frames never lead. No caption or links. Slide list and alt text: tools/patch_home.py (then run build_langs.py).
+- Earlier SVG / traced / hand-drawn face experiments were dropped.
+- Check consent for devotees visible in frame, and shrine photo rules, before launch.
