@@ -27,16 +27,22 @@ photos:
     h: 1012
     artist: "Abhiraj Panakkadan"
     lic: "CC BY-SA 4.0"
+    alt: "Muthappan Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:Muthappan_Theyyam_Kannur.jpg"
   - file: "muthappan-2.jpg"
     w: 760
     h: 506
     artist: "Lightframer007"
     lic: "CC BY-SA 4.0"
+    alt: "Close view of the Muthappan Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:Blessings_of_god.jpg"
   - file: "muthappan-3.jpg"
     w: 760
     h: 570
     artist: "rajeshodayanchal"
     lic: "CC BY 3.0"
+    alt: "Muthappan Theyyam during a ritual in North Malabar, Kerala"
+    page: "https://commons.wikimedia.org/wiki/File:Chamayam-muthappan.JPG"
 ---
 ## Who is Muthappan?
 

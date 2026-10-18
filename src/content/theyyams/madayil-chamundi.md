@@ -29,16 +29,22 @@ photos:
     h: 1013
     artist: "Vaikoovery"
     lic: "CC BY 3.0"
+    alt: "Madayil Chamundi Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:Madayil_Chamundi.jpg"
   - file: "madayil-chamundi-2.jpg"
     w: 760
     h: 570
     artist: "Vaikoovery"
     lic: "CC BY 3.0"
+    alt: "Close view of the Madayil Chamundi Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:Madayil_Chamundi%27s_Make_Up_Final_Touch_Up_(1).JPG"
   - file: "madayil-chamundi-3.jpg"
     w: 760
     h: 1013
     artist: "Vaikoovery"
     lic: "CC BY 3.0"
+    alt: "Madayil Chamundi Theyyam during a ritual in North Malabar, Kerala"
+    page: "https://commons.wikimedia.org/wiki/File:Madayil_Chamundi%27s_Make_Up_(1).JPG"
 ---
 ## Who is Madayil Chamundi?
 

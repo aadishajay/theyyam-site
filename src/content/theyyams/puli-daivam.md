@@ -29,16 +29,22 @@ photos:
     h: 921
     artist: "Kuttappan Chettan"
     lic: "CC BY-SA 4.0"
+    alt: "Puli Daivam Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:Puliyoorkaali.jpg"
   - file: "puli-daivam-2.jpg"
     w: 760
     h: 554
     artist: "Mullookkaaran"
     lic: "CC BY-SA 3.0"
+    alt: "Close view of the Puli Daivam Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:Puliyooru_Kaali_-_Thamburatti_Theyyam.JPG"
   - file: "puli-daivam-3.jpg"
     w: 760
     h: 1040
     artist: "Vaikoovery"
     lic: "CC BY 3.0"
+    alt: "Puli Daivam Theyyam during a ritual in North Malabar, Kerala"
+    page: "https://commons.wikimedia.org/wiki/File:Pulikkandan_(1).jpg"
 ---
 ## Who is Puli Daivam?
 

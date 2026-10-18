@@ -31,11 +31,15 @@ photos:
     h: 506
     artist: "Balakrishnan Koyyal"
     lic: "CC BY-SA 4.0"
+    alt: "Panjuruli Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:Theyyam_Panchuruli.jpg"
   - file: "panjuruli-2.jpg"
     w: 760
     h: 504
     artist: "Uajith"
     lic: "CC BY-SA 3.0"
+    alt: "Close view of the Panjuruli Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:Panchuruli_Theyyam_Kanathur_Kerala.jpg"
 ---
 ## Who is Panjuruli?
 

@@ -71,7 +71,7 @@ A small note.
 ## Add a Theyyam
 Add `src/content/theyyams/<slug>.md`. Front matter: `kind: theyyam`, `slug`, `order`, `name`, `ml` (Malayalam),
 `category` (gods, goddesses, heroes, harmony), `tagline`, `alias`, `tags` (search keywords), `koladhari`,
-`facts` (label/value list), `sources`, `photos` (file, size, artist, licence; files in `public/assets/theyyam/`).
+`facts` (label/value list), `sources`, and `photos`. Each photo: `file` (in `public/assets/theyyam/`), `w`, `h`, `alt`, optional `caption`, `artist`, `lic`, and `page` (the source page the credit links to). The first photo is the hero; every other photo is shown by `::gallery`, so adding a photo is one more entry in `photos`.
 Body sections, in order: `## Who is <name>?`, `## The story`, `::gallery`, `## What you will see`, `::gloss`,
 `## In the tradition`, `:::note ... :::`. Add the name (and any spellings) to `src/data/theyyam-terms.json` so other
 pages link to it automatically (the first mention of each other Theyyam is linked).

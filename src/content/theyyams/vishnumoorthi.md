@@ -29,16 +29,22 @@ photos:
     h: 1013
     artist: "Drsankar91"
     lic: "CC BY-SA 4.0"
+    alt: "Vishnumoorthi Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:Narasimhamoorti.jpg"
   - file: "vishnumoorthi-2.jpg"
     w: 760
     h: 1040
     artist: "Mullookkaaran"
     lic: "CC BY-SA 3.0"
+    alt: "Close view of the Vishnumoorthi Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:Make_up_of_Vishnumoorthi_Theyyam.jpg"
   - file: "vishnumoorthi-3.jpg"
     w: 760
     h: 1013
     artist: "Navaneethtm"
     lic: "CC BY-SA 4.0"
+    alt: "Vishnumoorthi Theyyam during a ritual in North Malabar, Kerala"
+    page: "https://commons.wikimedia.org/wiki/File:Kannadi_nokkal.jpg"
 ---
 ## Who is Vishnumoorthi?
 

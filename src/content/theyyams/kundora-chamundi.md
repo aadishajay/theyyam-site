@@ -29,16 +29,22 @@ photos:
     h: 830
     artist: "Uajith"
     lic: "CC BY-SA 4.0"
+    alt: "Kundora Chamundi Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:KundoraChamundi_Theyyam.jog.jpg"
   - file: "kundora-chamundi-2.jpg"
     w: 760
     h: 1351
     artist: "Kuttappan Chettan"
     lic: "CC BY-SA 4.0"
+    alt: "Close view of the Kundora Chamundi Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:%E0%B4%95%E0%B5%81%E0%B4%A3%E0%B5%8D%E0%B4%9F%E0%B5%8B%E0%B4%B1_%E0%B4%9A%E0%B4%BE%E0%B4%AE%E0%B5%81%E0%B4%A3%E0%B5%8D%E0%B4%A1%E0%B4%BF.jpg"
   - file: "kundora-chamundi-3.jpg"
     w: 760
     h: 1028
     artist: "Kuttappan Chettan"
     lic: "CC BY-SA 4.0"
+    alt: "Kundora Chamundi Theyyam during a ritual in North Malabar, Kerala"
+    page: "https://commons.wikimedia.org/wiki/File:%E0%B4%95%E0%B5%81%E0%B4%A3%E0%B5%8D%E0%B4%9F%E0%B5%8B%E0%B5%BC_%E0%B4%9A%E0%B4%BE%E0%B4%AE%E0%B5%81%E0%B4%A3%E0%B5%8D%E0%B4%A1%E0%B4%BF.jpg"
 ---
 ## Who is Kundora Chamundi?
 

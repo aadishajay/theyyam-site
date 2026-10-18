@@ -34,7 +34,15 @@ const theyyams = defineCollection({
     koladhari: z.boolean().default(false),
     facts: z.array(z.object({ label: z.string(), value: z.string() })),
     sources: z.array(z.object({ name: z.string(), url: z.string() })),
-    photos: z.array(z.object({ file: z.string(), w: z.number(), h: z.number(), artist: z.string(), lic: z.string() })).default([]),
+    // The first photo is the hero; every other photo is shown in the gallery (::gallery in the body).
+    photos: z.array(z.object({
+      file: z.string(), // under public/assets/theyyam/
+      w: z.number(), h: z.number(),
+      alt: z.string().optional(), // description for screen readers and search
+      caption: z.string().optional(), // shown above the credit in the gallery
+      artist: z.string(), lic: z.string(),
+      page: z.string().url().optional(), // source page (Wikimedia Commons) the credit links to
+    })).default([]),
   }),
 });
 

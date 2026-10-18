@@ -29,16 +29,22 @@ photos:
     h: 1140
     artist: "Artoffabhi"
     lic: "CC BY-SA 4.0"
+    alt: "Kandanar Kelan Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:Face_of_Theyyam.jpg"
   - file: "kandanar-kelan-2.jpg"
     w: 760
     h: 506
     artist: "Shagil Kannur"
     lic: "CC BY-SA 3.0"
+    alt: "Close view of the Kandanar Kelan Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:Face_art_of_Kandanaar_Kelan_Theyyam_by_Shagil_Kannur.jpg"
   - file: "kandanar-kelan-3.jpg"
     w: 760
     h: 1228
     artist: "Avinash P C"
     lic: "CC BY-SA 4.0"
+    alt: "Kandanar Kelan Theyyam during a ritual in North Malabar, Kerala"
+    page: "https://commons.wikimedia.org/wiki/File:Fierce_and_divine.jpg"
 ---
 ## Who is Kandanar Kelan?
 

@@ -5,7 +5,7 @@
 //   ::cta{title="" text="" label="" href="enquire.html" spaced}   call-to-action box
 //   ::figure{src="" alt="" width=1000 height=563}                 wide image (src is under /assets/)
 //   ::faq                                 "Quick answers" accordion from the front matter `faq`
-//   ::gallery                             Theyyam photo gallery + photo credits (front matter `photos`)
+//   ::gallery                             Theyyam photo gallery + credits, from front matter `photos` (photos after the first)
 //   ::gloss                               koladhari hint (only when front matter `koladhari: true`)
 //   :::note ... :::                       Theyyam visitor note (adds the photography reminder)
 //
@@ -62,12 +62,14 @@ export default function remarkBlocks() {
           break;
         }
         case 'gallery': {
+          // metadata-driven: every photo after the first (the hero) comes from front matter `photos`
           const photos = fm.photos ?? [];
           const alts = [`${fm.name} Theyyam in ritual attire`, `Close view of the ${fm.name} Theyyam face and headdress`, `${fm.name} Theyyam during a ritual in North Malabar, Kerala`];
+          const credit = (c) => `${c.page ? `<a href="${esc(c.page)}" rel="noopener">${esc(c.artist)}</a>` : esc(c.artist)}, ${esc(c.lic)}, via Wikimedia Commons`;
           let h = '';
           if (photos.length > 1)
-            h += '<div class="gal">' + photos.slice(1, 3).map((c, i) => `<figure><img src="${u('assets/theyyam/' + c.file)}" alt="${esc(alts[i + 1])}" width="${c.w}" height="${c.h}" loading="lazy" /><figcaption>Photo: ${esc(c.artist)}, ${esc(c.lic)}, via Wikimedia Commons</figcaption></figure>`).join('') + '</div>';
-          if (photos.length) h += `<p style="font-size:12px;opacity:.7;margin:-12px 0 20px">Hero photo: ${esc(photos[0].artist)}, ${esc(photos[0].lic)}, via Wikimedia Commons</p>`;
+            h += '<div class="gal">' + photos.slice(1).map((c, i) => `<figure><img src="${u('assets/theyyam/' + c.file)}" alt="${esc(c.alt ?? alts[Math.min(i + 1, 2)])}" width="${c.w}" height="${c.h}" loading="lazy" /><figcaption>${c.caption ? esc(c.caption) + ' ' : ''}Photo: ${credit(c)}</figcaption></figure>`).join('') + '</div>';
+          if (photos.length) h += `<p style="font-size:12px;opacity:.7;margin:-12px 0 20px">Hero photo: ${credit(photos[0])}</p>`;
           out = h ? [html(h)] : [];
           break;
         }

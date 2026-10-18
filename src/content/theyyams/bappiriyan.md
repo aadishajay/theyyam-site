@@ -29,16 +29,22 @@ photos:
     h: 1140
     artist: "Shagil Muzhappilangad"
     lic: "CC BY-SA 4.0"
+    alt: "Bappiriyan Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:Bappiriyan_Theyyan_(15).jpg"
   - file: "bappiriyan-2.jpg"
     w: 760
     h: 1140
     artist: "Shagil Muzhappilangad"
     lic: "CC BY-SA 4.0"
+    alt: "Close view of the Bappiriyan Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:Bappiriyan_Theyyan_(11).jpg"
   - file: "bappiriyan-3.jpg"
     w: 760
     h: 1140
     artist: "Shagil Muzhappilangad"
     lic: "CC BY-SA 4.0"
+    alt: "Bappiriyan Theyyam during a ritual in North Malabar, Kerala"
+    page: "https://commons.wikimedia.org/wiki/File:Bappiriyan_Theyyan_(3).jpg"
 ---
 ## Who is Bappiriyan?
 

@@ -29,11 +29,15 @@ photos:
     h: 1013
     artist: "Kuttappan Chettan"
     lic: "CC BY-SA 4.0"
+    alt: "Arya Poonkani Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:%E0%B4%86%E0%B4%B0%E0%B5%8D%E0%B4%AF%E0%B4%AA%E0%B5%82%E0%B4%99%E0%B5%8D%E0%B4%95%E0%B4%A8%E0%B5%8D%E0%B4%A8%E0%B4%BF%E0%B4%85%E0%B4%AE%E0%B5%8D%E0%B4%AE.jpg"
   - file: "arya-poonkani-2.jpg"
     w: 760
     h: 1013
     artist: "Kuttappan Chettan"
     lic: "CC BY-SA 4.0"
+    alt: "Close view of the Arya Poonkani Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:%E0%B4%86%E0%B4%B0%E0%B5%8D%E0%B4%AF%E0%B4%AA%E0%B5%82%E0%B4%99%E0%B5%8D%E0%B4%95%E0%B4%A8%E0%B5%8D%E0%B4%A8%E0%B4%BF%E0%B4%85%E0%B4%AE%E0%B5%8D%E0%B4%AE_2.jpg"
 ---
 ## Who is Arya Poonkani?
 

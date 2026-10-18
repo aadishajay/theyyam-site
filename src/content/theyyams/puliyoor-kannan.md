@@ -29,16 +29,22 @@ photos:
     h: 1137
     artist: "Uajith"
     lic: "CC BY-SA 4.0"
+    alt: "Puliyoor Kannan Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:Puliyooru_Kannan_Theyyam_Neeliyath_tharavad.jpg"
   - file: "puliyoor-kannan-2.jpg"
     w: 760
     h: 1351
     artist: "Kuttappan Chettan"
     lic: "CC BY-SA 4.0"
+    alt: "Close view of the Puliyoor Kannan Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:%E0%B4%AA%E0%B5%81%E0%B4%B2%E0%B4%BF%E0%B4%AF%E0%B5%82%E0%B5%BC_%E0%B4%95%E0%B4%A3%E0%B5%8D%E0%B4%A3%E0%B5%BB_%E0%B4%A6%E0%B5%88%E0%B4%B5%E0%B4%82.jpg"
   - file: "puliyoor-kannan-3.jpg"
     w: 760
     h: 1001
     artist: "Vaikoovery"
     lic: "CC BY 3.0"
+    alt: "Puliyoor Kannan Theyyam during a ritual in North Malabar, Kerala"
+    page: "https://commons.wikimedia.org/wiki/File:Puliyoor_Kannan.jpg"
 ---
 ## Who is Puliyoor Kannan?
 

@@ -27,16 +27,22 @@ photos:
     h: 504
     artist: "Rakesh S"
     lic: "CC BY-SA 2.0"
+    alt: "Muchilot Bhagavathi Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:Muchilottu_Bhagavathi.jpg"
   - file: "muchilot-2.jpg"
     w: 760
     h: 506
     artist: "Akhilan"
     lic: "CC BY-SA 4.0"
+    alt: "Close view of the Muchilot Bhagavathi Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:Keralam_Museum_Muchilottu_Bhagavathi_Theyyam_Face.jpg"
   - file: "muchilot-3.jpg"
     w: 760
     h: 570
     artist: "Anoopan at Malayalam Wikipedia"
     lic: "CC BY-SA 3.0"
+    alt: "Muchilot Bhagavathi Theyyam during a ritual in North Malabar, Kerala"
+    page: "https://commons.wikimedia.org/wiki/File:Muchilottu_bhagavathi_theyyam.JPG"
 ---
 ## Who is Muchilot Bhagavathi?
 

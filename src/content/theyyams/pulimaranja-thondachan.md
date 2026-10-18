@@ -27,11 +27,15 @@ photos:
     h: 1350
     artist: "Kuttappan Chettan"
     lic: "CC BY-SA 4.0"
+    alt: "Pulimaranja Thondachan Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:%E0%B4%AA%E0%B5%81%E0%B4%B2%E0%B4%BF%E0%B4%AE%E0%B4%B1%E0%B4%9E%E0%B5%8D%E0%B4%9E_%E0%B4%A4%E0%B5%8A%E0%B4%A3%E0%B5%8D%E0%B4%9F%E0%B4%9A%E0%B5%8D%E0%B4%9A%E0%B5%BB_%E0%B4%A4%E0%B5%86%E0%B4%AF%E0%B5%8D%E0%B4%AF%E0%B4%82.jpg"
   - file: "pulimaranja-2.jpg"
     w: 760
     h: 506
     artist: "Sai Shekar Kannur"
     lic: "CC BY-SA 4.0"
+    alt: "Close view of the Pulimaranja Thondachan Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:%E0%B4%AA%E0%B5%81%E0%B4%B2%E0%B4%BF%E0%B4%AE%E0%B4%B1%E0%B4%9E%E0%B5%8D%E0%B4%9E_%E0%B4%A4%E0%B5%8A%E0%B4%A3%E0%B5%8D%E0%B4%9F%E0%B4%9A%E0%B5%8D%E0%B4%9A%E0%B5%BB.jpg"
 ---
 ## Who is Pulimaranja Thondachan?
 

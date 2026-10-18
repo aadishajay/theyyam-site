@@ -27,16 +27,22 @@ photos:
     h: 1140
     artist: "Akshay Sanjeev"
     lic: "CC BY-SA 4.0"
+    alt: "Vasoorimala Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:Akshay_submission_1.jpg"
   - file: "vasoorimala-2.jpg"
     w: 760
     h: 1347
     artist: "SijiR"
     lic: "CC BY-SA 4.0"
+    alt: "Close view of the Vasoorimala Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:Vasoorimala_Theyyam_@_Kanacheri_Sree_Kurumba_Temple_IMG20260309110557.jpg"
   - file: "vasoorimala-3.jpg"
     w: 760
     h: 1347
     artist: "SijiR"
     lic: "CC BY-SA 4.0"
+    alt: "Vasoorimala Theyyam during a ritual in North Malabar, Kerala"
+    page: "https://commons.wikimedia.org/wiki/File:Vasoorimala_Theyyam_@_Kanacheri_Sree_Kurumba_Temple_IMG20260309110653.jpg"
 ---
 ## Who is Vasoorimala?
 

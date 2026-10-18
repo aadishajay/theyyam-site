@@ -27,16 +27,22 @@ photos:
     h: 570
     artist: "Vaikoovery"
     lic: "CC BY 3.0"
+    alt: "Poomaruthan Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:Poomaruthan_(6).JPG"
   - file: "poomaruthan-2.jpg"
     w: 760
     h: 570
     artist: "Vaikoovery"
     lic: "CC BY 3.0"
+    alt: "Close view of the Poomaruthan Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:Poomaruthan_(3).JPG"
   - file: "poomaruthan-3.jpg"
     w: 760
     h: 1140
     artist: "Ajeeshkumar4u"
     lic: "CC BY-SA 4.0"
+    alt: "Poomaruthan Theyyam during a ritual in North Malabar, Kerala"
+    page: "https://commons.wikimedia.org/wiki/File:Poomaruthan_theyyam_at_Kuttamath_Poomala_temple_2016.jpg"
 ---
 ## Who is Poomaruthan?
 

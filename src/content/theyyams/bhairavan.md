@@ -29,16 +29,22 @@ photos:
     h: 1143
     artist: "Sreejithk2000"
     lic: "CC BY-SA 3.0"
+    alt: "Bhairavan Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:Bhairavan_(1).JPG"
   - file: "bhairavan-2.jpg"
     w: 760
     h: 570
     artist: "Vaikoovery"
     lic: "CC BY 3.0"
+    alt: "Close view of the Bhairavan Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:Bhairavan(2).jpg"
   - file: "bhairavan-3.jpg"
     w: 760
     h: 1013
     artist: "Vaikoovery"
     lic: "CC BY 3.0"
+    alt: "Bhairavan Theyyam during a ritual in North Malabar, Kerala"
+    page: "https://commons.wikimedia.org/wiki/File:Bhairavan_Face.jpg"
 ---
 ## Who is Bhairavan?
 

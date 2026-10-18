@@ -54,7 +54,7 @@ const ld = [
       <Breadcrumb items={[['Home', 'index.html'], ['Theyyams', 'theyyams/'], [t.name]]} style="font-size:14px;padding-top:24px" />
       <div class="hero">
         {first
-          ? <img class="h" src={u('assets/theyyam/' + first)} alt={`${t.name} Theyyam in ritual attire`} width="760" height="950" />
+          ? <img class="h" src={u('assets/theyyam/' + first)} alt={t.photos[0]?.alt ?? `${t.name} Theyyam in ritual attire`} width="760" height="950" />
           : <div class="ph h" role="img" aria-label={`${t.name}: photograph to come`}><span lang="ml">{t.ml}</span><small>Photo to come</small></div>}
         <div>
           <a class="chip" href={u(`theyyams/#${t.category}`)}>{cat.label}</a>

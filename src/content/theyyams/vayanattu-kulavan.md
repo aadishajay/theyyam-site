@@ -29,16 +29,22 @@ photos:
     h: 1309
     artist: "Vk1110"
     lic: "CC BY-SA 4.0"
+    alt: "Vayanattu Kulavan Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:Shree_Vayanattu_kulavan.jpg"
   - file: "vayanattu-kulavan-2.jpg"
     w: 760
     h: 1013
     artist: "Kannanshanmugam,shanmugamstudio,Kollam"
     lic: "CC BY 3.0"
+    alt: "Close view of the Vayanattu Kulavan Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:Theyyam_mask_DSCN0031.JPG"
   - file: "vayanattu-kulavan-3.jpg"
     w: 760
     h: 1140
     artist: "Jinoy Tom Jacob"
     lic: "CC BY-SA 4.0"
+    alt: "Vayanattu Kulavan Theyyam during a ritual in North Malabar, Kerala"
+    page: "https://commons.wikimedia.org/wiki/File:Thondachan_and_Gulikan_Theyyam_Ettikulam,_Kannur_0.jpg"
 ---
 ## Who is Vayanattu Kulavan?
 

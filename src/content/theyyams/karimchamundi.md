@@ -27,16 +27,22 @@ photos:
     h: 1155
     artist: "Sreejithk2000 at Malayalam Wikipedia"
     lic: "CC BY-SA 3.0"
+    alt: "Karimchamundi Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:Karimchamundi_Theyyam.jpg"
   - file: "karimchamundi-2.jpg"
     w: 760
     h: 490
     artist: "LalkrishnaNambiar"
     lic: "CC BY-SA 4.0"
+    alt: "Close view of the Karimchamundi Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:Karinchamundi_Theyyam.jpg"
   - file: "karimchamundi-3.jpg"
     w: 760
     h: 1351
     artist: "Vaikoovery"
     lic: "CC BY-SA 4.0"
+    alt: "Karimchamundi Theyyam during a ritual in North Malabar, Kerala"
+    page: "https://commons.wikimedia.org/wiki/File:Karinchamundi_Theyyam,_Koovery.jpg"
 ---
 ## Who is Karimchamundi?
 

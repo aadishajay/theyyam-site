@@ -29,11 +29,15 @@ photos:
     h: 1013
     artist: "Kuttappan Chettan"
     lic: "CC BY-SA 4.0"
+    alt: "Padarkulangara Bhagavathy Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:%E0%B4%AA%E0%B4%BE%E0%B4%9F%E0%B4%BE%E0%B5%BC_%E0%B4%95%E0%B5%81%E0%B4%B3%E0%B4%99%E0%B5%8D%E0%B4%99%E0%B4%B0_%E0%B4%AD%E0%B4%97%E0%B4%B5%E0%B4%A4%E0%B4%BF.jpg"
   - file: "padarkulangara-bhagavathy-2.jpg"
     w: 760
     h: 1013
     artist: "Kuttappan Chettan"
     lic: "CC BY-SA 4.0"
+    alt: "Close view of the Padarkulangara Bhagavathy Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:%E0%B4%AA%E0%B4%BE%E0%B4%9F%E0%B4%BE%E0%B5%BC%E0%B4%95%E0%B5%81%E0%B4%B3%E0%B4%99%E0%B5%8D%E0%B4%99%E0%B4%B0_%E0%B4%AD%E0%B4%97%E0%B4%B5%E0%B4%A4%E0%B4%BF.jpg"
 ---
 ## Who is Padarkulangara Bhagavathy?
 

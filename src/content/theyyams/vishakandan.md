@@ -29,6 +29,8 @@ photos:
     h: 1547
     artist: "Anoopan"
     lic: "CC BY-SA 4.0"
+    alt: "Vishakandan Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:Chathamballi_Vishakandan_Theyyam.jpg"
 ---
 ## Who is Vishakandan?
 

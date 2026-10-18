@@ -29,16 +29,22 @@ photos:
     h: 1140
     artist: "Shagil Muzhappilangad"
     lic: "CC BY-SA 4.0"
+    alt: "Gulikan Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:Dance_of_The_Gulikan_Theyyam_(10).jpg"
   - file: "gulikan-2.jpg"
     w: 760
     h: 1140
     artist: "VIJAY KRISHNA K S"
     lic: "CC BY-SA 4.0"
+    alt: "Close view of the Gulikan Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:%27Gulikan%27.jpg"
   - file: "gulikan-3.jpg"
     w: 760
     h: 1140
     artist: "Shagil Muzhappilangad"
     lic: "CC BY-SA 4.0"
+    alt: "Gulikan Theyyam during a ritual in North Malabar, Kerala"
+    page: "https://commons.wikimedia.org/wiki/File:Dance_of_The_Gulikan_Theyyam_(15).jpg"
 ---
 ## Who is Gulikan?
 

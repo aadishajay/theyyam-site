@@ -27,11 +27,15 @@ photos:
     h: 1140
     artist: "Abhiram RP"
     lic: "CC BY-SA 4.0"
+    alt: "Kadangot Makkam Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:Makkavum_Makkalum.jpg"
   - file: "makkam-2.jpg"
     w: 760
     h: 570
     artist: "Sreejithmachery"
     lic: "CC BY-SA 4.0"
+    alt: "Close view of the Kadangot Makkam Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:Chala_karangottu_Makkam.jpg"
 ---
 ## Who is Kadangot Makkam?
 

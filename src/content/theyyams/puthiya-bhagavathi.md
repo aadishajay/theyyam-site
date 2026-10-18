@@ -29,16 +29,22 @@ photos:
     h: 1013
     artist: "Vaikoovery"
     lic: "CC BY 3.0"
+    alt: "Puthiya Bhagavathi Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:Puthiya_Bhagavathi.jpg"
   - file: "puthiya-bhagavathi-2.jpg"
     w: 760
     h: 673
     artist: "Challiyan at Malayalam Wikipedia"
     lic: "CC BY-SA 3.0"
+    alt: "Close view of the Puthiya Bhagavathi Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:Puthiya_bhagavathi2a.jpg"
   - file: "puthiya-bhagavathi-3.jpg"
     w: 760
     h: 627
     artist: "User:Anoopan"
     lic: "CC BY-SA 3.0"
+    alt: "Puthiya Bhagavathi Theyyam during a ritual in North Malabar, Kerala"
+    page: "https://commons.wikimedia.org/wiki/File:Puthiya_bhavathi_thirumudi_3.jpg"
 ---
 ## Who is Puthiya Bhagavathi?
 

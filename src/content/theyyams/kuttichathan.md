@@ -27,16 +27,22 @@ photos:
     h: 1013
     artist: "TheRanchKeeper"
     lic: "CC BY-SA 4.0"
+    alt: "Kuttichathan Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:A_photograph_of_Shasthappan_Theyyam.jpg"
   - file: "kuttichathan-2.jpg"
     w: 760
     h: 570
     artist: "Anoopan at Malayalam Wikipedia"
     lic: "CC BY-SA 3.0"
+    alt: "Close view of the Kuttichathan Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:Kutti_Chathan_2.jpg"
   - file: "kuttichathan-3.jpg"
     w: 760
     h: 506
     artist: "Shagil Kannur"
     lic: "CC BY-SA 4.0"
+    alt: "Kuttichathan Theyyam during a ritual in North Malabar, Kerala"
+    page: "https://commons.wikimedia.org/wiki/File:Kuttichaathan_theyyam_make-up.jpg"
 ---
 ## Who is Kuttichathan?
 

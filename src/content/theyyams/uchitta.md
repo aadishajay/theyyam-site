@@ -27,16 +27,22 @@ photos:
     h: 1351
     artist: "Kuttappan Chettan"
     lic: "CC BY-SA 4.0"
+    alt: "Uchitta Bhagavathy Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:%E0%B4%89%E0%B4%9A%E0%B5%8D%E0%B4%9A%E0%B4%BF%E0%B4%9F%E0%B5%8D%E0%B4%9F%E0%B4%AE%E0%B5%8D%E0%B4%AE.jpg"
   - file: "uchitta-2.jpg"
     w: 760
     h: 1140
     artist: "Avinash P C"
     lic: "CC BY-SA 4.0"
+    alt: "Close view of the Uchitta Bhagavathy Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:Fierce_and_transcendent.jpg"
   - file: "uchitta-3.jpg"
     w: 760
     h: 505
     artist: "Sreejithk2000"
     lic: "CC BY-SA 3.0"
+    alt: "Uchitta Bhagavathy Theyyam during a ritual in North Malabar, Kerala"
+    page: "https://commons.wikimedia.org/wiki/File:%E0%B4%89%E0%B4%9A%E0%B5%8D%E0%B4%9A%E0%B4%BF%E0%B4%9F%E0%B5%8D%E0%B4%9F%E0%B4%AF%E0%B5%81%E0%B4%9F%E0%B5%86_%E0%B4%AE%E0%B5%81%E0%B4%9F%E0%B4%BF.JPG"
 ---
 ## Who is Uchitta Bhagavathy?
 

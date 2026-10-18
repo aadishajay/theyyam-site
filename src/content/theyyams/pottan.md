@@ -27,16 +27,22 @@ photos:
     h: 1009
     artist: "Vijayanrajapuram"
     lic: "CC BY-SA 4.0"
+    alt: "Pottan Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:Pottan_theyyam_at_Maruthodan_tharavad_06.jpg"
   - file: "pottan-2.jpg"
     w: 760
     h: 1351
     artist: "Vijayanrajapuram"
     lic: "CC BY-SA 4.0"
+    alt: "Close view of the Pottan Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:Pottan_theyyam_1.jpg"
   - file: "pottan-3.jpg"
     w: 760
     h: 1009
     artist: "Vijayanrajapuram"
     lic: "CC BY-SA 4.0"
+    alt: "Pottan Theyyam during a ritual in North Malabar, Kerala"
+    page: "https://commons.wikimedia.org/wiki/File:Pottan_theyyam_at_Maruthodan_tharavad_08.jpg"
 ---
 ## Who is Pottan?
 

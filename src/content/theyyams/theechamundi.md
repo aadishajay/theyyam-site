@@ -29,16 +29,22 @@ photos:
     h: 1688
     artist: "Dusk.Orpia"
     lic: "CC BY-SA 4.0"
+    alt: "Theechamundi Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:Thee_Chamundi_or_Ottakolam_Theyyam_(%E0%B4%A4%E0%B5%80_%E0%B4%9A%E0%B4%BE%E0%B4%AE%E0%B5%81%E0%B4%A3%E0%B5%8D%E0%B4%9F%E0%B4%BF_%E0%B4%A4%E0%B5%86%E0%B4%AF%E0%B5%8D%E0%B4%AF%E0%B4%82)_Fire_Theyyam_(42276).jpg"
   - file: "theechamundi-2.jpg"
     w: 760
     h: 1688
     artist: "Dusk.Orpia"
     lic: "CC BY-SA 4.0"
+    alt: "Close view of the Theechamundi Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:Thee_Chamundi_or_Ottakolam_Theyyam_(%E0%B4%A4%E0%B5%80_%E0%B4%9A%E0%B4%BE%E0%B4%AE%E0%B5%81%E0%B4%A3%E0%B5%8D%E0%B4%9F%E0%B4%BF_%E0%B4%A4%E0%B5%86%E0%B4%AF%E0%B5%8D%E0%B4%AF%E0%B4%82)_Fire_Theyyam_(34604).jpg"
   - file: "theechamundi-3.jpg"
     w: 760
     h: 1688
     artist: "Dusk.Orpia"
     lic: "CC BY-SA 4.0"
+    alt: "Theechamundi Theyyam during a ritual in North Malabar, Kerala"
+    page: "https://commons.wikimedia.org/wiki/File:Thee_Chamundi_or_Ottakolam_Theyyam_(%E0%B4%A4%E0%B5%80_%E0%B4%9A%E0%B4%BE%E0%B4%AE%E0%B5%81%E0%B4%A3%E0%B5%8D%E0%B4%9F%E0%B4%BF_%E0%B4%A4%E0%B5%86%E0%B4%AF%E0%B5%8D%E0%B4%AF%E0%B4%82)_Fire_Theyyam.jpg"
 ---
 ## Who is Theechamundi?
 

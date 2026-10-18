@@ -29,16 +29,22 @@ photos:
     h: 570
     artist: "Vijayakumarblathur"
     lic: "CC BY-SA 3.0"
+    alt: "Kurathi Amma Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:Kurathi_theyyam.jpg"
   - file: "kurathi-2.jpg"
     w: 760
     h: 1118
     artist: "Mullookkaaran"
     lic: "CC BY-SA 3.0"
+    alt: "Close view of the Kurathi Amma Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:Kurathi_Theyyam.jpg"
   - file: "kurathi-3.jpg"
     w: 760
     h: 1009
     artist: "Kuttappan Chettan"
     lic: "CC BY-SA 4.0"
+    alt: "Kurathi Amma Theyyam during a ritual in North Malabar, Kerala"
+    page: "https://commons.wikimedia.org/wiki/File:%E0%B4%95%E0%B5%81%E0%B4%B1%E0%B4%A4%E0%B5%8D%E0%B4%A4%E0%B4%BF_%E0%B4%85%E0%B4%AE%E0%B5%8D%E0%B4%AE.jpg"
 ---
 ## Who is Kurathi Amma?
 

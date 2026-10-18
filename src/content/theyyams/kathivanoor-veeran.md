@@ -27,16 +27,22 @@ photos:
     h: 1140
     artist: "Shagil Kannur"
     lic: "CC BY-SA 4.0"
+    alt: "Kathivanoor Veeran Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:Kathivannur_veeran_theyyam_at_Kannur,_Kerala_.jpg"
   - file: "kathivanoor-2.jpg"
     w: 760
     h: 503
     artist: "Uajith"
     lic: "CC BY-SA 4.0"
+    alt: "Close view of the Kathivanoor Veeran Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:Chemmarathi_thara_Kathivanoor_Veeran.jpg"
   - file: "kathivanoor-3.jpg"
     w: 760
     h: 479
     artist: "Uajith"
     lic: "CC BY-SA 4.0"
+    alt: "Kathivanoor Veeran Theyyam during a ritual in North Malabar, Kerala"
+    page: "https://commons.wikimedia.org/wiki/File:Kathivanoor_Veeran_Chemmarathi_Thara-Eripuram.jpg"
 ---
 ## Who is Kathivanoor Veeran?
 

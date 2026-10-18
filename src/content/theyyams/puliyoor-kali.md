@@ -29,16 +29,22 @@ photos:
     h: 921
     artist: "Kuttappan Chettan"
     lic: "CC BY-SA 4.0"
+    alt: "Puliyoor Kali Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:Puliyoorkaali.jpg"
   - file: "puliyoor-kali-2.jpg"
     w: 760
     h: 554
     artist: "Mullookkaaran"
     lic: "CC BY-SA 3.0"
+    alt: "Close view of the Puliyoor Kali Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:Puliyooru_Kaali_-_Thamburatti_Theyyam.JPG"
   - file: "puliyoor-kali-3.jpg"
     w: 760
     h: 1140
     artist: "Sumalkv"
     lic: "CC BY-SA 4.0"
+    alt: "Puliyoor Kali Theyyam during a ritual in North Malabar, Kerala"
+    page: "https://commons.wikimedia.org/wiki/File:Puliyoor_Kali_Theyyam_at_Mathamangalam.jpg"
 ---
 ## Who is Puliyoor Kali?
 

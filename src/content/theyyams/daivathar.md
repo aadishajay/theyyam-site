@@ -29,16 +29,22 @@ photos:
     h: 551
     artist: "Shagil Kannur"
     lic: "CC BY-SA 4.0"
+    alt: "Daivathar Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:Daivathaar_Theyyam_at_Andaloorkaavu.jpg"
   - file: "daivathar-2.jpg"
     w: 760
     h: 1140
     artist: "Kiranveluthan"
     lic: "CC BY-SA 4.0"
+    alt: "Close view of the Daivathar Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:20200220104341_IMG_7516_(1).jpg"
   - file: "daivathar-3.jpg"
     w: 760
     h: 495
     artist: "Shagil Kannur"
     lic: "CC BY-SA 4.0"
+    alt: "Daivathar Theyyam during a ritual in North Malabar, Kerala"
+    page: "https://commons.wikimedia.org/wiki/File:Daivathaar_of_Andaloorkkaavu_3.jpg"
 ---
 ## Who is Daivathar?
 

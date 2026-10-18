@@ -29,16 +29,22 @@ photos:
     h: 1040
     artist: "Vaikoovery"
     lic: "CC BY 3.0"
+    alt: "Pulikandan Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:Pulikkandan_(1).jpg"
   - file: "pulikandan-2.jpg"
     w: 760
     h: 585
     artist: "Vaikoovery"
     lic: "CC BY 3.0"
+    alt: "Close view of the Pulikandan Theyyam face and headdress"
+    page: "https://commons.wikimedia.org/wiki/File:Pulikkandan_and_Puliyoor_Kannan.jpg"
   - file: "pulikandan-3.jpg"
     w: 760
     h: 1048
     artist: "Vaikoovery"
     lic: "CC BY 3.0"
+    alt: "Pulikandan Theyyam during a ritual in North Malabar, Kerala"
+    page: "https://commons.wikimedia.org/wiki/File:Pulikkandan_(2).jpg"
 ---
 ## Who is Pulikandan?
 

@@ -31,6 +31,8 @@ photos:
     h: 1013
     artist: "Mithunrajkeekkamkot"
     lic: "CC BY-SA 3.0"
+    alt: "Ummachi Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:%E0%B4%89%E0%B4%AE%E0%B5%8D%E0%B4%AE%E0%B4%9A%E0%B5%8D%E0%B4%9A%E0%B4%BF_%E0%B4%A4%E0%B5%86%E0%B4%AF%E0%B5%8D%E0%B4%AF%E0%B4%82.jpg"
 ---
 ## Who is Ummachi?
 

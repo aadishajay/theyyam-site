@@ -29,6 +29,8 @@ photos:
     h: 570
     artist: "Vaikoovery"
     lic: "CC BY 3.0"
+    alt: "Pulikarinkali Theyyam in ritual attire"
+    page: "https://commons.wikimedia.org/wiki/File:Pullikkarinkaliyamma_and_Puliyoor_Kaali_(1).jpg"
 ---
 ## Who is Pulikarinkali?
 
