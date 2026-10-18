@@ -20,7 +20,7 @@ const closing = t0.closing ?? 'Made with warmth in North Malabar, Kerala · Powe
 ---
 <footer class="foot" style="background:#4A0E12;color:#fff;padding:48px 0 32px"><div class="w">
   <div style="display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between">
-    <div style="max-width:340px"><div style="font-weight:800;font-size:22px">LGFC Theyyam</div><p style="opacity:.85;margin-top:8px">{about}</p>{contact.offices.map((o) => <p style="opacity:.85;margin-top:6px;font-size:14px"><b>{o.label}:</b> {o.address}</p>)}</div>
+    <div style="max-width:340px"><div style="font-weight:800;font-size:22px">LGFC Theyyam</div><p style="opacity:.85;margin-top:8px">{about}</p>{contact.offices.map((o) => <p style="opacity:.85;margin-top:6px;font-size:14px"><b>{t[o.key]}:</b> {o.address}</p>)}</div>
     <nav aria-label={t.footer} style="display:flex;flex-direction:column">
       <a href={u('trips.html')}>{t.trips}</a><a href={u('theyyams/')}>{t.theyyams}</a><a href={u('journal.html')}>{t.journal}</a><a href={u('enquire.html')}>{t.enquire}</a>
     </nav>
