@@ -95,7 +95,6 @@ For launch: `SITE=https://your-domain.com BASE=/ INDEXABLE=1 npm run deploy`.
 
 ## Before launch
 `npm run check:placeholders` lists every `[PLACEHOLDER]` still on the site. A launch deploy (`INDEXABLE=1 npm run deploy`) stops until none are left.
-The Google rating chip reads `src/data/google-rating.json` (4.9, 411 reviews, checked 2026-10-19): refresh it before launch.
 
 Fill the placeholders (`[PHONE]`, `[EMAIL]`, `[INSTAGRAM]`, `[ADDRESS]`, registration no., rating, association,
 testimonial, author and date), set `ENDPOINT` in `src/pages/enquire.astro`, pick a domain, and build with the launch
