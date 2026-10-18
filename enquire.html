@@ -71,22 +71,52 @@ h1{font-size:clamp(2.2rem,9.5vw,4rem)}h2{font-size:1.6rem}h3{font-size:1.2rem;fo
 <div class="w lay">
 <div class="main">
 <p style="font-size:14px;margin:0 0 16px">Fields marked * are required.</p>
-<form action="#" method="post" class="fm" onsubmit="event.preventDefault();document.getElementById('sent').hidden=false;this.hidden=true">
+<form id="enq" action="#" method="post" class="fm" novalidate>
 <div class="f"><label for="name">Full name <span aria-hidden="true">*</span></label><input id="name" name="name" type="text" autocomplete="name" required></div>
 <div class="f"><label for="email">Email <span aria-hidden="true">*</span></label><input id="email" name="email" type="email" autocomplete="email" required></div>
 <div class="f"><label for="phone">WhatsApp number</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+91 …"></div>
+<div class="f"><label for="month">Preferred month</label><select id="month" name="month"><option>Flexible</option><option>October</option><option>November</option><option>December</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option></select></div>
+<div class="f"><label for="trip">Trip you are interested in</label><select id="trip" name="trip"><option value="">Not sure yet</option><option value="heritage">The Heritage Journey (3 nights)</option><option value="deep-dive">North Malabar Deep Dive (5 nights)</option><option value="craft">Craft &amp; Attire Journey (4 nights)</option><option value="custom">Private or custom trip</option></select></div>
+<div class="f"><label for="adults">Number of travellers</label><input id="adults" name="adults" type="number" min="1" value="2" inputmode="numeric"></div>
+<details class="full more" style="grid-column:1/-1;border:2px solid #1a0a08;border-radius:16px;padding:0 18px"><summary style="padding:16px 0;font-size:16px">Add more detail (optional)</summary>
+<div class="fm" style="padding-bottom:18px">
+<div class="f"><label for="style">How would you like to travel?</label><select id="style" name="style"><option>Not sure yet</option><option>Join a small group</option><option>Private group (friends or family)</option><option>Fully customised itinerary</option></select></div>
 <div class="f"><label for="country">Travelling from</label><input id="country" name="country" type="text" autocomplete="country-name"></div>
-<div class="f"><label for="style">How would you like to travel?</label><select id="style" name="style"><option>Join a small group</option><option>Private group (friends or family)</option><option>Fully customised itinerary</option><option>Not sure yet</option></select></div>
-<div class="f"><label for="trip">Trip you are interested in</label><select id="trip" name="trip"><option>Not sure yet</option><option>The Heritage Journey (3 nights)</option><option>North Malabar Deep Dive (5 nights)</option><option>Craft &amp; Attire Journey (4 nights)</option><option>Private or custom trip</option></select></div>
-<div class="f"><label for="month">Preferred month</label><select id="month" name="month"><option>October</option><option>November</option><option>December</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>Flexible</option></select></div>
-<div class="f"><label for="adults">Adults</label><input id="adults" name="adults" type="number" min="1" value="2"></div>
 <div class="f"><label for="kids">Children (with ages)</label><input id="kids" name="kids" type="text" placeholder="e.g. 1 child, 9"></div>
 <div class="f"><label for="src">How did you hear about us?</label><input id="src" name="src" type="text"></div>
 <div class="f full"><label for="notes">Anything we should know?</label><textarea id="notes" name="notes" placeholder="Interests, mobility needs, budget range"></textarea></div>
+</div></details>
+<div aria-hidden="true" style="position:absolute;left:-9999px"><label>Leave this empty <input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>
 <label class="full" style="grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;font-size:14px"><input type="checkbox" name="consent" required style="width:24px;height:24px;flex:none;margin-top:2px;accent-color:#D7261E"> I agree to LGFC contacting me about this enquiry. We never share your details. See [PRIVACY POLICY].</label>
-<div style="grid-column:1/-1"><button class="btn" type="submit" style="width:100%;max-width:320px">Send my enquiry</button></div>
+<p id="err" role="alert" hidden style="grid-column:1/-1;color:#b00020;font-weight:600"></p>
+<div style="grid-column:1/-1"><button id="go" class="btn" type="submit" style="width:100%;max-width:320px">Send my enquiry</button><p style="font-size:14px;margin-top:10px;opacity:.8">No payment now. We reply within two working days.</p></div>
 </form>
-<p id="sent" hidden style="padding:24px;border:2px solid #1a0a08;border-radius:20px;font-weight:600">Thank you. This is a review build, so nothing was sent. The live site will deliver your enquiry to our team.</p>
+<div id="sent" hidden tabindex="-1" style="padding:28px;border:2px solid #1a0a08;border-radius:20px"><h2 style="font-size:1.6rem">Thank you, we have your enquiry</h2><p style="margin-top:12px">A member of our North Malabar team will reply within two working days with a first suggestion. Nothing is charged and nothing is booked yet.</p><p id="review" hidden style="margin-top:12px;font-weight:600">Review build: nothing was sent. The live site will deliver your enquiry to our team.</p><p style="margin-top:16px"><a class="btn red" href="what-is-theyyam.html">While you wait: what is Theyyam?</a></p></div>
+<script>
+(function(){
+/* Set ENDPOINT to a form service URL (for example a Formspree or Basin form endpoint) before launch. Empty = review mode. */
+var ENDPOINT='';
+var f=document.getElementById('enq'),err=document.getElementById('err'),go=document.getElementById('go'),sent=document.getElementById('sent');
+window.dataLayer=window.dataLayer||[];function track(e){window.dataLayer.push({event:e});}
+var q=new URLSearchParams(location.search),t=q.get('trip');
+if(t){var o=f.querySelector('#trip option[value="'+t.replace(/[^a-z-]/g,'')+'"]');if(o)f.trip.value=o.value;}
+var started=false;f.addEventListener('input',function(){if(!started){started=true;track('enquiry_start');}});
+f.addEventListener('submit',function(ev){
+ ev.preventDefault();err.hidden=true;
+ if(f.company.value)return;
+ if(!f.name.value.trim()||!/^\S+@\S+\.\S+$/.test(f.email.value.trim())||!f.consent.checked){
+  err.textContent='Please add your name, a valid email and tick the consent box.';err.hidden=false;
+  (!f.name.value.trim()?f.name:!/^\S+@\S+\.\S+$/.test(f.email.value.trim())?f.email:f.consent).focus();return;}
+ go.disabled=true;go.textContent='Sending…';
+ function done(real){track('enquiry_submit');f.hidden=true;sent.hidden=false;if(!real)document.getElementById('review').hidden=false;sent.focus();}
+ if(!ENDPOINT){done(false);return;}
+ var d={};new FormData(f).forEach(function(v,k){if(k!=='company')d[k]=v;});
+ fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
+ .then(function(r){if(!r.ok)throw 0;done(true);})
+ .catch(function(){go.disabled=false;go.textContent='Send my enquiry';err.textContent='Sorry, that did not send. Please try again, or email us at [EMAIL].';err.hidden=false;});
+});
+})();
+</script>
 </div>
 <aside aria-label="What happens next">
 <img src="assets/p-face-paint.jpg" alt="Portrait of a Theyyam with orange face paint" width="500" height="420" style="width:100%;height:240px;object-fit:cover;border-radius:28px 28px 0 0">
