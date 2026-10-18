@@ -8,7 +8,7 @@ section=f'''<!--trust:start-->
 <div style="flex:1 1 340px"><p class="eyebrow" style="color:#D7261E;margin:0 0 12px">Rooted in North Malabar</p><h2 style="max-width:640px">Run by natives of North Malabar. Hosted like family.</h2><p style="font-size:18px;margin-top:16px;max-width:640px">We are a team of natives from Kannur and across North Malabar. After eight years of working with the families and villages of this region, we know who to ask, when to step back, and how to make a guest feel welcome.</p></div>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:32px">
-<div class="card" style="padding:22px"><h3>Local, not outsourced</h3><p style="margin-top:8px">Your guide and driver are natives of North Malabar. Nobody reads you a script.</p></div>
+<div class="card" style="padding:22px"><h3>Local, not outsourced</h3><p style="margin-top:8px">Our team, and any guide or driver we arrange, are natives of North Malabar. Nobody reads you a script.</p></div>
 <div class="card" style="padding:22px"><h3>Known to the families</h3><p style="margin-top:8px">Introductions come from people the families already trust, so you are welcomed, not merely allowed in.</p></div>
 <div class="card" style="padding:22px"><h3>A real person replies</h3><p style="margin-top:8px">No checkout and no call centre. Our North Malabar team answers within two working days, and is on call 24x7 once you are booked.</p></div>
 <div class="card" style="padding:22px"><h3>We protect the ritual</h3><p style="margin-top:8px">We never publish ritual dates or places, we brief every guest on etiquette, and we follow each shrine’s rules on photography.</p></div>
