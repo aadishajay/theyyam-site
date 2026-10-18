@@ -81,8 +81,11 @@ Landing page copy for every language is in `src/i18n/landing.ts` (same keys per 
 translated; the other pages are English with a note pointing to browser translation.
 
 ## Deploy
-`.github/workflows/deploy.yml` builds and publishes on push to `main`. One-time setup: repo Settings > Pages >
-Source = GitHub Actions.
+Build locally and push only the static output to the `gh-pages` branch (GitHub Pages serves that branch; source stays on `main`):
+```bash
+npm run deploy
+```
+For launch: `SITE=https://your-domain.com BASE=/ INDEXABLE=1 npm run deploy`.
 
 ## Before launch
 Fill the placeholders (`[PHONE]`, `[EMAIL]`, `[INSTAGRAM]`, `[ADDRESS]`, registration no., rating, association,
