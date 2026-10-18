@@ -32,8 +32,8 @@ def switcher(cur, prefix):
 
 T = {}
 T['de'] = {
- 'lang': 'de', 'title': 'LGFC Theyyam | Geführte Theyyam-Reisen in Nord-Kerala',
- 'desc': 'Erleben Sie Keralas ältestes lebendiges Ritual auf Kleingruppen- oder Individualreisen in Kannur und Kasaragod. Unterkunft und Transfers, auf Wunsch mit lokalem Guide. Jetzt anfragen.',
+ 'lang': 'de', 'title': 'Geführte Theyyam-Reisen in Nord-Kerala | LGFC Theyyam',
+ 'desc': 'Geführte Theyyam-Reisen in Kannur und Kasaragod: Kleingruppe oder individuell, mit Unterkunft und Transfers, auf Wunsch mit Guide. Jetzt anfragen.',
  'switchnote': 'Weitere Seiten sind derzeit auf Englisch. Nutzen Sie die Übersetzungsfunktion Ihres Browsers.',
  'pairs': [
  ('Skip to content','Zum Inhalt springen'),
@@ -138,8 +138,8 @@ T['de'] = {
  ('A Theyyam in a red headdress among coconut palms','Ein Theyyam mit rotem Kopfschmuck zwischen Kokospalmen'),
  ]}
 T['fr'] = {
- 'lang': 'fr', 'title': 'LGFC Theyyam | Voyages accompagnés autour du Theyyam, Kerala du Nord',
- 'desc': 'Découvrez le plus ancien rituel vivant du Kerala lors de voyages en petit groupe ou sur mesure à Kannur et Kasaragod. Hébergement et transferts, avec un guide local si vous le souhaitez. Contactez-nous.',
+ 'lang': 'fr', 'title': 'Voyages Theyyam accompagnés au Kerala | LGFC Theyyam',
+ 'desc': 'Voyages Theyyam en petit groupe ou sur mesure à Kannur et Kasaragod. Hébergement, transferts et guide local en option. Demandez un devis.',
  'switchnote': 'Les autres pages sont pour l’instant en anglais. Utilisez la fonction de traduction de votre navigateur.',
  'pairs': [
  ('Skip to content','Aller au contenu'),
@@ -243,8 +243,8 @@ T['fr'] = {
  ('A Theyyam in a red headdress among coconut palms','Un Theyyam coiffé de rouge parmi les cocotiers'),
  ]}
 T['es'] = {
- 'lang': 'es', 'title': 'LGFC Theyyam | Viajes guiados al Theyyam en el norte de Kerala',
- 'desc': 'Conozca el ritual vivo más antiguo de Kerala en viajes en grupo reducido o a medida por Kannur y Kasaragod. Alojamiento y traslados, con guía local si lo desea. Consúltenos.',
+ 'lang': 'es', 'title': 'Viajes guiados al Theyyam en Kerala | LGFC Theyyam',
+ 'desc': 'Viajes al Theyyam en grupo reducido o a medida en Kannur y Kasaragod. Alojamiento, traslados y guía local opcional. Pida presupuesto.',
  'switchnote': 'Las demás páginas están por ahora en inglés. Use la función de traducción de su navegador.',
  'pairs': [
  ('Skip to content','Saltar al contenido'),
