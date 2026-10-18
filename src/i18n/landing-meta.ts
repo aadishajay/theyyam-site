@@ -3,7 +3,7 @@ import type { Lang } from '../lib/site';
 // <head> copy and structured-data strings for the landing page of each language.
 export const landingMeta: Record<Lang, { title: string; description: string; ogAlt: string; orgDescription: string; crumb: string; credit: string }> = {
   en: {
-    title: 'Guided Theyyam Tours in North Kerala | LGFC Theyyam',
+    title: 'Guided Theyyam Tours in North Malabar, Kerala | LGFC Theyyam',
     description: 'Small-group and custom Theyyam tours in Kannur and Kasaragod. Stays and transfers, with a local guide if you want one. Enquire for a quote.',
     ogAlt: 'A Theyyam in a large red and silver headdress at a shrine in Kannur, Kerala',
     orgDescription: 'Guided Theyyam tours and cultural journeys in North Malabar, Kerala: small-group and private trips in Kannur, Kasaragod, Thalassery, Payyannur, Thaliparamba and Kanhangad.',

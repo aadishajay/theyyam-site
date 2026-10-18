@@ -7,6 +7,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 remote=$(git remote get-url origin)
 npm run build
+node scripts/check-placeholders.mjs   # fails a launch build (INDEXABLE=1) while placeholders remain
 tmp=$(mktemp -d)
 cp -R dist/. "$tmp"/
 touch "$tmp/.nojekyll"

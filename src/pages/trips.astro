@@ -57,7 +57,7 @@ const includes = [
           <h2 style="font-size:clamp(1.8rem,6vw,2.6rem)">{t.name}</h2>
           <p style="margin-top:12px">{t.blurb}</p>
           <ul>{t.bullets.map((b) => <li>{b}</li>)}</ul>
-          <div class="pr"><div><small>Price</small><div style="font-weight:800;font-size:22px">On request</div></div><a class="btn red" href={u(`enquire.html?trip=${t.id}`)}>Enquire about this trip</a></div>
+          <div class="pr"><div><small>Price</small><div style="font-weight:800;font-size:22px">On request</div></div><a class="btn red" href={u(`enquire.html?trip=${t.id}`)}>Enquire about {t.name}</a></div>
         </div></article>
       ))}
     </div></section>

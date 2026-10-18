@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "deploy": "bash scripts/deploy.sh"
+    "deploy": "bash scripts/deploy.sh",
+    "check:placeholders": "node scripts/check-placeholders.mjs"
   },
   "dependencies": {
     "astro": "^5.18.2",
