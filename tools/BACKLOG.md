@@ -17,3 +17,8 @@ K.K.N. Kurup, The Cult of Teyyam and Hero Worship in Kerala (1973); Kurup, Teyya
 - "Kudidaivam": no source found. Closest is Kudiveeran (listed by Kerala Tourism; only an NFT listing describes it). Need the user's source or spelling.
 - Kallurti (Bhuta Kola, Tulu Nadu) deliberately left out for now.
 - Pages with no photo yet: Angakkaran, Bappuran, Police Theyyam, Rakta Chamundi, Veerakali, Cheerumba Bhagavathi, Aali Theyyam, Kalanthan Mukri, Yogyar Akampadi, Pulimaruthan, Marapuli.
+
+## Languages
+- de/, fr/, es/ landing pages are built by tools/build_langs.py (re-run after any change to index.html). Other pages stay English; footer note points to browser translate.
+- Needs native-speaker review before launch (ritual wording: no dance/show/performance).
+- Add the three pages to sitemap.xml and drop noindex at launch.
