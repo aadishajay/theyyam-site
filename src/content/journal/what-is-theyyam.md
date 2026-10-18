@@ -6,6 +6,7 @@ description: "What Theyyam is, who keeps it, what you will see and how to be a g
 category: "Culture"
 readTime: "9 min read"
 author: "Sankeerth"
+date: "2024-12-12"
 toc: true
 hero:
   src: "blog/what-is-theyyam.jpg"

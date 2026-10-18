@@ -43,7 +43,7 @@ docs/BACKLOG.md             content still to add, review notes
 
 ## Write a blog post
 Add `src/content/journal/<slug>.md` (the slug becomes `/<slug>.html`). Front matter: `title`, `h1`, `crumb`,
-`description`, `category`, `readTime`, `author` (rotate between Sankeerth, Geethu, Abhina and Aadi), `hero` (image under `public/assets/`), `lead`, `ld` (structured-data
+`description`, `category`, `readTime`, `author` (rotate between Sankeerth, Geethu, Abhina and Aadi), `date` (YYYY-MM-DD, shown as "Updated" and used in the structured data), `hero` (image under `public/assets/`), `lead`, `ld` (structured-data
 headline/description/about/image), `related` (3 cards), `faq` (question/answer list), and `toc: true` for an
 "In this guide" list. Then add a card in `src/data/journal.ts`. Body is Markdown with these blocks:
 

@@ -10,6 +10,7 @@ const journal = defineCollection({
     description: z.string(),
     category: z.string(),
     readTime: z.string(),
+    date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/), // publication / last update, YYYY-MM-DD
     author: z.string(), // byline; rotate between Sankeerth, Geethu, Abhina and Aadi
     toc: z.boolean().default(false), // show the "In this guide" list
     hero: z.object({ src: z.string(), alt: z.string(), width: z.number(), height: z.number() }),

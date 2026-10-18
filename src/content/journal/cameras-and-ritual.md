@@ -6,6 +6,7 @@ description: "Why photography and video are not allowed at some Theyyam rituals 
 category: "Etiquette"
 readTime: "6 min read"
 author: "Abhina"
+date: "2025-11-13"
 hero:
   src: "blog/cameras-and-ritual.jpg"
   alt: "Close view of a Theyyam with a green palm-frond headdress"

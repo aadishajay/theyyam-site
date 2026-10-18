@@ -6,6 +6,7 @@ description: "Kantara shows Bhoota Kola, a ritual closely related to Theyyam. Wh
 category: "Culture"
 readTime: "7 min read"
 author: "Geethu"
+date: "2026-05-08"
 hero:
   src: "blog/kantara-and-theyyam.jpg"
   alt: "A Theyyam with a red and white painted face holding a sword"

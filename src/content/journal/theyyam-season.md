@@ -6,6 +6,7 @@ description: "When is the Theyyam season in Kerala? The season runs from late Oc
 category: "Planning"
 readTime: "7 min read"
 author: "Abhina"
+date: "2025-03-05"
 hero:
   src: "blog/theyyam-season.jpg"
   alt: "Profile of a Theyyam in a silver crown and red and green attire against a green background"

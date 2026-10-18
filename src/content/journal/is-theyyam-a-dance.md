@@ -6,6 +6,7 @@ description: "Many sites call Theyyam a dance or a show. For the families who ke
 category: "Culture"
 readTime: "6 min read"
 author: "Sankeerth"
+date: "2026-03-17"
 toc: true
 hero:
   src: "blog/is-theyyam-a-dance.jpg"

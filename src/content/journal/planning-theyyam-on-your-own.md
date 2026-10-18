@@ -6,6 +6,7 @@ description: "Why seeing a Theyyam ritual in North Kerala is hard to plan alone:
 category: "Planning"
 readTime: "6 min read"
 author: "Aadi"
+date: "2025-05-14"
 hero:
   src: "blog/planning-theyyam-on-your-own.jpg"
   alt: "A shrine ground at night with a palm-leaf flagstaff, lights and devotees at the edge"

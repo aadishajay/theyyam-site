@@ -6,6 +6,7 @@ description: "How Theyyam attire and the face are made in North Kerala: face pai
 category: "Culture"
 readTime: "5 min read"
 author: "Geethu"
+date: "2025-09-22"
 hero:
   src: "blog/attire-and-craft.jpg"
   alt: "A craftsman weaving yellow palm fibre for Theyyam attire"

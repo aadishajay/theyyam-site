@@ -17,6 +17,7 @@ const { entry } = Astro.props;
 const d = entry.data;
 const { Content, headings } = await render(entry);
 const path = `${entry.id}.html`;
+const shown = new Date(d.date + 'T00:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
 // table of contents from the h2 headings in the source
 const toc = headings.filter((h) => h.depth === 2).map((h) => ({ id: h.slug, text: h.text }));
 const ld = [
@@ -24,7 +25,7 @@ const ld = [
   {
     '@type': 'Article', headline: d.ld.headline, description: d.ld.description,
     author: { '@type': 'Person', name: d.author, worksFor: { '@id': abs('') + '#org' } }, publisher: { '@id': abs('') + '#org' },
-    mainEntityOfPage: abs(path), image: abs('assets/' + d.ld.image), about: { '@type': 'Thing', name: d.ld.about },
+    datePublished: d.date, dateModified: d.date, mainEntityOfPage: abs(path), image: abs('assets/' + d.ld.image), about: { '@type': 'Thing', name: d.ld.about },
   },
   faqNode(d.faq.map((f) => ({ q: f.q, a: plain(f.a) }))),
 ];
@@ -38,7 +39,7 @@ const ld = [
           <Breadcrumb items={[['Home', 'index.html'], ['Journal', 'journal.html'], [d.category]]} />
           <p class="k" style="margin-bottom:10px">{d.category} · {d.readTime}</p>
           <h1>{d.h1}</h1>
-          <p style="margin:20px 0 0;font-size:15px;opacity:.75">By {d.author} · Updated [DATE] · LGFC local guides</p>
+          <p style="margin:20px 0 0;font-size:15px;opacity:.75">By {d.author} · Updated {shown} · LGFC local guides</p>
         </div>
         <img src={u('assets/' + d.hero.src)} alt={d.hero.alt} width={d.hero.width} height={d.hero.height} style="width:100%;max-width:1100px;margin:28px auto 0;border-radius:28px;aspect-ratio:16/9;object-fit:cover" />
       </div>

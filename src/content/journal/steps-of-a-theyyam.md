@@ -6,6 +6,7 @@ description: "The stages of a Theyyam ritual in order, with meanings: aniyara, t
 category: "Culture"
 readTime: "8 min read"
 author: "Aadi"
+date: "2026-01-20"
 toc: true
 hero:
   src: "blog/steps-of-a-theyyam.jpg"
