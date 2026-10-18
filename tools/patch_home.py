@@ -15,7 +15,8 @@ for i,s in enumerate(order):
 block=f'''<!--faces:start-->
 <div class="faces" role="group" aria-label="Faces of the Theyyams in our guide"><div class="fstack">{slides}</div><p class="fcap"><a href="theyyams/{order[0]}.html">{E(names[order[0]])}</a></p></div>
 <!--faces:end-->'''
-css='''.fstack{position:relative;width:100%;max-width:460px;aspect-ratio:4/5;border-radius:999px 999px 24px 24px;border:6px solid #FFB400;margin:0 auto;overflow:hidden;background:#4A0E12}
+css='''.strip span{display:inline-block;padding-left:100%;animation:strip-run 20s linear infinite}.strip:hover span{animation-play-state:paused}@keyframes strip-run{to{transform:translateX(-100%)}}@media(prefers-reduced-motion:reduce){.strip{text-align:center;white-space:normal}.strip span{padding-left:0;animation:none}}
+.fstack{position:relative;width:100%;max-width:460px;aspect-ratio:4/5;border-radius:999px 999px 24px 24px;border:6px solid #FFB400;margin:0 auto;overflow:hidden;background:#4A0E12}
 .fslide{position:absolute;inset:0;display:block;opacity:0;transition:opacity 1.6s ease-in-out}
 .fslide.on{opacity:1;z-index:1}
 .fslide img{width:100%;height:100%;object-fit:cover;transform:scale(1.07);transition:transform 7s ease-out}
