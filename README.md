@@ -77,8 +77,10 @@ Body sections, in order: `## Who is <name>?`, `## The story`, `::gallery`, `## W
 pages link to it automatically (the first mention of each other Theyyam is linked).
 
 ## Testimonials
-`src/content/testimonials.md` is the single source. The first item with `published: true` and `theyyam: true` appears on
-every landing page (quote kept in its original wording). While none is published, the translated placeholder shows.
+`src/content/testimonials.md` is the single source. Published items (`published: true`, `theyyam: true`) rotate in a carousel
+on every landing page, each with the cover photo of its trip (`trips:` map; images in `public/assets/testimonials/`).
+The same items, after the first, appear in "What guests say" on the trips page. While none is published, the translated
+placeholder shows. Quotes are anonymised: label them "Theyyam Trip <place>" and refer to staff as "the guide".
 
 ## Translations
 Landing page copy for every language is in `src/i18n/landing.ts` (same keys per language). Only the landing page is

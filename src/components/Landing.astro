@@ -6,8 +6,8 @@ import HeroCarousel from '../components/HeroCarousel.astro';
 import TrustStrip from '../components/TrustStrip.astro';
 import TwoWays from '../components/TwoWays.astro';
 import CtaBand from '../components/CtaBand.astro';
+import TestimonialCarousel from '../components/TestimonialCarousel.astro';
 import { whyIcons } from './icons';
-import { getEntry } from 'astro:content';
 import { landing } from '../i18n/landing';
 import { landingMeta } from '../i18n/landing-meta';
 import { ui } from '../i18n/ui';
@@ -21,11 +21,6 @@ const t = landing[lang];
 const m = landingMeta[lang];
 const n = ui[lang];
 const blocks = landingLd(lang);
-// the first published Theyyam testimonial from src/content/testimonials.md, else the translated placeholder
-const items = (await getEntry('testimonials', 'testimonials'))?.data.items ?? [];
-const real = items.find((i) => i.published && i.theyyam);
-const quote = real ? `“${real.quote}”` : t.testimonial;
-const quoteBy = real ? `${real.label}, ${real.date}` : t.testimonialBy;
 const regChips = ['LetsGoForACamp Travel and Innovation LLP', '[TOURISM REGISTRATION NO.]', '[GOOGLE RATING · REVIEW COUNT]', '[MEMBER OF TOURISM ASSOCIATION]'];
 type K = keyof typeof t;
 const snap: { img: string; alt: K; tag: K; h: K; p: K }[] = [
@@ -110,9 +105,7 @@ const mosaic: { img: string; alt: K; w: number; h: number; span?: boolean }[] = 
 
 <section class="sec" style="padding-top:0"><div class="w"><div class="mos">{mosaic.map((m) => <img src={u(`assets/${m.img}`)} alt={t[m.alt]} width={m.w} height={m.h} style={m.span ? 'grid-column:span 2' : undefined} />)}</div></div></section>
 
-<section class="sec" style="background:#FFB400"><div class="w" style="max-width:860px;text-align:center">
-<p style="font-size:clamp(1.3rem,5vw,2rem);font-weight:700;line-height:1.35">{quote}</p>
-<p style="margin-top:16px;font-weight:500">{quoteBy}</p></div></section>
+<TestimonialCarousel lang={lang} placeholder={{ quote: t.testimonial, by: t.testimonialBy }} />
 
 <section class="sec" id="faq"><div class="w" style="max-width:860px">
 <h2 style="margin-bottom:24px">{t.faqH2}</h2>

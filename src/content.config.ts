@@ -49,8 +49,10 @@ const theyyams = defineCollection({
 const testimonials = defineCollection({
   loader: glob({ pattern: 'testimonials.md', base: './src/content' }),
   schema: z.object({
+    trips: z.record(z.object({ image: z.string(), alt: z.string() })),
     items: z.array(z.object({
       id: z.string(),
+      trip: z.string(), // key in `trips` (supplies the cover photo)
       quote: z.string(),
       label: z.string(), // anonymised attribution, e.g. "Theyyam Trip Payyanur, Kannur"
       date: z.string(), // month and year
