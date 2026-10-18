@@ -1,0 +1,81 @@
+---
+import '../styles/base.css';
+import { abs, u, INDEXABLE, LANGS, LOCALE, HOME_PATH, type Lang } from '../lib/site';
+import { ui } from '../i18n/ui';
+import { orgNode, websiteNode } from '../lib/schema';
+
+interface Props {
+  title: string;
+  description: string;
+  /** site path of this page, e.g. 'trips.html', 'theyyams/', '' (home) */
+  path: string;
+  lang?: Lang;
+  ogType?: 'website' | 'article';
+  /** site path of the share image */
+  ogImage?: string;
+  ogImageMeta?: { width: number; height: number; alt: string };
+  /** add Twitter card tags */
+  twitter?: boolean;
+  /** extra JSON-LD nodes added after Organization + WebSite */
+  ld?: Record<string, unknown>[];
+  /** replaces the default [Organization, WebSite, ...ld] graph */
+  graph?: Record<string, unknown>[];
+  /** further separate JSON-LD blocks */
+  ldExtra?: Record<string, unknown>[][];
+  /** emit hreflang alternates (landing pages) */
+  hreflang?: boolean;
+  /** wrap the page in an extra <div> (matches the original markup of most pages) */
+  wrap?: boolean;
+  /** load the Theyyam search (English UI) */
+  search?: boolean;
+}
+const {
+  title, description, path, lang = 'en', ogType = 'website', ogImage = 'assets/lgfc-og.jpg',
+  ogImageMeta, twitter = false, ld = [], graph, ldExtra = [], hreflang = false, wrap = true, search = true,
+} = Astro.props;
+const t = ui[lang];
+const url = abs(path);
+const image = abs(ogImage);
+const jsonld = [graph ?? [orgNode(), websiteNode(), ...ld], ...ldExtra];
+---
+<!doctype html>
+<html lang={lang}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="robots" content={INDEXABLE ? 'index,follow' : 'noindex,nofollow'} />
+  <link rel="canonical" href={url} />
+  {hreflang && LANGS.map((l) => <link rel="alternate" hreflang={l} href={abs(HOME_PATH[l])} />)}
+  {hreflang && <link rel="alternate" hreflang="x-default" href={abs('')} />}
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:url" content={url} />
+  <meta property="og:site_name" content="LGFC Theyyam" />
+  {hreflang && <meta property="og:locale" content={LOCALE[lang]} />}
+  {hreflang && LANGS.filter((l) => l !== lang).map((l) => <meta property="og:locale:alternate" content={LOCALE[l]} />)}
+  <meta property="og:image" content={image} />
+  {ogImageMeta && <meta property="og:image:width" content={String(ogImageMeta.width)} />}
+  {ogImageMeta && <meta property="og:image:height" content={String(ogImageMeta.height)} />}
+  {ogImageMeta && <meta property="og:image:alt" content={ogImageMeta.alt} />}
+  {twitter && <meta name="twitter:card" content="summary_large_image" />}
+  {twitter && <meta name="twitter:title" content={title} />}
+  {twitter && <meta name="twitter:description" content={description} />}
+  {twitter && <meta name="twitter:image" content={image} />}
+  {twitter && ogImageMeta && <meta name="twitter:image:alt" content={ogImageMeta.alt} />}
+  <meta name="geo.region" content="IN-KL" />
+  <meta name="theme-color" content="#4A0E12" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  {jsonld.map((g) => <script type="application/ld+json" is:inline set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': g })} />)}
+  <slot name="head" />
+</head>
+<body>
+  <a class="skip" href="#main">{t.skip}</a>
+  {wrap ? <div><slot /></div> : <slot />}
+  {search && <script is:inline src={u('assets/search.js')} defer></script>}
+  <slot name="foot" />
+</body>
+</html>

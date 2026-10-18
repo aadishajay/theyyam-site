@@ -1,0 +1,57 @@
+/* home template rules */
+body{margin:0;font-family:'Poppins',system-ui,sans-serif;color:#1a0a08;background:#fff;line-height:1.65;font-size:16px}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:800;line-height:1.08;letter-spacing:-.02em}
+h1{font-size:clamp(2.4rem,10.5vw,5rem)}
+h2{font-size:clamp(1.9rem,7.5vw,3.2rem)}
+h3{font-size:1.25rem;font-weight:700;letter-spacing:-.01em}
+.sec{padding:56px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:999px;background:#FFB400;color:#1a0a08;font-weight:700;text-decoration:none;border:2px solid #FFB400}
+.btn:hover{background:#fff;border-color:#fff}
+.btn.red{background:#D7261E;color:#fff;border-color:#D7261E}
+.btn.red:hover{background:#4A0E12;border-color:#4A0E12}
+.btn.line{background:transparent;color:#fff;border-color:#fff}
+.btn.line:hover{background:#fff;color:#4A0E12}
+.kal{height:24px;background:url(/assets/kalam-border.svg) repeat-x;background-size:auto 24px}
+.hero{display:flex;flex-direction:column;gap:36px;padding-top:40px;padding-bottom:56px}
+.eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#FFB400}
+.arch{width:100%;max-width:460px;aspect-ratio:4/5;object-fit:cover;border-radius:999px 999px 24px 24px;border:6px solid #FFB400;margin:0 auto}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.chips span{border:1.5px solid rgba(255,255,255,.5);border-radius:999px;padding:6px 14px;font-size:14px}
+.strip{background:#D7261E;color:#fff;overflow:hidden;white-space:nowrap;font-weight:800;font-size:20px;padding:14px 0;letter-spacing:.04em;text-transform:uppercase}
+.cards{display:flex;flex-direction:column;gap:20px}
+.card{border:2px solid #1a0a08;border-radius:24px;padding:28px;background:#fff}
+.card .ic{width:56px;height:56px;border-radius:50%;background:#FFB400;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.snap{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 20px 20px;margin:0 -20px}
+.trip{flex:0 0 84%;scroll-snap-align:center;border-radius:24px;overflow:hidden;background:#4A0E12;color:#fff;text-decoration:none;display:block}
+.trip img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.trip div{padding:22px}
+.tag{display:inline-block;background:#FFB400;color:#1a0a08;border-radius:999px;padding:2px 12px;font-size:13px;font-weight:700}
+.steps{display:grid;grid-template-columns:1fr;gap:28px;list-style:none;padding:0;margin:0}
+.steps b{font-size:56px;font-weight:800;color:#FFB400;line-height:1}
+.mos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mos img{width:100%;height:100%;object-fit:cover;border-radius:18px;min-height:160px}
+details{border-bottom:2px solid #1a0a08}
+summary{cursor:pointer;font-weight:700;font-size:18px;padding:20px 0;min-height:44px}
+.bar{position:sticky;bottom:0;z-index:20;display:flex;gap:8px;padding:10px 16px;background:#fff;border-top:2px solid #1a0a08}
+.bar .btn{flex:1;min-height:48px}
+@media(min-width:768px){
+.w{padding:0 40px}.sec{padding:96px 0}
+.hero{flex-direction:row;align-items:center;gap:64px;padding-top:72px;padding-bottom:96px}.hero>*{flex:1}
+.cards{flex-direction:row}.cards>*{flex:1}
+.snap{display:grid;grid-template-columns:repeat(3,1fr);overflow:visible;padding:0;margin:0}.trip{flex:none}
+.steps{grid-template-columns:repeat(4,1fr)}
+.mos{grid-template-columns:repeat(4,1fr)}
+.nv{display:flex}.mm{display:none}.bar{display:none}
+}
+summary h3{font:inherit;margin:0;letter-spacing:0;display:inline}
+.strip span{display:inline-block;padding-left:100%;animation:strip-run 20s linear infinite}
+.strip:hover span{animation-play-state:paused}
+@keyframes strip-run{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.strip{text-align:center;white-space:normal}.strip span{padding-left:0;animation:none}}
+.fstack{position:relative;width:100%;max-width:460px;aspect-ratio:4/5;border-radius:999px 999px 24px 24px;border:6px solid #FFB400;margin:0 auto;overflow:hidden;background:#4A0E12}
+.fslide{position:absolute;inset:0;display:block;opacity:0;transition:opacity 1.6s ease-in-out}
+.fslide.on{opacity:1;z-index:1}
+.fslide img{width:100%;height:100%;object-fit:cover;transform:scale(1.07);transition:transform 7s ease-out}
+.fslide.on img{transform:scale(1)}
+@media(prefers-reduced-motion:reduce){.fslide,.fslide img{transition:none}.fslide img{transform:none}}

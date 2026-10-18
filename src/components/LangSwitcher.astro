@@ -1,0 +1,21 @@
+---
+import { LANGS, HOME_PATH, u, type Lang } from '../lib/site';
+interface Props { current: Lang }
+const { current } = Astro.props;
+const short: Record<Lang, string> = { en: 'EN', de: 'DE', fr: 'FR', es: 'ES' };
+const full: Record<Lang, string> = { en: 'English', de: 'Deutsch', fr: 'Français', es: 'Español' };
+---
+<div class="lang" role="navigation" aria-label="Language">
+  {LANGS.map((l) =>
+    l === current ? (
+      <span aria-current="true">{short[l]}</span>
+    ) : (
+      <a href={u(HOME_PATH[l] || 'index.html')} hreflang={l} lang={l} title={full[l]}>{short[l]}</a>
+    )
+  )}
+</div>
+<style>
+  .lang { display: flex; gap: 10px; font-size: 13px; font-weight: 600; margin: 0 24px 0 auto; }
+  .lang a { color: #1a0a08; text-decoration: none; }
+  .lang span { font-weight: 800; }
+</style>

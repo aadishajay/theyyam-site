@@ -1,0 +1,30 @@
+/* journal template rules */
+body{margin:0;font-family:'Poppins',system-ui,sans-serif;color:#1a0a08;background:#fff;line-height:1.65;font-size:16px}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:800;line-height:1.1;letter-spacing:-.02em}
+h1{font-size:clamp(2.2rem,9.5vw,4.4rem)}
+h2{font-size:clamp(1.6rem,6vw,2.4rem)}
+h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:999px;background:#FFB400;color:#1a0a08;font-weight:700;text-decoration:none;border:2px solid #FFB400}
+.btn:hover{background:#fff;border-color:#fff}
+.btn.red{background:#D7261E;color:#fff;border-color:#D7261E}
+.btn.red:hover{background:#4A0E12;border-color:#4A0E12}
+.kal{height:24px;background:url(/assets/kalam-border.svg) repeat-x;background-size:auto 24px}
+.nv a.btn{color:#fff}
+.cats{display:flex;gap:10px;overflow-x:auto;padding:2px 20px 12px;margin:24px -20px 0}
+.cat{flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border:2px solid #fff;border-radius:999px;color:#fff;text-decoration:none;font-weight:600;white-space:nowrap}
+.cat.on{background:#FFB400;border-color:#FFB400;color:#1a0a08}
+.feat{display:block;text-decoration:none;color:#1a0a08;border:2px solid #1a0a08;border-radius:28px;overflow:hidden}
+.feat img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.feat .b{padding:24px}
+.grid{display:grid;grid-template-columns:1fr;gap:24px}
+.pc{display:block;text-decoration:none;color:#1a0a08}
+.pc img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:24px}
+.pc:hover h3{color:#D7261E}
+.k{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#D7261E}
+@media(min-width:768px){
+.w{padding:0 40px}.cats{margin:24px 0 0;padding:2px 0 12px}
+.feat{display:flex}.feat>*{flex:1}.feat img{aspect-ratio:auto;height:100%;min-height:380px}.feat .b{padding:48px;display:flex;flex-direction:column;justify-content:center}
+.grid{grid-template-columns:repeat(3,1fr);gap:40px 28px}
+.nv{display:flex}.mm{display:none}
+}

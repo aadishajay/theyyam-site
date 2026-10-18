@@ -1,0 +1,76 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import TrustStrip from '../components/TrustStrip.astro';
+import TwoWays from '../components/TwoWays.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { trips } from '../data/trips';
+import { u, abs } from '../lib/site';
+import { breadcrumb } from '../lib/schema';
+import '../styles/trips.css';
+
+const ld = [
+  breadcrumb([['Home', ''], ['Guided trips', 'trips.html']]),
+  {
+    '@type': 'ItemList', name: 'Guided Theyyam trips',
+    itemListElement: trips.map((t, i) => ({
+      '@type': 'ListItem', position: i + 1,
+      item: {
+        '@type': 'TouristTrip', name: t.name, description: t.blurb, touristType: ['Culture', 'Heritage'],
+        duration: `P${t.nights}D`, provider: { '@id': abs('') + '#org' },
+        itinerary: { '@type': 'Place', name: t.itinerary }, url: abs('enquire.html'),
+      },
+    })),
+  },
+];
+const includes = [
+  { h: 'Included', items: ['Stays and breakfast', 'Private road transfers', 'Ritual access, arranged by us', 'Local Theyyam guide: optional, on request'] },
+  { h: 'Not included', items: ['Flights to Kannur or Mangaluru', 'Travel insurance', 'Personal spending'] },
+  { h: 'Good to know', items: ['Rituals run late into the night', 'Modest dress is expected', 'Rituals confirmed before you pay in full'] },
+];
+---
+<Base
+  title="Theyyam Tour Packages in North Kerala | LGFC Theyyam"
+  description="Guided Theyyam tour packages in North Malabar: 3, 4 and 5 night journeys with stay and transfers, and a local guide if you want one. Group or private. Enquire for a quote."
+  path="trips.html"
+  ld={ld}
+>
+  <Header current="trips" />
+  <main id="main">
+    <section style="background:#4A0E12;color:#fff"><div class="w" style="padding-top:36px;padding-bottom:48px">
+      <Breadcrumb items={[['Home', 'index.html'], ['Guided trips']]} light />
+      <h1>Guided Theyyam trips in Kerala</h1>
+      <p style="font-size:18px;margin-top:20px;max-width:640px;opacity:.92">Three ways to experience Theyyam in North Malabar, each with an optional local guide. Season runs late October to May. Rituals are confirmed with you closer to travel.</p>
+      <div class="chips"><span>Group or private</span><span>Guide optional</span><span>Stay + transfers</span><span>Custom itineraries</span></div>
+    </div><div class="kal"></div></section>
+
+    <section class="sec"><div class="w" style="display:flex;flex-direction:column;gap:32px">
+      {trips.map((t) => (
+        <article class="tr"><img src={u('assets/' + t.img)} alt={t.alt} width={t.width} height={t.height} /><div class="b">
+          <div><span class="tag">{t.nights} nights</span><span class="tag">{t.base}</span><span class="tag">{t.level}</span></div>
+          <h2 style="font-size:clamp(1.8rem,6vw,2.6rem)">{t.name}</h2>
+          <p style="margin-top:12px">{t.blurb}</p>
+          <ul>{t.bullets.map((b) => <li>{b}</li>)}</ul>
+          <div class="pr"><div><small>Price</small><div style="font-weight:800;font-size:22px">On request</div></div><a class="btn red" href={u(`enquire.html?trip=${t.id}`)}>Enquire about this trip</a></div>
+        </div></article>
+      ))}
+    </div></section>
+
+    <TrustStrip line="Run by natives of North Malabar · Hosted like family" />
+    <TwoWays />
+
+    <section class="sec" style="background:#FFB400"><div class="w">
+      <h2 style="margin-bottom:28px">What every trip includes</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:20px">
+        {includes.map((c) => (
+          <div style="flex:1 1 240px;background:#fff;border:2px solid #1a0a08;border-radius:24px;padding:26px"><h3>{c.h}</h3><ul style="margin:10px 0 0;padding-left:20px">{c.items.map((i) => <li>{i}</li>)}</ul></div>
+        ))}
+      </div>
+    </div></section>
+
+    <CtaBand title="Not sure which trip fits?" text="Tell us your month and group. We will suggest the right one." label="Enquire about a trip" />
+  </main>
+  <Footer />
+</Base>

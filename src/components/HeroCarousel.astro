@@ -1,0 +1,31 @@
+---
+import { u } from '../lib/site';
+import { heroSlides } from '../data/hero';
+import { landing } from '../i18n/landing';
+import type { Lang } from '../lib/site';
+interface Props { lang: Lang }
+const t = landing[Astro.props.lang];
+---
+<div class="faces" role="group" aria-label={t.carouselLabel}>
+  <div class="fstack">
+    {heroSlides.map((s, i) => (
+      <div class={i === 0 ? 'fslide on' : 'fslide'} aria-hidden={i === 0 ? undefined : 'true'}>
+        <img src={u(`assets/hero/${s.file}.jpg`)} alt={t[s.alt]} width="800" height="1000" loading={i === 0 ? undefined : 'lazy'} />
+      </div>
+    ))}
+  </div>
+</div>
+<script is:inline>
+(function(){var st=document.querySelector('.fstack');if(!st)return;var s=[].slice.call(st.querySelectorAll('.fslide')),n=s.length,i=0,timer=null;
+if(n<2||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+function load(k){var im=s[k%n].querySelector('img');if(im&&im.loading==='lazy'){im.loading='eager';}}
+function show(k){var o=s[i],c=s[k];o.classList.remove('on');o.setAttribute('aria-hidden','true');c.classList.add('on');c.removeAttribute('aria-hidden');i=k;load(k+1);}
+function next(){show((i+1)%n);}
+function start(){if(!timer&&!document.hidden)timer=setInterval(next,3800);}
+function stop(){clearInterval(timer);timer=null;}
+load(1);load(2);
+st.parentNode.addEventListener('mouseenter',stop);st.parentNode.addEventListener('mouseleave',start);st.parentNode.addEventListener('focusin',stop);st.parentNode.addEventListener('focusout',start);
+document.addEventListener('visibilitychange',function(){document.hidden?stop():start();});
+if('IntersectionObserver' in window){new IntersectionObserver(function(e){e[0].isIntersecting?start():stop();},{threshold:.2}).observe(st);}else{start();}
+})();
+</script>

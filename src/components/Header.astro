@@ -1,0 +1,37 @@
+---
+import { u, HOME_PATH, type Lang } from '../lib/site';
+import { ui } from '../i18n/ui';
+import LangSwitcher from './LangSwitcher.astro';
+interface Props {
+  lang?: Lang;
+  /** which nav item is the current page */
+  current?: 'trips' | 'theyyams' | 'journal' | 'enquire' | '';
+  /** show the EN/DE/FR/ES switcher (landing pages only) */
+  switcher?: boolean;
+}
+const { lang = 'en', current = '', switcher = false } = Astro.props;
+const t = ui[lang];
+const home = u(lang === 'en' ? 'index.html' : HOME_PATH[lang]);
+// FAQ anchors live on the landing page of the current language
+const faq = lang === 'en' ? u('index.html') + '#faq' : '#faq';
+const cur = (k: string) => (current === k ? { 'aria-current': 'page', style: 'color:#D7261E' } : {});
+const homeLabel = lang === 'en' ? 'index.html' : '';
+---
+<header class="hd"><div class="w">
+  <a class="lg" href={home}>LGFC Theyyam</a>
+  {switcher && <LangSwitcher current={lang} />}
+  <nav class="nv" aria-label={t.main}>
+    <a href={u('trips.html')} {...cur('trips')}>{t.trips}</a>
+    <a href={u('theyyams/')} {...cur('theyyams')}>{t.theyyams}</a>
+    <a href={u('journal.html')} {...cur('journal')}>{t.journal}</a>
+    <a href={faq}>{t.faq}</a>
+    <a class="btn red" href={u('enquire.html')}>{t.enquire}</a>
+  </nav>
+  <details class="mm"><summary>{t.menu}</summary><div>
+    <a href={u('trips.html')}>{t.trips}</a>
+    <a href={u('theyyams/')}>{t.theyyams}</a>
+    <a href={u('journal.html')}>{t.journal}</a>
+    <a href={faq}>{t.faq}</a>
+    <a href={u('enquire.html')}>{t.enquire}</a>
+  </div></details>
+</div></header>

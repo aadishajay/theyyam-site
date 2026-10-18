@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import TheyyamCard from '../../components/TheyyamCard.astro';
+import categories from '../../data/theyyam-categories.json';
+import { u, abs } from '../../lib/site';
+import { breadcrumb } from '../../lib/schema';
+import '../../styles/theyyam.css';
+
+const all = (await getCollection('theyyams')).sort((a, b) => a.data.order - b.data.order);
+const desc = 'Browse the Theyyams of North Malabar: gods, goddesses, heroes and shared traditions. Search by name, story or meaning, with images and history for each.';
+const ld = [
+  breadcrumb([['Home', ''], ['Theyyams', 'theyyams/']]),
+  { '@type': 'CollectionPage', name: 'The Theyyams of North Malabar', description: desc, url: abs('theyyams/') },
+  { '@type': 'ItemList', name: 'Theyyams', itemListElement: all.map((t, i) => ({ '@type': 'ListItem', position: i + 1, url: abs(`theyyams/${t.data.slug}.html`), name: t.data.name })) },
+];
+---
+<Base wrap={false} title="The Theyyams of North Malabar: A Guide to Each Deity | LGFC Theyyam" description={desc} path="theyyams/" ld={ld} ogImage="assets/theyyam/muthappan-1.jpg">
+  <Header current="theyyams" />
+  <main id="main">
+    <section style="background:#4A0E12;color:#fff"><div class="w" style="padding-top:36px;padding-bottom:44px">
+      <Breadcrumb items={[['Home', 'index.html'], ['Theyyams']]} light />
+      <h1>The Theyyams of North Malabar</h1>
+      <p style="font-size:18px;margin-top:18px;max-width:640px;opacity:.92">Hundreds of forms are recorded, each with its own story, face and song. Start here to meet some of them. Search by name, by what they stand for, or in Malayalam.</p>
+      <form class="hubsearch" role="search" onsubmit="return false"><label for="hubq" style="position:absolute;left:-999px">Search Theyyams</label><input id="hubq" type="search" placeholder="Try “Muthappan”, “fierce goddess” or “harmony”" autocomplete="off" aria-controls="hubgrid" /></form>
+      <div class="fchips" role="group" aria-label="Filter by category"><button type="button" aria-pressed="true" data-c="">All</button>{categories.map((c) => <button type="button" aria-pressed="false" data-c={c.key}>{c.label}</button>)}</div>
+    </div><div class="kal"></div></section>
+    <section style="padding:36px 0 64px"><div class="w">
+      <p id="hubstatus" aria-live="polite" style="font-size:14px;opacity:.8;margin:0 0 8px"></p>
+      <div id="hubgrid">
+        {categories.map((c) => (
+          <section class="cg" id={c.key} data-c={c.key} style="margin-top:36px"><h2>{c.label}</h2><p style="margin:8px 0 20px;max-width:640px">{c.desc}</p>
+            <div class="cardg">{all.filter((t) => t.data.category === c.key).map((t) => <TheyyamCard hubItem slug={t.data.slug} name={t.data.name} ml={t.data.ml} category={t.data.category} tagline={t.data.tagline} photo={t.data.photos[0]?.file} />)}</div>
+          </section>
+        ))}
+      </div>
+      <div id="hubempty" class="empty" hidden><b>No match yet.</b><p style="margin:8px 0 0" id="hubdym"></p><p style="margin:8px 0 0">This list is growing. <a href={u('enquire.html')}>Ask us</a> about a Theyyam you have heard of.</p></div>
+      <div style="margin-top:56px;max-width:720px"><h2>How we group them</h2><p style="margin-top:12px">This grouping is ours, to help readers. Scholars use other divisions, and many Theyyams fit more than one. Stories also differ from shrine to shrine and teller to teller. We do not publish dates or places, because Theyyam is worship kept by families and communities. See our <a href={u('theyyam-etiquette.html')}>etiquette guide</a> before you go. Unsure of a word such as ottakolam or kaliyattam? See <a href={u('theyyam-glossary.html')}>Theyyam words explained</a>.</p></div>
+    </div></section>
+  </main>
+  <Footer credit="Photographs: Wikimedia Commons contributors, credited on each page. Placeholders until we use our own." />
+</Base>

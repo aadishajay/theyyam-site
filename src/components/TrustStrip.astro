@@ -1,0 +1,20 @@
+---
+import { u } from '../lib/site';
+interface Props {
+  ariaLabel?: string;
+  stats?: [string, string][];
+  line?: string;
+  closing?: string;
+}
+const {
+  ariaLabel = 'Why travellers trust us',
+  stats = [['8+', 'years organising Theyyam tours'], ['500+', 'explorers hosted on Theyyam trips'], ['24x7', 'support for booked trips']],
+  line,
+  closing = 'Made with warmth in North Malabar, Kerala · Powered by letsgoforacamp',
+} = Astro.props;
+---
+<section aria-label={ariaLabel} style="padding:32px 0 8px"><div class="w"><div style="display:flex;flex-wrap:wrap;gap:14px">
+  {stats.map(([n, label]) => (
+    <div style="flex:1 1 220px;display:flex;align-items:center;gap:16px;border:2px solid #1a0a08;border-radius:20px;padding:16px 20px;background:#fff"><b style="font-size:40px;font-weight:800;color:#D7261E;line-height:1">{n}</b><span style="font-weight:600;line-height:1.35">{label}</span></div>
+  ))}
+</div>{line && <p id="kannur-line" style="font-size:14px;margin:6px 0 0;font-weight:600">{line}</p>}<p style="font-size:13px;margin:14px 0 0;opacity:.75">{closing}</p></div></section>

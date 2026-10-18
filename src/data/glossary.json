@@ -1,0 +1,132 @@
+[
+ {
+  "name": "Theyyam",
+  "html": "From the word <i>daivam</i>, god. The ritual in which the koladhari, after hours of preparation, is believed to become the deity. Also called Kaliyattam, which is more often used for the festival.",
+  "source": {
+   "name": "Theyyam",
+   "url": "https://en.wikipedia.org/wiki/Theyyam"
+  }
+ },
+ {
+  "name": "Kolam",
+  "html": "The form of the deity that a Theyyam takes, as in <i>Theyyakkolam</i>. People speak of someone “taking the kolam”, which means bearing the deity’s form.",
+  "source": null
+ },
+ {
+  "name": "Kaliyattam",
+  "html": "The yearly festival at a family shrine or grove in which Theyyams are held. The word is also used for Theyyam itself. Several sources note that the season runs from about late October to May.",
+  "source": {
+   "name": "Theyyam",
+   "url": "https://en.wikipedia.org/wiki/Theyyam"
+  }
+ },
+ {
+  "name": "Perumkaliyattam",
+  "html": "A very large festival, held at long intervals, in which many Theyyams are held. Sources give different intervals; Kerala Tourism says twelve years or more.",
+  "source": {
+   "name": "Kerala Tourism",
+   "url": "https://keralatourism.org/bekal/theyyam-various-types.php"
+  }
+ },
+ {
+  "name": "Ottakolam",
+  "html": "A Theyyam that appears on its own, commonly explained as “a single kolam”, rather than together with other Theyyams. The word is often used for fire-linked forms such as Theechamundi and Vishnumoorthi, where the koladhari goes through a rite with embers. We found this meaning in a Wikipedia article and in general usage, not in a scholarly source, so please check it with a local guide.",
+  "source": {
+   "name": "Vishnumoorthy Theyyam",
+   "url": "https://en.wikipedia.org/wiki/Vishnumoorthy_Theyyam"
+  }
+ },
+ {
+  "name": "Thottam and Vellattam",
+  "html": "The first part of a Theyyam, held without full make-up or attire, with only a small red headdress. The koladhari sings or recites the story of the deity with the drummers.",
+  "source": {
+   "name": "Theyyam",
+   "url": "https://en.wikipedia.org/wiki/Theyyam"
+  }
+ },
+ {
+  "name": "Mudi",
+  "html": "The sacred headdress. Placing it on the koladhari is described as the moment the deity enters. Night rituals may use a smaller mudi than the day ritual.",
+  "source": {
+   "name": "Theyyam",
+   "url": "https://en.wikipedia.org/wiki/Theyyam"
+  }
+ },
+ {
+  "name": "Mukhathezhuthu",
+  "html": "Face painting, done by specialists in patterns that belong to each Theyyam, using natural colours.",
+  "source": {
+   "name": "Kerala Folklore: Bhairavan Theyyam",
+   "url": "https://keralafolklore.com/bhairavan-theyyam.html"
+  }
+ },
+ {
+  "name": "Aniyara",
+  "html": "The green room, a simple shelter near the grove where the koladhari is made up and dressed. A lamp is kept there, and in one account it is understood as the presence of God.",
+  "source": {
+   "name": "Polika: Theyyam rituals",
+   "url": "https://polika.co.in/en/article/kerala/culture/theyyam/theyyam-articles/theyyam-rituals/"
+  }
+ },
+ {
+  "name": "Purappadu",
+  "html": "Roughly “coming forth”: the moment the fully dressed deity sets out from the green room towards the shrine ground. We found this word only in a few popular sources, so its use may vary.",
+  "source": null
+ },
+ {
+  "name": "Kalasam / kalasham",
+  "html": "A word with more than one use. In some sources it is the closing stage, when the deity departs. In another it is a vessel with offerings placed on one side of the grove. In Wikipedia’s article, <i>kalaasams</i> are the eight sets of ritual footwork.",
+  "source": {
+   "name": "Theyyam",
+   "url": "https://en.wikipedia.org/wiki/Theyyam"
+  }
+ },
+ {
+  "name": "Kuri",
+  "html": "A mark of blessing given by the deity, described in one account as dried turmeric and rice powder. Some deities use sacred ash instead.",
+  "source": {
+   "name": "Polika: Theyyam rituals",
+   "url": "https://polika.co.in/en/article/kerala/culture/theyyam/theyyam-articles/theyyam-rituals/"
+  }
+ },
+ {
+  "name": "Koladhari",
+  "html": "The person who wears the kolam: the one through whom the deity is understood to appear.",
+  "source": {
+   "name": "Polika: Theyyam rituals",
+   "url": "https://polika.co.in/en/article/kerala/culture/theyyam/theyyam-articles/theyyam-rituals/"
+  }
+ },
+ {
+  "name": "Kavu",
+  "html": "A sacred grove or small shrine, often the setting for a Theyyam.",
+  "source": {
+   "name": "Theyyam",
+   "url": "https://en.wikipedia.org/wiki/Theyyam"
+  }
+ },
+ {
+  "name": "Tharavad",
+  "html": "An ancestral family home. Many Theyyams are kept by a tharavad as its family deity.",
+  "source": {
+   "name": "Theyyam",
+   "url": "https://en.wikipedia.org/wiki/Theyyam"
+  }
+ },
+ {
+  "name": "Madappura",
+  "html": "A shrine of Muthappan. It has no idol or flagstaff and is open to people of all communities.",
+  "source": {
+   "name": "Muthappan",
+   "url": "https://en.wikipedia.org/wiki/Muthappan"
+  }
+ },
+ {
+  "name": "Banku",
+  "html": "The Muslim call to prayer. Some Mappila Theyyams begin with it.",
+  "source": {
+   "name": "Mappila Theyyam",
+   "url": "https://en.wikipedia.org/wiki/Mappila_Theyyam"
+  }
+ }
+]

@@ -1,0 +1,13 @@
+---
+import { u } from '../lib/site';
+import categories from '../data/theyyam-categories.json';
+interface Props { slug: string; name: string; ml: string; category: string; tagline: string; photo?: string; hubItem?: boolean }
+const { slug, name, ml, category, tagline, photo, hubItem = false } = Astro.props;
+const catLabel = categories.find((c) => c.key === category)?.label;
+---
+<a class="tc" href={u(`theyyams/${slug}.html`)} data-s={hubItem ? slug : undefined}>
+  {photo
+    ? <img src={u('assets/theyyam/' + photo)} alt={`${name} Theyyam in ritual attire`} width="400" height="500" loading="lazy" />
+    : <div class="ph tcp" role="img" aria-label={`${name}: photograph to come`}><span lang="ml">{ml}</span><small>Photo to come</small></div>}
+  <h3>{name}</h3><p class="m">{ml} · {catLabel}</p><p class="t">{tagline}</p>
+</a>

@@ -1,0 +1,22 @@
+[
+ {
+  "key": "gods",
+  "label": "Gods and guardians",
+  "desc": "Deities of the Shaiva and Vaishnava traditions, village guardians and protective spirits."
+ },
+ {
+  "key": "goddesses",
+  "label": "Goddesses",
+  "desc": "The Bhagavathis and other mother goddesses, from gentle and graceful to fierce."
+ },
+ {
+  "key": "heroes",
+  "label": "Heroes and ancestors",
+  "desc": "Ordinary people, warriors and wronged women who are worshipped as divine after their death."
+ },
+ {
+  "key": "harmony",
+  "label": "Shared traditions",
+  "desc": "Forms that tell of Hindu and Muslim traditions meeting in North Malabar."
+ }
+]

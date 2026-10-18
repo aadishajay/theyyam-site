@@ -1,0 +1,8 @@
+---
+import { u } from '../lib/site';
+interface Props { items: [string, string?][]; light?: boolean; style?: string }
+const { items, light = false, style = 'font-size:14px;margin-bottom:18px' } = Astro.props;
+---
+<nav aria-label="Breadcrumb" style={style + (light ? ';opacity:.85' : '')}>
+  {items.map(([label, href], i) => (<>{i > 0 && ' / '}{href !== undefined ? <a href={u(href)} style={light ? 'color:#fff' : undefined}>{label}</a> : label}</>))}
+</nav>

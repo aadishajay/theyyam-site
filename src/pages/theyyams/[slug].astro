@@ -1,0 +1,84 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import TheyyamCard from '../../components/TheyyamCard.astro';
+import Cta from '../../components/Cta.astro';
+import categories from '../../data/theyyam-categories.json';
+import { u, abs } from '../../lib/site';
+import { linkify } from '../../lib/linkify';
+import { breadcrumb, faqNode } from '../../lib/schema';
+import '../../styles/theyyam.css';
+
+export async function getStaticPaths() {
+  const all = (await getCollection('theyyams')).sort((a, b) => a.data.order - b.data.order);
+  return all.map((entry) => ({ params: { slug: entry.data.slug }, props: { entry, all } }));
+}
+const { entry, all } = Astro.props;
+const t = entry.data;
+const { Content } = await render(entry);
+const cat = categories.find((c) => c.key === t.category)!;
+const path = `theyyams/${t.slug}.html`;
+const first = t.photos[0]?.file;
+
+// plain text of two sections, for the FAQ answers
+const unmd = (s: string) => s.replace(/\\([*_\[\]<>`{}\\])/g, '$1').trim();
+const body = entry.body!;
+const who = unmd(body.match(/## Who is .*?\n\n([\s\S]*?)\n\n## The story/)?.[1] ?? '');
+const look = unmd(body.match(/## What you will see\n\n([\s\S]*?)\n\n::gloss/)?.[1] ?? '');
+const faq = [
+  { q: `Who is ${t.name} in Theyyam?`, a: who },
+  { q: `What does ${t.name} Theyyam look like?`, a: look },
+];
+let desc = `${t.name} Theyyam: ${t.tagline} Story, meaning and what to expect.`;
+if (desc.length > 155) desc = `${t.name} Theyyam of North Malabar: story, meaning, appearance and what to expect when you attend.`;
+const rel = [...all.filter((x) => x.data.category === t.category && x !== entry), ...all.filter((x) => x.data.category !== t.category)].slice(0, 4);
+const ld = [
+  breadcrumb([['Home', ''], ['Theyyams', 'theyyams/'], [t.name, path]]),
+  {
+    '@type': 'Article', headline: `${t.name} Theyyam: story, meaning and what to expect`, description: desc,
+    author: { '@id': abs('') + '#org' }, publisher: { '@id': abs('') + '#org' }, mainEntityOfPage: abs(path),
+    image: first ? abs('assets/theyyam/' + first) : abs('assets/lgfc-headdress-portrait.jpg'),
+    about: { '@type': 'Thing', name: `${t.name} Theyyam`, alternateName: [t.ml, ...t.alias] },
+  },
+  faqNode(faq),
+];
+---
+<Base wrap={false} title={`${t.name} Theyyam: Story, Meaning & What to Expect | LGFC Theyyam`} description={desc} path={path} ld={ld} ogType="article"
+  ogImage={first ? 'assets/theyyam/' + first : 'assets/lgfc-og.jpg'}>
+  <Header current="theyyams" />
+  <main id="main"><article>
+    <div class="w">
+      <Breadcrumb items={[['Home', 'index.html'], ['Theyyams', 'theyyams/'], [t.name]]} style="font-size:14px;padding-top:24px" />
+      <div class="hero">
+        {first
+          ? <img class="h" src={u('assets/theyyam/' + first)} alt={`${t.name} Theyyam in ritual attire`} width="760" height="950" />
+          : <div class="ph h" role="img" aria-label={`${t.name}: photograph to come`}><span lang="ml">{t.ml}</span><small>Photo to come</small></div>}
+        <div>
+          <a class="chip" href={u(`theyyams/#${t.category}`)}>{cat.label}</a>
+          <h1 style="margin-top:14px">{t.name}</h1>
+          <p class="ml" lang="ml">{t.ml}</p>
+          <p style="font-size:1.15em;font-weight:500;margin:18px 0 22px">{t.tagline}</p>
+          <div class="facts"><dl>
+            {t.facts.map((f) => <div><dt>{f.label}</dt><dd set:html={linkify(f.value, t.slug)} /></div>)}
+          </dl></div>
+        </div>
+      </div>
+      <div class="art sec" style="padding-bottom:8px">
+        <Content />
+        <h2>Quick answers</h2>
+        {faq.map((f) => <details><summary><h3>{f.q}</h3></summary><p style="margin-top:0">{f.a}</p></details>)}
+        <Cta style="margin-top:36px" title="Learn about the Theyyams with a local guide" text="Our guided trips explain each deity’s story as you see it, and are planned with you on enquiry. We never publish ritual dates or venues, and confirm the right nights with you closer to travel." />
+        <p class="srcs"><b>Sources and further reading:</b> {t.sources.map((s, i) => <>{i > 0 && ', '}<a href={s.url} rel="noopener">{s.name}{s.url.includes('wikipedia') ? ' (Wikipedia)' : ''}</a></>)}. Stories vary by shrine, family and teller; this is a general summary, not a definitive version.</p>
+      </div>
+    </div>
+    <section style="padding:48px 0 72px"><div class="w">
+      <h2 style="margin:0 0 20px">More Theyyams</h2>
+      <div class="cardg">{rel.map((x) => <TheyyamCard slug={x.data.slug} name={x.data.name} ml={x.data.ml} category={x.data.category} tagline={x.data.tagline} photo={x.data.photos[0]?.file} />)}</div>
+      <p style="margin-top:24px"><a class="btn red" href={u('theyyams/')} style="background:#D7261E;color:#fff">Browse all Theyyams</a></p>
+    </div></section>
+  </article></main>
+  <Footer credit="Photographs: Wikimedia Commons contributors, credited on each page. Placeholders until we use our own." />
+</Base>

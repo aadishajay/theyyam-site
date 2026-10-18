@@ -1,0 +1,9 @@
+import type { Lang } from '../lib/site';
+
+// Shared UI strings (navigation, skip link, footer, mobile bar) for each language.
+export const ui: Record<Lang, Record<string, string>> = {
+  en: { skip: 'Skip to content', main: 'Main', footer: 'Footer', trips: 'Guided trips', theyyams: 'Theyyams', journal: 'Journal', faq: 'FAQ', enquire: 'Enquire', menu: 'Menu', seeTrips: 'See trips', note: '' },
+  de: { skip: 'Zum Inhalt springen', main: 'Hauptmenü', footer: 'Fußbereich', trips: 'Geführte Reisen', theyyams: 'Theyyams', journal: 'Journal', faq: 'FAQ', enquire: 'Anfragen', menu: 'Menü', seeTrips: 'Reisen ansehen', note: 'Weitere Seiten sind derzeit auf Englisch. Nutzen Sie die Übersetzungsfunktion Ihres Browsers.' },
+  fr: { skip: 'Aller au contenu', main: 'Principal', footer: 'Pied de page', trips: 'Voyages accompagnés', theyyams: 'Theyyams', journal: 'Journal', faq: 'FAQ', enquire: 'Nous contacter', menu: 'Menu', seeTrips: 'Voir les voyages', note: 'Les autres pages sont pour l’instant en anglais. Utilisez la fonction de traduction de votre navigateur.' },
+  es: { skip: 'Saltar al contenido', main: 'Principal', footer: 'Pie de página', trips: 'Viajes guiados', theyyams: 'Theyyams', journal: 'Diario', faq: 'FAQ', enquire: 'Consultar', menu: 'Menú', seeTrips: 'Ver viajes', note: 'Las demás páginas están por ahora en inglés. Use la función de traducción de su navegador.' },
+};

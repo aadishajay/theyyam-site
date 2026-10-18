@@ -1,0 +1,25 @@
+---
+import { u } from '../lib/site';
+interface Props {
+  eyebrow?: string; heading?: string;
+  group?: { title: string; text: string; cta: string };
+  custom?: { title: string; text: string; cta: string };
+  enquire?: string;
+  pad?: string;
+  cls?: string;
+}
+const {
+  eyebrow = 'Two ways to travel', heading = 'Join a group or make it yours',
+  group = { title: 'Small group departures', text: 'Share the journey with up to 8 like-minded travellers. Departure windows are shared when you enquire.', cta: 'Enquire about a group trip' },
+  custom = { title: 'Private and customised', text: 'Your own dates, pace and interests, for family, friends, a special-interest group or a solo explorer. We design it with you.', cta: 'Enquire about a custom trip' },
+  enquire = 'enquire.html',
+  pad = 'padding:8px 0 56px',
+  cls,
+} = Astro.props;
+const card = 'flex:1 1 280px;border:2px solid #1a0a08;border-radius:24px;padding:28px;background:#fff';
+---
+<section class={cls} style={pad}><div class="w"><p class="eyebrow" style="color:#D7261E;margin:0 0 12px">{eyebrow}</p><h2 style="margin-bottom:24px;max-width:720px">{heading}</h2>
+  <div style="display:flex;flex-wrap:wrap;gap:20px">
+    <div style={card}><h3>{group.title}</h3><p style="margin:10px 0 20px">{group.text}</p><a class="btn" href={u(enquire)}>{group.cta}</a></div>
+    <div style={card}><h3>{custom.title}</h3><p style="margin:10px 0 20px">{custom.text}</p><a class="btn" href={u(enquire)}>{custom.cta}</a></div>
+  </div></div></section>

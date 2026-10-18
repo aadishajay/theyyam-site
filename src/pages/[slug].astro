@@ -1,0 +1,63 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { u, abs } from '../lib/site';
+import { inline, plain } from '../lib/md';
+import { breadcrumb, faqNode } from '../lib/schema';
+import '../styles/post.css';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('journal');
+  return posts.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const d = entry.data;
+const { Content, headings } = await render(entry);
+const path = `${entry.id}.html`;
+// table of contents from the h2 headings in the source
+const toc = headings.filter((h) => h.depth === 2).map((h) => ({ id: h.slug, text: h.text }));
+const ld = [
+  breadcrumb([['Home', ''], ['Journal', 'journal.html'], [d.crumb, path]]),
+  {
+    '@type': 'Article', headline: d.ld.headline, description: d.ld.description,
+    author: { '@id': abs('') + '#org' }, publisher: { '@id': abs('') + '#org' },
+    mainEntityOfPage: abs(path), image: abs('assets/' + d.ld.image), about: { '@type': 'Thing', name: d.ld.about },
+  },
+  faqNode(d.faq.map((f) => ({ q: f.q, a: plain(f.a) }))),
+];
+---
+<Base title={d.title} description={d.description} path={path} ld={ld}>
+  <Header current="journal" />
+  <main id="main">
+    <article>
+      <div class="w" style="padding-top:32px">
+        <div class="art">
+          <Breadcrumb items={[['Home', 'index.html'], ['Journal', 'journal.html'], [d.category]]} />
+          <p class="k" style="margin-bottom:10px">{d.category} · {d.readTime}</p>
+          <h1>{d.h1}</h1>
+          <p style="margin:20px 0 0;font-size:15px;opacity:.75">By [AUTHOR NAME] · Updated [DATE] · LGFC local guides</p>
+        </div>
+        <img src={u('assets/' + d.hero.src)} alt={d.hero.alt} width={d.hero.width} height={d.hero.height} style="width:100%;max-width:1100px;margin:28px auto 0;border-radius:28px;aspect-ratio:16/9;object-fit:cover" />
+      </div>
+      <div class="w"><div class="art">
+        <p style="font-size:1.15em;margin-top:32px;font-weight:500" set:html={inline(d.lead)} />
+        {d.toc && toc.length > 0 && (
+          <div class="toc"><b>In this guide</b><ol>{toc.map((t) => <li><a href={`${u(path)}#${t.id}`}>{t.text}</a></li>)}</ol></div>
+        )}
+        <Content />
+      </div></div>
+    </article>
+    <section style="padding:64px 0 72px"><div class="w">
+      <h2 style="margin:0 0 24px">Keep reading</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px">
+        {d.related.map((r) => (
+          <a class="pc" href={u(`${r.slug}.html`)}><img src={u('assets/' + r.img)} alt={r.alt} width="600" height="400" /><p class="k" style="margin:12px 0 0">{r.k}</p><h3>{r.title}</h3></a>
+        ))}
+      </div>
+    </div></section>
+  </main>
+  <Footer />
+</Base>

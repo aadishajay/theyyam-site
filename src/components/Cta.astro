@@ -1,0 +1,13 @@
+---
+import { u } from '../lib/site';
+interface Props { title?: string; text?: string; href?: string; label?: string; spaced?: boolean; style?: string }
+const {
+  title = 'See it with someone who knows the family',
+  text = 'Our guided trips arrange access and explain every step, so you can simply be present and listen.',
+  href = 'enquire.html',
+  label = 'Enquire about a trip',
+  spaced = false,
+  style,
+} = Astro.props;
+---
+<div class="cta" style={style ?? (spaced ? 'margin-top:32px' : undefined)}><h3>{title}</h3><p>{text}</p><a class="btn" href={u(href)}>{label}</a></div>

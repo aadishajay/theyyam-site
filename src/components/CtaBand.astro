@@ -1,0 +1,6 @@
+---
+import { u } from '../lib/site';
+interface Props { title: string; text: string; label: string; href?: string; textStyle?: string }
+const { title, text, label, href = 'enquire.html' } = Astro.props;
+---
+<section style="background:#D7261E;color:#fff;text-align:center;padding:72px 0 0"><div class="w"><h2>{title}</h2><p style="font-size:18px;margin:16px auto 28px;max-width:520px">{text}</p><a class="btn" href={u(href)}>{label}</a></div><img src={u('assets/palms-maroon.svg')} alt="" width="1440" height="220" style="width:100%;height:auto;margin-top:40px" /></section>

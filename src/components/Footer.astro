@@ -1,0 +1,30 @@
+---
+import { u, type Lang } from '../lib/site';
+import { ui } from '../i18n/ui';
+interface Props {
+  lang?: Lang;
+  /** text under the logo; defaults to the standard company line */
+  about?: string;
+  /** photo credit line */
+  credit?: string;
+  /** closing line */
+  closing?: string;
+}
+const t0 = Astro.props;
+const lang = t0.lang ?? 'en';
+const t = ui[lang];
+const about = t0.about ?? 'LGFC Theyyam is run by LetsGoForACamp Travel and Innovation LLP, organising guided Theyyam tours in Kannur, Kasaragod and across North Malabar, Kerala. [ADDRESS]';
+const credit = t0.credit ?? 'Photographs: LetsGoForACamp trips. Some Theyyam pages use Wikimedia Commons images (CC BY / BY-SA), credited on each page.';
+const closing = t0.closing ?? 'Made with warmth in North Malabar, Kerala · Powered by letsgoforacamp';
+---
+<footer class="foot" style="background:#4A0E12;color:#fff;padding:48px 0 32px"><div class="w">
+  <div style="display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between">
+    <div style="max-width:340px"><div style="font-weight:800;font-size:22px">LGFC Theyyam</div><p style="opacity:.85;margin-top:8px">{about}</p></div>
+    <nav aria-label={t.footer} style="display:flex;flex-direction:column">
+      <a href={u('trips.html')}>{t.trips}</a><a href={u('theyyams/')}>{t.theyyams}</a><a href={u('journal.html')}>{t.journal}</a><a href={u('enquire.html')}>{t.enquire}</a>
+    </nav>
+    <p style="opacity:.85">[PHONE]<br />[EMAIL]<br />[INSTAGRAM]</p>
+  </div>
+  <p style="font-size:13px;opacity:.85;margin-top:32px">{credit}</p>
+  <p style="font-size:13px;margin:12px 0 0;opacity:.7">{closing}</p>
+</div></footer>

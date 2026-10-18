@@ -1,0 +1,121 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import HeroCarousel from '../components/HeroCarousel.astro';
+import TrustStrip from '../components/TrustStrip.astro';
+import TwoWays from '../components/TwoWays.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { whyIcons } from './icons';
+import { landing } from '../i18n/landing';
+import { landingMeta } from '../i18n/landing-meta';
+import { ui } from '../i18n/ui';
+import { landingLd } from '../lib/landing-seo';
+import { u, HOME_PATH, type Lang } from '../lib/site';
+import '../styles/home.css';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = landing[lang];
+const m = landingMeta[lang];
+const n = ui[lang];
+const blocks = landingLd(lang);
+const regChips = ['LetsGoForACamp Travel and Innovation LLP', '[TOURISM REGISTRATION NO.]', '[GOOGLE RATING · REVIEW COUNT]', '[MEMBER OF TOURISM ASSOCIATION]'];
+type K = keyof typeof t;
+const snap: { img: string; alt: K; tag: K; h: K; p: K }[] = [
+  { img: 'lgfc-ornaments.jpg', alt: 'trip1alt', tag: 'trip1tag', h: 'trip1h', p: 'trip1p' },
+  { img: 'lgfc-shrine-night.jpg', alt: 'trip2alt', tag: 'trip2tag', h: 'trip2h', p: 'trip2p' },
+  { img: 'lgfc-headdress-shrine.jpg', alt: 'alt4', tag: 'trip3tag', h: 'trip3h', p: 'trip3p' },
+];
+const towns: [string, string][] = [['Kannur', t.town1d], ['Thalassery', t.town2d], [t.town3n, t.town3d], ['Kanhangad', t.town4d]];
+const mosaic: { img: string; alt: K; w: number; h: number; span?: boolean }[] = [
+  { img: 'lgfc-ornaments.jpg', alt: 'trip1alt', w: 600, h: 400, span: true },
+  { img: 'lgfc-portrait-ritual.jpg', alt: 'alt1', w: 400, h: 400 },
+  { img: 'lgfc-night-profile.jpg', alt: 'alt7', w: 400, h: 500 },
+  { img: 'lgfc-daytime-theyyam.jpg', alt: 'alt3', w: 600, h: 400, span: true },
+  { img: 'lgfc-headdress-shrine.jpg', alt: 'alt4', w: 400, h: 300, span: true },
+];
+---
+<Base search={lang === 'en'} title={m.title} description={m.description} path={HOME_PATH[lang]} lang={lang} hreflang twitter
+  ogImageMeta={{ width: 1200, height: 630, alt: m.ogAlt }} graph={blocks[0]} ldExtra={blocks.slice(1)}>
+  <Header lang={lang} switcher />
+  <main id="main">
+<section style="background:#4A0E12;color:#fff">
+<div class="w hero">
+<div>
+<p class="eyebrow" style="margin:0 0 16px">{t.eyebrow}</p>
+<h1>{t.h1a} <span style="color:#FFB400">{t.h1b}</span>.</h1>
+<p style="font-size:18px;margin:22px 0 30px;max-width:520px;opacity:.92">{t.heroText}</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px"><a class="btn" href={u("enquire.html")}>{t.ctaEnquire}</a><a class="btn line" href={u("trips.html")}>{t.ctaTrips}</a></div>
+<div class="chips"><span>{t.chipRooted}</span><span>{t.chipSeason}</span><span>{t.chipGroup}</span><span>{t.chipStay}</span></div>
+</div>
+<HeroCarousel lang={lang} />
+</div>
+<div class="kal"></div>
+</section>
+
+<div class="strip" aria-hidden="true"><span>{t.marquee}</span></div>
+
+<TrustStrip ariaLabel={t.trustLabel} stats={[['8+', t.stat1], ['500+', t.stat2], ['24x7', t.stat3]]} closing={t.closing} />
+<section class="sec" aria-label={t.sealLabel} style="padding:48px 0 16px"><div class="w">
+<div style="display:flex;flex-wrap:wrap;gap:32px;align-items:center">
+<div style="flex:0 0 auto;margin:0 auto"><svg viewBox="0 0 200 200" width="150" height="150" role="img" aria-label={t.sealLabel} style="flex:none"><defs><path id="seal-c" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs><circle cx="100" cy="100" r="97" fill="#4A0E12" stroke="#FFB400" stroke-width="4"/><circle cx="100" cy="100" r="62" fill="none" stroke="#FFB400" stroke-width="1.5"/><text font-size="12.5" font-weight="700" letter-spacing="1.6" fill="#FFB400"><textPath href="#seal-c">ROOTED IN NORTH MALABAR · KANNUR · KASARAGOD · </textPath></text><text x="100" y="112" text-anchor="middle" font-size="28" font-weight="700" fill="#fff" lang="ml">മലബാർ</text></svg></div>
+<div style="flex:1 1 340px"><p class="eyebrow" style="color:#D7261E;margin:0 0 12px">{t.chipRooted}</p><h2 style="max-width:640px">{t.rootedH2}</h2><p style="font-size:18px;margin-top:16px;max-width:640px">{t.rootedP}</p></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:32px">
+{[1, 2, 3, 4].map((n) => <div class="card" style="padding:22px"><h3>{t[`card${n}h` as keyof typeof t]}</h3><p style="margin-top:8px">{t[`card${n}p` as keyof typeof t]}</p></div>)}
+</div>
+<ul style="list-style:none;margin:24px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px;font-size:14px">{regChips.map((c) => <li style="border:1.5px dashed #1a0a08;border-radius:999px;padding:6px 14px">{c}</li>)}</ul>
+</div></section>
+<TwoWays cls="sec" pad="padding:40px 0 8px" eyebrow={t.twEyebrow} heading={t.twH2} group={{ title: t.twGroupH, text: t.twGroupP, cta: t.twGroupCta }} custom={{ title: t.twCustomH, text: t.twCustomP, cta: t.twCustomCta }} /><section class="sec"><div class="w">
+<p class="eyebrow" style="color:#D7261E;margin:0 0 12px">{t.whyEyebrow}</p>
+<h2 style="margin-bottom:32px;max-width:720px">{t.whyH2}</h2>
+<div class="cards">
+{[1, 2, 3].map((n) => <div class="card"><div class="ic" set:html={whyIcons[n - 1]} /><h3>{t[`why${n}h` as keyof typeof t]}</h3><p style="margin-top:8px">{t[`why${n}p` as keyof typeof t]}</p></div>)}
+</div>
+</div></section>
+
+<section class="sec" style="background:#FFB400"><div class="w" style="display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-wrap:wrap;gap:32px;align-items:center">
+<img src={u("assets/lgfc-face-closeup.jpg")} alt={t.alt0} width="420" height="560" style="flex:1 1 280px;max-width:420px;border-radius:24px;aspect-ratio:3/4;object-fit:cover;border:4px solid #1a0a08" />
+<div style="flex:1 1 320px"><p class="eyebrow" style="color:#4A0E12;margin:0 0 12px">{t.isEyebrow}</p><h2>{t.isH2}</h2><p style="font-size:18px;margin:18px 0 22px">{t.isP}</p><div style="display:flex;flex-wrap:wrap;gap:12px"><a class="btn red" href={u("what-is-theyyam.html")}>{t.isBtn1}</a><a class="btn" href={u("theyyams/")} style="background:#fff;color:#1a0a08;border:2px solid #1a0a08">{t.isBtn2}</a></div></div>
+</div></div></section>
+
+<section class="sec"><div class="w">
+<p class="eyebrow" style="color:#D7261E;margin:0 0 12px">{t.tripsEyebrow}</p>
+<h2 style="margin-bottom:12px;max-width:720px">{t.tripsH2}</h2>
+<p style="margin-bottom:28px;max-width:600px">{t.tripsP}</p>
+<div class="snap">
+{snap.map((c) => <a class="trip" href={u('trips.html')}><img src={u(`assets/${c.img}`)} alt={t[c.alt]} width="800" height="600" /><div><span class="tag">{t[c.tag]}</span><h3 style="margin:12px 0 6px">{t[c.h]}</h3><p style="opacity:.9">{t[c.p]}</p></div></a>)}
+</div>
+</div></section>
+
+<section class="sec" style="background:#4A0E12;color:#fff"><div class="w">
+<h2 style="margin-bottom:12px;max-width:720px">{t.basesH2}</h2>
+<p style="margin-bottom:28px;max-width:600px;opacity:.9">{t.basesP}</p>
+<div style="display:flex;flex-wrap:wrap;gap:28px;align-items:center">
+<svg viewBox="0 0 600 440" role="img" aria-label={t.mapLabel} style="flex:1 1 320px;max-width:560px;width:100%;height:auto"><rect width="600" height="440" rx="24" fill="#6b1a20"/><path d="M40 0 L60 60 Q110 130 170 190 Q260 260 340 320 Q420 370 440 440 L600 440 L600 0Z" fill="#FFB400"/><path d="M14 40 q10 -8 20 0 t20 0 M10 150 q10 -8 20 0 t20 0 M60 260 q10 -8 20 0 t20 0 M150 360 q10 -8 20 0 t20 0" stroke="#FFB400" stroke-width="3" fill="none" opacity=".6"/><path d="M89 38 L202 170 L359 206 L370 310 L490 391" stroke="#4A0E12" stroke-width="3" stroke-dasharray="8 8" fill="none"/><g fill="#D7261E" stroke="#4A0E12" stroke-width="3"><circle cx="89" cy="38" r="11"/><circle cx="202" cy="170" r="11"/><circle cx="359" cy="206" r="11"/><circle cx="370" cy="310" r="11"/><circle cx="490" cy="391" r="11"/></g><g font-family="Poppins,sans-serif" font-weight="700" font-size="20" fill="#4A0E12"><text x="108" y="44">Kanhangad</text><text x="221" y="176">Payyannur</text><text x="378" y="212">Thaliparamba</text><text x="389" y="316">Kannur</text><text x="400" y="372">Thalassery</text></g></svg>
+<ul style="flex:1 1 280px;margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px">{towns.map(([name, d]) => <li><b style="color:#FFB400">{name}</b> {d}</li>)}</ul>
+</div></div></section>
+
+<section class="sec"><div class="w">
+<h2 style="margin-bottom:32px">{t.howH2}</h2>
+<ol class="steps">{[1, 2, 3, 4].map((n) => <li><b>{n}</b><h3 style="margin:8px 0">{t[`step${n}h` as keyof typeof t]}</h3><p>{t[`step${n}p` as keyof typeof t]}</p></li>)}</ol></div></section>
+
+<section class="sec" style="padding-top:0"><div class="w"><div class="mos">{mosaic.map((m) => <img src={u(`assets/${m.img}`)} alt={t[m.alt]} width={m.w} height={m.h} style={m.span ? 'grid-column:span 2' : undefined} />)}</div></div></section>
+
+<section class="sec" style="background:#FFB400"><div class="w" style="max-width:860px;text-align:center">
+<p style="font-size:clamp(1.3rem,5vw,2rem);font-weight:700;line-height:1.35">{t.testimonial}</p>
+<p style="margin-top:16px;font-weight:500">{t.testimonialBy}</p></div></section>
+
+<section class="sec" id="faq"><div class="w" style="max-width:860px">
+<h2 style="margin-bottom:24px">{t.faqH2}</h2>
+{[1, 2, 3, 4].map((n) => <details style={n === 1 ? 'border-top:2px solid #1a0a08' : undefined}><summary><h3>{t[`q${n}` as keyof typeof t]}</h3></summary><p style="padding-bottom:20px" set:html={t[`a${n}` as keyof typeof t]} /></details>)}
+</div></section>
+
+<CtaBand title={t.finalH2} text={t.finalP} label={t.ctaEnquire} />
+</main>
+  <Footer lang={lang} about={t.about} credit={t.credit} closing={t.closing} />
+  {n.note && <p style="background:#4A0E12;color:#fff;opacity:.9;font-size:13px;margin:0;padding:0 20px 20px;text-align:center">{n.note}</p>}
+  <div class="bar"><a class="btn red" href={u('enquire.html')}>{n.enquire}</a><a class="btn" href={u('trips.html')} style="background:#fff;border-color:#1a0a08">{n.seeTrips}</a></div>
+</Base>

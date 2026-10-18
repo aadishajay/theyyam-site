@@ -1,0 +1,27 @@
+/* trips template rules */
+body{margin:0;font-family:'Poppins',system-ui,sans-serif;color:#1a0a08;background:#fff;line-height:1.65;font-size:16px}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:800;line-height:1.08;letter-spacing:-.02em}
+h1{font-size:clamp(2.2rem,9.5vw,4.4rem)}
+h2{font-size:clamp(1.8rem,7vw,3rem)}
+h3{font-size:1.25rem;font-weight:700;letter-spacing:-.01em}
+.sec{padding:56px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:999px;background:#FFB400;color:#1a0a08;font-weight:700;text-decoration:none;border:2px solid #FFB400}
+.btn:hover{background:#fff;border-color:#fff}
+.btn.red{background:#D7261E;color:#fff;border-color:#D7261E}
+.btn.red:hover{background:#4A0E12;border-color:#4A0E12}
+.kal{height:24px;background:url(/assets/kalam-border.svg) repeat-x;background-size:auto 24px}
+.eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#FFB400}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.chips span{border:1.5px solid rgba(255,255,255,.5);border-radius:999px;padding:6px 14px;font-size:14px}
+.tr{display:flex;flex-direction:column;border:2px solid #1a0a08;border-radius:28px;overflow:hidden;background:#fff}
+.tr img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.tr .b{padding:24px}
+.tag{display:inline-block;background:#FFB400;color:#1a0a08;border-radius:999px;padding:2px 12px;font-size:13px;font-weight:700;margin:0 6px 6px 0}
+.tr ul{margin:14px 0 20px;padding-left:20px}
+.pr{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+@media(min-width:768px){
+.w{padding:0 40px}.sec{padding:96px 0}
+.tr{flex-direction:row}.tr>*{flex:1}.tr:nth-child(even){flex-direction:row-reverse}.tr img{aspect-ratio:auto;height:100%;min-height:380px}.tr .b{padding:44px;display:flex;flex-direction:column;justify-content:center}
+.nv{display:flex}.mm{display:none}
+}

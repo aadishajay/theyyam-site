@@ -1,0 +1,23 @@
+/* enquire template rules */
+body{margin:0;font-family:'Poppins',system-ui,sans-serif;color:#1a0a08;background:#fff;line-height:1.65;font-size:16px}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:800;line-height:1.08;letter-spacing:-.02em}
+h1{font-size:clamp(2.2rem,9.5vw,4rem)}
+h2{font-size:1.6rem}
+h3{font-size:1.2rem;font-weight:700}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 32px;border-radius:999px;background:#D7261E;color:#fff;font:inherit;font-weight:700;text-decoration:none;border:2px solid #D7261E;cursor:pointer}
+.btn:hover{background:#4A0E12;border-color:#4A0E12}
+.kal{height:24px;background:url(/assets/kalam-border.svg) repeat-x;background-size:auto 24px}
+.nv a.btn{color:#fff}
+.fm{display:grid;grid-template-columns:1fr;gap:18px}
+.f{display:flex;flex-direction:column;gap:6px}
+.f label{font-weight:600;font-size:15px}
+.f input,.f select,.f textarea{min-height:52px;padding:12px 16px;border:2px solid #1a0a08;border-radius:16px;font:inherit;background:#fff;color:#1a0a08;width:100%}
+.f textarea{min-height:130px}
+.f input:focus,.f select:focus,.f textarea:focus{outline:4px solid #FFB400;outline-offset:0}
+.lay{display:flex;flex-direction:column;gap:32px;padding:32px 0 64px}
+@media(min-width:768px){
+.w{padding:0 40px}.fm{grid-template-columns:1fr 1fr}.f.full{grid-column:span 2}
+.lay{flex-direction:row;align-items:flex-start;gap:56px;padding:64px 0 96px}.lay>.main{flex:3}.lay>aside{flex:2}
+.nv{display:flex}.mm{display:none}
+}

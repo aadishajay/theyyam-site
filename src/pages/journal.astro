@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { featured, latest } from '../data/journal';
+import { u } from '../lib/site';
+import { breadcrumb } from '../lib/schema';
+import '../styles/journal.css';
+
+const cats = ['All', 'Culture', 'Etiquette', 'Planning', 'Theyyam types'];
+---
+<Base
+  title="Theyyam Journal: Guides, Etiquette & Culture | LGFC Theyyam"
+  description="Guides to Theyyam gods, attire, etiquette and planning in North Kerala, written by people who live alongside the ritual."
+  path="journal.html"
+  ld={[breadcrumb([['Home', ''], ['Journal', 'journal.html']])]}
+>
+  <Header current="journal" />
+  <main id="main">
+    <section style="background:#4A0E12;color:#fff"><div class="w" style="padding-top:36px;padding-bottom:40px">
+      <Breadcrumb items={[['Home', 'index.html'], ['Journal']]} light />
+      <h1>The Theyyam Journal</h1>
+      <p style="font-size:18px;margin-top:18px;max-width:640px;opacity:.92">Guides to the gods, attire and etiquette of north Kerala’s living ritual, written by people who live alongside it.</p>
+      <div class="cats" role="list" aria-label="Categories">
+        {cats.map((c, i) => <a class={i === 0 ? 'cat on' : 'cat'} href={u('journal.html')} role="listitem">{c}</a>)}
+      </div>
+    </div><div class="kal"></div></section>
+
+    <section style="padding:40px 0 24px"><div class="w">
+      <a class="feat" href={u(`${featured.slug}.html`)}>
+        <img src={u('assets/' + featured.img)} alt={featured.alt} width={featured.width} height={featured.height} />
+        <div class="b"><p class="k">{featured.k}</p><h2 style="margin:10px 0 12px">{featured.title}</h2><p>{(featured as any).blurb}</p><p style="margin-top:18px;font-weight:700;color:#D7261E">Read the guide →</p></div>
+      </a>
+    </div></section>
+
+    <section style="padding:24px 0 64px"><div class="w">
+      <h2 style="margin-bottom:24px">Latest articles</h2>
+      <div class="grid">
+        {latest.map((c) => (
+          <a class="pc" href={u(`${c.slug}.html`)}><img src={u('assets/' + c.img)} alt={c.alt} width={c.width} height={c.height} /><p class="k" style="margin-top:14px">{c.k}</p><h3 style="margin-top:4px">{c.title}</h3></a>
+        ))}
+      </div>
+      <div style="text-align:center;margin-top:40px"><a class="btn red" href={u('journal.html')}>Load more articles</a></div>
+    </div></section>
+
+    <section style="background:#D7261E;color:#fff;text-align:center;padding:72px 0 0"><div class="w"><h2>Read it. Then go with someone who knows.</h2><p style="font-size:18px;margin:16px auto 28px;max-width:520px">Our guided trips put everything in these articles into practice.</p><a class="btn" href={u('trips.html')}>See guided trips</a></div><img src={u('assets/palms-maroon.svg')} alt="" width="1440" height="220" style="width:100%;height:auto;margin-top:40px" /></section>
+  </main>
+  <Footer />
+</Base>
