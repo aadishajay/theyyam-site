@@ -174,6 +174,11 @@ GL=[
 ('Thottam and Vellattam','The first part of a Theyyam, performed without full make-up or costume, with only a small red headdress. The performer sings or recites the story of the deity with the drummers.','Theyyam','https://en.wikipedia.org/wiki/Theyyam'),
 ('Mudi','The sacred headdress. Placing it on the performer is described as the moment the deity enters. Night performances may use a smaller mudi than the day performance.','Theyyam','https://en.wikipedia.org/wiki/Theyyam'),
 ('Mukhathezhuthu','Face painting, done by specialists in patterns that belong to each Theyyam, using natural colours.','Kerala Folklore: Bhairavan Theyyam','https://keralafolklore.com/bhairavan-theyyam.html'),
+('Aniyara','The green room, a simple shelter near the grove where the performer is made up and dressed. A lamp is kept there, and in one account it is understood as the presence of God.','Polika: Theyyam rituals','https://polika.co.in/en/article/kerala/culture/theyyam/theyyam-articles/theyyam-rituals/'),
+('Purappadu','Roughly “coming forth”: the moment the fully dressed deity sets out from the green room towards the shrine ground. We found this word only in a few popular sources, so its use may vary.',None,None),
+('Kalasam / kalasham','A word with more than one use. In some sources it is the closing stage, when the deity departs. In another it is a vessel with offerings placed on one side of the grove. In Wikipedia’s article, <i>kalaasams</i> are the eight sets of dance footwork.','Theyyam','https://en.wikipedia.org/wiki/Theyyam'),
+('Kuri','A mark of blessing given by the deity, described in one account as dried turmeric and rice powder. Some deities use sacred ash instead.','Polika: Theyyam rituals','https://polika.co.in/en/article/kerala/culture/theyyam/theyyam-articles/theyyam-rituals/'),
+('Koladhari','The person who wears the kolam, the performer.','Polika: Theyyam rituals','https://polika.co.in/en/article/kerala/culture/theyyam/theyyam-articles/theyyam-rituals/'),
 ('Kavu','A sacred grove or small shrine, often the setting for a Theyyam.','Theyyam','https://en.wikipedia.org/wiki/Theyyam'),
 ('Tharavad','An ancestral family home. Many Theyyams are kept by a tharavad as its family deity.','Theyyam','https://en.wikipedia.org/wiki/Theyyam'),
 ('Madappura','A shrine of Muthappan. It has no idol or flagstaff and is open to people of all communities.','Muthappan','https://en.wikipedia.org/wiki/Muthappan'),
@@ -195,7 +200,7 @@ if B+'theyyam-glossary.html' not in sm: sm=sm.replace('</urlset>',f'<url><loc>{B
 open('sitemap.xml','w').write(sm)
 
 # ---- link Theyyam names inside journal posts (root pages) ----
-POSTS=['what-is-theyyam.html','theyyam-etiquette.html','theyyam-season.html','planning-theyyam-on-your-own.html','main-theyyams.html','costume-and-craft.html','cameras-and-ritual.html']
+POSTS=['steps-of-a-theyyam.html','what-is-theyyam.html','theyyam-etiquette.html','theyyam-season.html','planning-theyyam-on-your-own.html','main-theyyams.html','costume-and-craft.html','cameras-and-ritual.html']
 for f in POSTS:
     s=open(f).read();used=set(re.findall(r'href="theyyams/([a-z-]+)\.html"',s))
     def fix(m):
