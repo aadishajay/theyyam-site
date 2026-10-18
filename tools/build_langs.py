@@ -138,7 +138,7 @@ T['de'] = {
  ('A Theyyam in a red headdress among coconut palms','Ein Theyyam mit rotem Kopfschmuck zwischen Kokospalmen'),
  ]}
 T['fr'] = {
- 'lang': 'fr', 'title': 'Voyages Theyyam accompagnés au Kerala | LGFC Theyyam',
+ 'lang': 'fr', 'title': 'Voyages culturels autour du Theyyam | LGFC Theyyam',
  'desc': 'Voyages Theyyam en petit groupe ou sur mesure à Kannur et Kasaragod. Hébergement, transferts et guide local en option. Demandez un devis.',
  'switchnote': 'Les autres pages sont pour l’instant en anglais. Utilisez la fonction de traduction de votre navigateur.',
  'pairs': [
@@ -348,11 +348,77 @@ T['es'] = {
  ('A Theyyam in a red headdress among coconut palms','Un Theyyam con tocado rojo entre cocoteros'),
  ]}
 
+
+# --- French editorial pass (keys are the start of the English source string) ---
+FR_OVR = [
+ ('Guided Theyyam tours · North', 'Voyages culturels autour du Theyyam · Nord du Kerala'),
+ ('shared with respect', 'à découvrir avec respect'),
+ ('Small-group journeys to Kerala', 'Des voyages en petits groupes pour découvrir l’une des plus anciennes traditions rituelles vivantes du Kerala, conçus selon vos envies. Avec, si vous le souhaitez, un guide local qui ouvre les portes, explique chaque étape et veille à ce que vous soyez bien accueilli.'),
+ ('Rooted in North Malabar', 'Au cœur du Malabar du Nord'),
+ ('aria-label="Rooted in North Malabar"', 'aria-label="Au cœur du Malabar du Nord"'),
+ ('Season: Oct to May', 'Saison : d’octobre à mai'),
+ ('Group or private', 'En groupe ou en privé'),
+ ('Stay + transfers', 'Hébergement et transferts inclus'),
+ ('Heritage · Family', 'Traditions · Familles · Spiritualité · Savoir-faire · Musique · Récits'),
+ ('Made with warmth in North Malabar', 'Imaginé et organisé avec soin dans le nord du Kerala · Powered by letsgoforacamp'),
+ ('Run by natives of North Malabar', 'Une équipe locale du Malabar du Nord. Un accueil chaleureux et authentique.'),
+ ('We are a team of natives', 'Notre équipe est originaire de Kannur et d’autres localités du Malabar du Nord. Après huit années passées aux côtés des familles et des communautés locales, nous savons à qui nous adresser, quand nous faire discrets et comment accueillir nos visiteurs avec respect.'),
+ ('Local, not outsourced', 'Une équipe locale, pas d’intermédiaires'),
+ ('Our team, and any guide or driver', 'Notre équipe, nos guides et les chauffeurs que nous sollicitons connaissent personnellement la région. Ici, pas de discours appris par cœur : des échanges authentiques et des rencontres humaines.'),
+ ('Known to the families', 'Des liens de confiance avec les familles locales'),
+ ('Introductions come from', 'Nous privilégions les présentations par l’intermédiaire de personnes auxquelles les familles font déjà confiance. Vous êtes accueilli dans le respect des usages locaux.'),
+ ('A real person replies', 'Un interlocuteur humain, à votre écoute'),
+ ('No checkout and no call centre', 'Pas de réservation impersonnelle ni de centre d’appels. Notre équipe locale vous répond sous deux jours ouvrés et reste disponible 24 h/24 pendant votre voyage réservé.'),
+ ('We protect the ritual', 'Le respect du rituel avant tout'),
+ ('We never publish ritual dates', 'Nous ne diffusons pas publiquement les dates ni les lieux des rituels. Nous informons chaque voyageur des usages locaux et respectons les règles de chaque sanctuaire concernant les photos et les vidéos.'),
+ ('Two ways to travel', 'Deux façons de vivre l’expérience'),
+ ('Join a group or make it yours', 'Rejoignez un petit groupe ou créez votre propre voyage'),
+ ('Small group departures', 'Voyages en petits groupes'),
+ ('Share the journey with up to 8', 'Voyagez avec un maximum de huit personnes partageant vos centres d’intérêt. Les dates de départ sont communiquées sur demande.'),
+ ('Private and customised', 'Voyage privé et personnalisé'),
+ ('Your own dates, pace', 'Choisissez vos dates, votre rythme et vos centres d’intérêt. En famille, entre amis, en groupe thématique ou en solo, nous concevons votre voyage avec vous.'),
+ ('Why go with us: the ritual', 'Pourquoi voyager avec nous ? Le Theyyam est un rituel sacré : nous vous aidons à y assister dans le respect des traditions locales.'),
+ ('Access, arranged', 'Des visites organisées avec soin'),
+ ('Rituals happen in family shrines', 'Les rituels se déroulent dans des sanctuaires familiaux et sur les places des villages. Nous facilitons les rencontres et organisons votre visite au moment opportun, dans le respect des communautés locales.'),
+ ('A local guide, if you want one', 'Un guide local, selon vos envies'),
+ ('Optional. Know who the deity', 'En option, un guide local vous explique l’histoire de la divinité, la signification du rituel et les moments où il convient de s’approcher ou de garder ses distances.'),
+ ('Everything handled', 'Nous nous occupons de l’organisation'),
+ ('Night rituals and rural roads', 'Les rituels nocturnes et les déplacements dans les zones rurales demandent une organisation adaptée. Nous pouvons prévoir l’hébergement, les transferts, les repas et les retours tardifs.'),
+ ('New here?', 'Vous découvrez le Theyyam ?'),
+ ('A living ritual of north Kerala', 'Le Theyyam est un rituel sacré du nord du Kerala. Après des heures de préparation, de peinture et d’habillage, la personne qui prend le kolam est considérée, selon la croyance locale, comme la manifestation de la divinité. Il existe des centaines de formes de Theyyam, chacune avec sa parure, ses chants et son histoire, transmis de génération en génération au sein des communautés locales.'),
+ ('Exact rituals are confirmed', 'Les rituels auxquels vous pourrez assister sont confirmés avec vous avant le paiement, car leur déroulement varie selon les dates.'),
+ ('Five base towns', 'Cinq étapes. Au cœur des traditions du Malabar.'),
+ ('We stay in comfortable towns', 'Nous choisissons des villes offrant un hébergement adapté, puis organisons les déplacements vers les lieux de rituel afin de faciliter votre séjour et vos découvertes.'),
+ ('· weavers, beaches', '· artisanat textile, plages et accès pratique'),
+ ('· fort town, food', '· patrimoine historique, cuisine locale et cricket'),
+ ('· the heartland of the ritual', '· au cœur des traditions rituelles'),
+ ('· the northern gateway', '· aux portes du nord du Malabar'),
+ ('How it works', 'Comment organiser votre voyage'),
+ ('Tell us your plan', 'Parlez-nous de votre projet de voyage'),
+ ('Month, group size', 'Indiquez-nous vos dates, la taille de votre groupe et vos centres d’intérêt. Cela ne prend que deux minutes.'),
+ ('We shape the trip', 'Nous concevons votre itinéraire'),
+ ('A proposal in two working days', 'Vous recevez une proposition sous deux jours ouvrés.'),
+ ('We confirm rituals', 'Nous confirmons les rituels prévus'),
+ ('Closer to travel', 'À l’approche du départ, nous confirmons les dates les plus adaptées aux rituels.'),
+ ('You arrive, we host', 'À votre arrivée, nous vous accueillons'),
+ ('Stay and transfers are ready', 'Votre hébergement et vos transferts sont organisés. Un guide local vous accompagne si vous en avez choisi un.'),
+ ('The main season runs', 'La saison du Theyyam s’étend généralement de fin octobre à mai. Nous vous conseillons les périodes les plus adaptées en fonction de votre projet.'),
+ ('Some rituals are open', 'Certains rituels sont accessibles aux visiteurs, tandis que d’autres se déroulent dans un cadre familial. Les horaires pouvant être difficiles à obtenir, l’accompagnement d’un guide local ou d’un hôte qui connaît la famille facilite votre visite.'),
+ ('Is it suitable for children', 'Le voyage convient-il aux enfants et aux personnes âgées ?'),
+ ('Yes, with planning', 'Oui, avec une préparation adaptée. Certains rituels se prolongent tard dans la nuit et peuvent nécessiter de rester debout. Nous adaptons l’organisation dans la mesure du possible et prévoyons des places assises lorsqu’elles sont disponibles.'),
+ ('Not always. Many shrines', 'Pas toujours. De nombreux sanctuaires interdisent les photos et les vidéos, parfois pendant toute la durée du rituel. Nous vous informons des règles propres à chaque lieu et vous invitons à profiter pleinement du moment, sans nécessairement chercher à le photographier.'),
+ ('Ready to meet the gods', 'Prêt à découvrir les traditions sacrées du Malabar ?'),
+ ('Tell us when you can travel', 'Indiquez-nous vos dates de voyage. Nous vous répondrons sous deux jours ouvrés.'),
+]
+
 def build(code):
     t = T[code]
     s = BASE
     # protect the (unchanged) English marquee words before the generic pairs run on shorter strings
-    for a, b in sorted(t['pairs'], key=lambda p: -len(p[0])):
+    pairs = t['pairs']
+    if code == 'fr':
+        pairs = [(a, next((nv for k, nv in FR_OVR if a.startswith(k)), b)) for a, b in pairs]
+    for a, b in sorted(pairs, key=lambda p: -len(p[0])):
         if a not in s:
             print('  MISSING in', code, ':', a[:60])
         s = s.replace(a, b)
