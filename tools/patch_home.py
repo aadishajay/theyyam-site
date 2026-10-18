@@ -3,7 +3,7 @@ import re,json,sys,html
 sys.path.insert(0,'tools')
 import theyyams_data as d
 names={t['slug']:t['name'] for t in d.T}
-order=['vishnumoorthi','panjuruli','muchilot-bhagavathi','bhairavan','poomaruthan','kurathi','kathivanoor-veeran','uchitta','pottan','vasoorimala','bappiriyan','puliyoor-kali','daivathar','kandanar-kelan','chamundi','vayanattu-kulavan','theechamundi','madayil-chamundi','gulikan','puthiya-bhagavathi','kundora-chamundi','arya-poonkani','kuttichathan','karimchamundi','kadangot-makkam','pulimaranja-thondachan','puliyoor-kannan','padarkulangara-bhagavathy','pulikandan','vishakandan','pulikarinkali','ummachi','muthappan']
+order=['vishnumoorthi','panjuruli','muchilot-bhagavathi','bhairavan','poomaruthan','kurathi','kundora-chamundi','uchitta','bappiriyan','vasoorimala','kandanar-kelan','puliyoor-kali','kadangot-makkam','daivathar','pulikandan','kathivanoor-veeran']  # curated: sharp, clear, well framed
 import os
 order=[s for s in order if os.path.exists(f'assets/faces/{s}.jpg')]
 E=html.escape
