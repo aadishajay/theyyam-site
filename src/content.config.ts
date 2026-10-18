@@ -52,12 +52,10 @@ const testimonials = defineCollection({
     items: z.array(z.object({
       id: z.string(),
       quote: z.string(),
-      name: z.string(),
-      country: z.string(),
-      trip: z.string(),
-      source: z.enum(['google', 'email', 'whatsapp', 'other']),
+      label: z.string(), // anonymised attribution, e.g. "Theyyam Trip Payyanur, Kannur"
+      date: z.string(), // month and year
+      source: z.enum(['feedback', 'google', 'email', 'whatsapp', 'other']),
       sourceUrl: z.string().url().optional(),
-      date: z.string().optional(),
       published: z.boolean().default(false),
       theyyam: z.boolean().default(false), // about a Theyyam trip
     })),

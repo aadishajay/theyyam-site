@@ -25,7 +25,7 @@ const blocks = landingLd(lang);
 const items = (await getEntry('testimonials', 'testimonials'))?.data.items ?? [];
 const real = items.find((i) => i.published && i.theyyam);
 const quote = real ? `“${real.quote}”` : t.testimonial;
-const quoteBy = real ? `${real.name}, ${real.country} · ${real.trip}` : t.testimonialBy;
+const quoteBy = real ? `${real.label}, ${real.date}` : t.testimonialBy;
 const regChips = ['LetsGoForACamp Travel and Innovation LLP', '[TOURISM REGISTRATION NO.]', '[GOOGLE RATING · REVIEW COUNT]', '[MEMBER OF TOURISM ASSOCIATION]'];
 type K = keyof typeof t;
 const snap: { img: string; alt: K; tag: K; h: K; p: K }[] = [

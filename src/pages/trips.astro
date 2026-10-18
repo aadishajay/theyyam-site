@@ -7,6 +7,7 @@ import TrustStrip from '../components/TrustStrip.astro';
 import TwoWays from '../components/TwoWays.astro';
 import CtaBand from '../components/CtaBand.astro';
 import { trips } from '../data/trips';
+import { getEntry } from 'astro:content';
 import { u, abs } from '../lib/site';
 import { breadcrumb } from '../lib/schema';
 import '../styles/trips.css';
@@ -25,6 +26,9 @@ const ld = [
     })),
   },
 ];
+// guest quotes from src/content/testimonials.md (the first published one is featured on the landing pages)
+const all = (await getEntry('testimonials', 'testimonials'))?.data.items ?? [];
+const quotes = all.filter((i) => i.published && i.theyyam).slice(1, 5);
 const includes = [
   { h: 'Included', items: ['Stays and breakfast', 'Private road transfers', 'Ritual access, arranged by us', 'Local Theyyam guide: optional, on request'] },
   { h: 'Not included', items: ['Flights to Kannur or Mangaluru', 'Travel insurance', 'Personal spending'] },
@@ -69,6 +73,17 @@ const includes = [
         ))}
       </div>
     </div></section>
+
+    {quotes.length > 0 && (
+      <section class="sec"><div class="w">
+        <h2 style="margin-bottom:24px">What guests say</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
+          {quotes.map((q) => (
+            <figure style="margin:0;background:#fff;border:2px solid #1a0a08;border-radius:24px;padding:26px"><blockquote style="margin:0;font-size:1.05rem;line-height:1.5">“{q.quote}”</blockquote><figcaption style="margin-top:14px;font-size:14px;font-weight:600">{q.label}, {q.date}</figcaption></figure>
+          ))}
+        </div>
+      </div></section>
+    )}
 
     <CtaBand title="Not sure which trip fits?" text="Tell us your month and group. We will suggest the right one." label="Enquire about a trip" />
   </main>
