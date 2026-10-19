@@ -15,7 +15,7 @@ export function landingLd(lang: Lang) {
   const faq = faqNode([1, 2, 3, 4].map((n) => ({ q: t[`q${n}` as 'q1'], a: plain(t[`a${n}` as 'a1']) })));
   const imgs = heroSlides.map((s, i) => ({
     '@type': 'ImageObject', '@id': `${url}#img-${i}`, contentUrl: abs(`assets/hero/${s.file}.jpg`), url: abs(`assets/hero/${s.file}.jpg`),
-    width: 800, height: 1000, caption: t[s.alt], description: t[s.alt], inLanguage: lang, creditText: m.credit, copyrightNotice: '© LetsGoForACamp',
+    width: 1000, height: 1250, caption: t[s.alt], description: t[s.alt], inLanguage: lang, creditText: m.credit, copyrightNotice: '© LetsGoForACamp',
     creator: { '@id': orgId }, representativeOfPage: i === 0,
   }));
   const page = {

@@ -10,7 +10,7 @@ const t = landing[Astro.props.lang];
   <div class="fstack">
     {heroSlides.map((s, i) => (
       <div class={i === 0 ? 'fslide on' : 'fslide'} aria-hidden={i === 0 ? undefined : 'true'}>
-        <img src={u(`assets/hero/${s.file}.jpg`)} alt={t[s.alt]} width="800" height="1000" loading={i === 0 ? undefined : 'lazy'} fetchpriority={i === 0 ? 'high' : undefined} decoding={i === 0 ? 'sync' : 'async'} />
+        <img src={u(`assets/hero/${s.file}.jpg`)} alt={t[s.alt]} width="1000" height="1250" loading={i === 0 ? undefined : 'lazy'} fetchpriority={i === 0 ? 'high' : undefined} decoding={i === 0 ? 'sync' : 'async'} />
       </div>
     ))}
   </div>

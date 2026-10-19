@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Write WebP versions of every .jpg/.png under dist/ and a manifest for scripts/picturefy.mjs.
 
-  name.jpg  ->  name.jpg.<hash>.webp          main size (capped at 720 px wide for images up to 900 px, else full size)
+  name.jpg  ->  name.jpg.<hash>.webp          main size (full size)
              ->  name.jpg.<hash>-480.webp      small variant (images wider than 600 px)
              ->  name.jpg.<hash>-800.webp      medium variant (images wider than 900 px)
 <hash> is taken from the original file, so replacing an image gives it a new URL and the one-year cache can never serve a stale copy.
@@ -24,9 +24,9 @@ for f in sorted(dist.rglob('*')):
     with Image.open(f) as im: w, h = im.size
     h8 = hashlib.sha1(f.read_bytes()).hexdigest()[:8]
     base = f'{f}.{h8}'
-    main_w = min(w, 720) if w <= 900 else w
+    main_w = w
     full = Path(base + '.webp')
-    if not enc(f, full, 70 if w <= 900 else 72, main_w if main_w < w else None) or full.stat().st_size >= f.stat().st_size:
+    if not enc(f, full, 76, main_w if main_w < w else None) or full.stat().st_size >= f.stat().st_size:
         full.unlink(missing_ok=True); continue
     saved += f.stat().st_size - full.stat().st_size; n += 1
     entry = {'hash': h8, 'w': main_w, 'variants': []}

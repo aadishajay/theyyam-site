@@ -14,6 +14,33 @@ export const featured = {
 
 export const latest: JournalCard[] = [
   {
+    "slug": "kaliyattam-2027",
+    "img": "blog/kaliyattam-2027.jpg",
+    "alt": "A Theyyam in red attire holding a flame, with devotees watching from behind",
+    "width": 600,
+    "height": 400,
+    "k": "Festivals · 5 min",
+    "title": "Kaliyattam 2027: the festivals we know of, and what a Perumkaliyattam is"
+  },
+  {
+    "slug": "kannur-food-guide-for-theyyam",
+    "img": "blog/kannur-food-guide-for-theyyam.jpg",
+    "alt": "A plate of Thalassery biryani, rice with golden masala",
+    "width": 600,
+    "height": 400,
+    "k": "Food · 8 min",
+    "title": "In Kannur for Theyyam: must-try foods and where to eat them"
+  },
+  {
+    "slug": "thalassery-theyyam-cake-circus-cricket",
+    "img": "blog/thalassery-theyyam-cake-circus-cricket.jpg",
+    "alt": "A Theyyam in a tall red headdress ringed with flowers, seen close up at night",
+    "width": 600,
+    "height": 400,
+    "k": "Places · 6 min",
+    "title": "Thalassery: Theyyam, cake, circus and cricket"
+  },
+  {
     "slug": "kantara-and-theyyam",
     "img": "blog/kantara-and-theyyam.jpg",
     "alt": "A Theyyam with a red and white painted face holding a sword",
