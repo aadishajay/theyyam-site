@@ -1,5 +1,5 @@
 // Landing page copy for every language. Keys are shared; the English column is the source of truth.
-export interface LandingCopy { eyebrow: string; h1a: string; h1b: string; heroText: string; ctaEnquire: string; ctaTrips: string; chipRooted: string; chipSeason: string; chipGroup: string; chipStay: string; carouselLabel: string; alt0: string; alt1: string; alt2: string; alt3: string; alt4: string; alt5: string; alt6: string; alt7: string; marquee: string; trustLabel: string; stat1: string; stat2: string; stat3: string; closing: string; sealLabel: string; rootedEyebrow: string; rootedH2: string; rootedP: string; card1h: string; card1p: string; card2h: string; card2p: string; card3h: string; card3p: string; card4h: string; card4p: string; twEyebrow: string; twH2: string; twGroupH: string; twGroupP: string; twGroupCta: string; twCustomH: string; twCustomP: string; twCustomCta: string; whyEyebrow: string; whyH2: string; why1h: string; why1p: string; why2h: string; why2p: string; why3h: string; why3p: string; isAlt: string; isEyebrow: string; isH2: string; isP: string; isBtn1: string; isBtn2: string; tripsEyebrow: string; tripsH2: string; tripsP: string; trip1alt: string; trip1tag: string; trip1h: string; trip1p: string; trip2alt: string; trip2tag: string; trip2h: string; trip2p: string; trip3alt: string; trip3tag: string; trip3h: string; trip3p: string; basesH2: string; basesP: string; mapLabel: string; town1d: string; town2d: string; town3n: string; town3d: string; town4d: string; howH2: string; step1h: string; step1p: string; step2h: string; step2p: string; step3h: string; step3p: string; step4h: string; step4p: string; mos0: string; mos1: string; mos2: string; mos3: string; mos4: string; testimonial: string; testimonialBy: string; faqH2: string; q1: string; a1: string; q2: string; a2: string; q3: string; a3: string; q4: string; a4: string; finalH2: string; finalP: string; finalBtn: string; about: string; credit: string }
+export interface LandingCopy { poweredBy: string; eyebrow: string; h1a: string; h1b: string; heroText: string; ctaEnquire: string; ctaTrips: string; chipRooted: string; chipSeason: string; chipGroup: string; chipStay: string; carouselLabel: string; alt0: string; alt1: string; alt2: string; alt3: string; alt4: string; alt5: string; alt6: string; alt7: string; marquee: string; trustLabel: string; stat1: string; stat2: string; stat3: string; closing: string; sealLabel: string; rootedEyebrow: string; rootedH2: string; rootedP: string; card1h: string; card1p: string; card2h: string; card2p: string; card3h: string; card3p: string; card4h: string; card4p: string; twEyebrow: string; twH2: string; twGroupH: string; twGroupP: string; twGroupCta: string; twCustomH: string; twCustomP: string; twCustomCta: string; whyEyebrow: string; whyH2: string; why1h: string; why1p: string; why2h: string; why2p: string; why3h: string; why3p: string; isAlt: string; isEyebrow: string; isH2: string; isP: string; isBtn1: string; isBtn2: string; tripsEyebrow: string; tripsH2: string; tripsP: string; trip1alt: string; trip1tag: string; trip1h: string; trip1p: string; trip2alt: string; trip2tag: string; trip2h: string; trip2p: string; trip3alt: string; trip3tag: string; trip3h: string; trip3p: string; basesH2: string; basesP: string; mapLabel: string; town1d: string; town2d: string; town3n: string; town3d: string; town4d: string; howH2: string; step1h: string; step1p: string; step2h: string; step2p: string; step3h: string; step3p: string; step4h: string; step4p: string; mos0: string; mos1: string; mos2: string; mos3: string; mos4: string; testimonial: string; testimonialBy: string; faqH2: string; q1: string; a1: string; q2: string; a2: string; q3: string; a3: string; q4: string; a4: string; finalH2: string; finalP: string; finalBtn: string; about: string; credit: string }
 export const landing: Record<"en" | "de" | "fr" | "es", LandingCopy> = {
  "en": {
   "eyebrow": "Guided Theyyam tours · North Malabar, Kerala",
@@ -26,6 +26,7 @@ export const landing: Record<"en" | "de" | "fr" | "es", LandingCopy> = {
   "stat1": "years organising Theyyam tours",
   "stat2": "explorers hosted on Theyyam trips",
   "stat3": "support for booked trips",
+  "poweredBy": "TheyyamTrips is powered by LetsGoForACamp. Enquiries, confirmation emails and trip support come from LetsGoForACamp (letsgoforacamp.com).",
   "closing": "Made with warmth in North Malabar, Kerala · Powered by letsgoforacamp",
   "sealLabel": "Rooted in North Malabar",
   "rootedEyebrow": "Rooted in North Malabar",
@@ -140,6 +141,7 @@ export const landing: Record<"en" | "de" | "fr" | "es", LandingCopy> = {
   "stat1": "Jahre Erfahrung mit Theyyam-Reisen",
   "stat2": "Reisende auf Theyyam-Reisen betreut",
   "stat3": "Betreuung auf gebuchten Reisen",
+  "poweredBy": "TheyyamTrips wird von LetsGoForACamp betrieben. Anfragen, Bestätigungs-E-Mails und die Betreuung unterwegs kommen von LetsGoForACamp (letsgoforacamp.com).",
   "closing": "Mit Herz gemacht in Nord-Malabar, Kerala · Powered by letsgoforacamp",
   "sealLabel": "Verwurzelt in Nord-Malabar",
   "rootedEyebrow": "Verwurzelt in Nord-Malabar",
@@ -254,6 +256,7 @@ export const landing: Record<"en" | "de" | "fr" | "es", LandingCopy> = {
   "stat1": "ans à organiser des voyages Theyyam",
   "stat2": "voyageurs accueillis sur nos voyages Theyyam",
   "stat3": "assistance pour les voyages réservés",
+  "poweredBy": "TheyyamTrips est propulsé par LetsGoForACamp. Les demandes, e-mails de confirmation et l’assistance pendant le voyage viennent de LetsGoForACamp (letsgoforacamp.com).",
   "closing": "Imaginé et organisé avec soin dans le nord du Kerala · Powered by letsgoforacamp",
   "sealLabel": "Au cœur du Malabar du Nord",
   "rootedEyebrow": "Au cœur du Malabar du Nord",
@@ -368,6 +371,7 @@ export const landing: Record<"en" | "de" | "fr" | "es", LandingCopy> = {
   "stat1": "años organizando viajes al Theyyam",
   "stat2": "viajeros acogidos en viajes al Theyyam",
   "stat3": "atención en viajes reservados",
+  "poweredBy": "TheyyamTrips funciona con LetsGoForACamp. Las consultas, los correos de confirmación y la atención durante el viaje provienen de LetsGoForACamp (letsgoforacamp.com).",
   "closing": "Hecho con cariño en el Malabar del Norte, Kerala · Powered by letsgoforacamp",
   "sealLabel": "Arraigados en el Malabar del Norte",
   "rootedEyebrow": "Arraigados en el Malabar del Norte",

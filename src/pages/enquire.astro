@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { u } from '../lib/site';
 import { breadcrumb } from '../lib/schema';
+import contact from '../data/contact.json';
 import '../styles/enquire.css';
 
 // Form handler (Cloudflare Worker, POST /submit writes to Notion and emails the guest). No captcha widget; see the README.
@@ -46,8 +47,9 @@ const ENDPOINT = 'https://lgfc_custom_trip_form_handler.letsgoforacamp.workers.d
 </div></details>
 <input type="hidden" name="totalpax" /><input type="hidden" name="adultpax" /><input type="hidden" name="stayType" /><input type="hidden" name="datefixed" /><input type="hidden" name="planplaces" /><input type="hidden" name="specialreq" /><input type="hidden" name="rooms" /><input type="hidden" name="kidsage" /><input type="hidden" name="budget" /><input type="hidden" name="intent" value="estimate_first" /><input type="hidden" name="g-recaptcha-response" value="not-used" />
 <div aria-hidden="true" style="position:absolute;left:-9999px"><label>Leave this empty <input type="text" name="company" tabindex="-1" autocomplete="off" /></label></div>
-<label class="full" style="grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;font-size:14px"><input type="checkbox" name="consent" required style="width:24px;height:24px;flex:none;margin-top:2px;accent-color:#D7261E" /> I agree to LGFC contacting me about this enquiry. We never share your details. See [PRIVACY POLICY].</label>
+<label class="full" style="grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;font-size:14px"><input type="checkbox" name="consent" required style="width:24px;height:24px;flex:none;margin-top:2px;accent-color:#D7261E" /> I agree to TheyyamTrips by LetsGoForACamp contacting me about this enquiry. We never sell or share your details. See our <a href={u('privacy.html')} style="text-decoration:underline">privacy policy</a>.</label>
 <div class="f" style="grid-column:1/-1;max-width:320px"><label for="mathq">Quick check: what is <span id="mq">…</span>? <span aria-hidden="true">*</span></label><input id="mathq" type="text" inputmode="numeric" autocomplete="off" required /></div>
+<p style="grid-column:1/-1;font-size:14px;opacity:.85;margin:0">TheyyamTrips is powered by <b>LetsGoForACamp</b>. Your enquiry is handled by LetsGoForACamp, so our confirmation email and replies will come from LetsGoForACamp (alerts@letsgoforacamp.com).</p>
 <p id="err" role="alert" hidden style="grid-column:1/-1;color:#b00020;font-weight:600"></p>
 <div style="grid-column:1/-1"><button id="go" class="btn" type="submit" style="width:100%;max-width:320px">Send my enquiry</button><p style="font-size:14px;margin-top:10px;opacity:.8">No payment now. We reply within two working days.</p></div>
 </form>
@@ -95,7 +97,7 @@ f.addEventListener('submit',function(ev){
 <h2>What happens next</h2>
 <ol style="margin:16px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:10px"><li><b>We read your enquiry</b> and match it to the season.</li><li><b>You get a proposal</b> in two working days.</li><li><b>We confirm the rituals</b> closer to travel, then you pay.</li></ol>
 <hr style="border:0;border-top:2px solid #1a0a08;margin:22px 0" />
-<h3>Prefer to talk?</h3><p style="margin-top:6px">WhatsApp: [PHONE]<br />Email: [EMAIL]</p><p style="margin-top:10px;font-size:14px">8+ years organising Theyyam tours · 500+ explorers hosted · 24x7 support on booked trips. Replies come from our North Malabar team, not a call centre.</p>
+<h3>Prefer to talk?</h3><p style="margin-top:6px">WhatsApp: <a href={`https://wa.me/${contact.phone.replace(/\D/g, '')}`}>{contact.phone}</a><br />Email: <a href={`mailto:${contact.email}`}>{contact.email}</a></p><p style="margin-top:10px;font-size:14px">8+ years organising Theyyam tours · 500+ explorers hosted · 24x7 support on booked trips. Replies come from our North Malabar team, not a call centre.</p>
 </div>
 </aside>
 </div>

@@ -57,7 +57,7 @@ const mosaic: { img: string; alt: K; w: number; h: number; span?: boolean }[] = 
 
 <div class="strip" aria-hidden="true"><span>{t.marquee}</span></div>
 
-<TrustStrip ariaLabel={t.trustLabel} stats={[['8+', t.stat1], ['500+', t.stat2], ['24x7', t.stat3]]} closing={t.closing} />
+<TrustStrip ariaLabel={t.trustLabel} stats={[['8+', t.stat1], ['500+', t.stat2], ['24x7', t.stat3]]} closing={t.closing} poweredBy={t.poweredBy} />
 <section class="sec" aria-label={t.sealLabel} style="padding:48px 0 16px"><div class="w">
 <div style="display:flex;flex-wrap:wrap;gap:32px;align-items:center">
 <div style="flex:0 0 auto;margin:0 auto"><svg viewBox="0 0 200 200" width="150" height="150" role="img" aria-label={t.sealLabel} style="flex:none"><defs><path id="seal-c" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs><circle cx="100" cy="100" r="97" fill="#4A0E12" stroke="#FFB400" stroke-width="4"/><circle cx="100" cy="100" r="62" fill="none" stroke="#FFB400" stroke-width="1.5"/><text font-size="12.5" font-weight="700" letter-spacing="1.6" fill="#FFB400"><textPath href="#seal-c">ROOTED IN NORTH MALABAR · KANNUR · KASARAGOD · </textPath></text><text x="100" y="112" text-anchor="middle" font-size="28" font-weight="700" fill="#fff" lang="ml">മലബാർ</text></svg></div>
@@ -114,7 +114,7 @@ const mosaic: { img: string; alt: K; w: number; h: number; span?: boolean }[] = 
 
 <CtaBand title={t.finalH2} text={t.finalP} label={t.ctaEnquire} />
 </main>
-  <Footer lang={lang} about={t.about} credit={t.credit} closing={t.closing} />
+  <Footer lang={lang} about={t.about} credit={t.credit} closing={t.closing} poweredBy={t.poweredBy} />
   {n.note && <p style="background:#4A0E12;color:#fff;opacity:.9;font-size:13px;margin:0;padding:0 20px 20px;text-align:center">{n.note}</p>}
   <div class="bar"><a class="btn red" href={u('enquire.html')}>{n.enquire}</a><a class="btn" href={u('trips.html')} style="background:#fff;border-color:#1a0a08">{n.seeTrips}</a></div>
 </Base>

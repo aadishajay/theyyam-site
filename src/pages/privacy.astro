@@ -1,0 +1,77 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { u } from '../lib/site';
+import { breadcrumb } from '../lib/schema';
+import contact from '../data/contact.json';
+const reg = contact.offices.find((o) => o.key === 'registered');
+---
+<Base
+  title="Privacy Policy | TheyyamTrips"
+  description="How TheyyamTrips, powered by LetsGoForACamp, collects, uses and protects the details you share when you enquire about a Theyyam trip."
+  path="privacy.html"
+  ld={[breadcrumb([['Home', ''], ['Privacy policy', 'privacy.html']])]}
+>
+  <Header current="" />
+  <main id="main">
+    <div class="w" style="padding-top:40px;padding-bottom:72px;max-width:760px">
+      <h1>Privacy policy</h1>
+      <p style="margin-top:8px;opacity:.8">Last updated: 19 October 2026</p>
+
+      <h2 style="margin-top:32px">Who we are</h2>
+      <p style="margin-top:10px">TheyyamTrips is a guided Theyyam travel service powered by <b>LetsGoForACamp</b> (LetsGoForACamp Travel and Innovation LLP). LetsGoForACamp is the company that decides how your details are used, and it handles enquiries, confirmation emails and trip support. That is why messages about your enquiry will come from LetsGoForACamp. Registered office: {reg?.address}.</p>
+
+      <h2 style="margin-top:32px">What we collect</h2>
+      <p style="margin-top:10px">Only what you type into the enquiry form:</p>
+      <ul style="margin:10px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px">
+        <li>Your name, email address and phone or WhatsApp number (if you add one).</li>
+        <li>Tentative travel dates, whether they are flexible, number of travellers, the destination and trip you are interested in, and how you would like to travel.</li>
+        <li>Anything optional you add: the country you travel from, the ages of children (we do not ask for their names), how you heard about us and your notes.</li>
+      </ul>
+      <p style="margin-top:10px">We do not ask for payment details, passport numbers or other identity documents on this website. If we need any of these later to arrange a booking, we will ask you directly and say why.</p>
+
+      <h2 style="margin-top:32px">Why we use it</h2>
+      <ul style="margin:10px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px">
+        <li>To reply to your enquiry, suggest a trip and send a quote.</li>
+        <li>To send you a confirmation email with your enquiry reference.</li>
+        <li>If you travel with us, to plan and run the trip and to support you during it.</li>
+      </ul>
+      <p style="margin-top:10px">We use your details only for these purposes. We do not sell them, and we do not share them for advertising. We contact you about your enquiry and the trip, and we will not send you marketing unless you ask us to.</p>
+
+      <h2 style="margin-top:32px">Who handles your details</h2>
+      <p style="margin-top:10px">We use a few service providers to run the enquiry process. They process your details for us, under their own security terms:</p>
+      <ul style="margin:10px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px">
+        <li><b>Cloudflare</b> runs the system that receives your enquiry.</li>
+        <li><b>Notion</b> stores enquiries so our team can work on them.</li>
+        <li><b>SendGrid</b> delivers the confirmation email.</li>
+        <li><b>GitHub</b> hosts this website, and <b>Google Fonts</b> supplies its typeface. Like any website, they may see your IP address and browser details when you load a page.</li>
+      </ul>
+      <p style="margin-top:10px">Some of these providers are based outside India, so your details may be processed in other countries. If we arrange stays, transfers or local guides for your trip, we share the details they need (such as names and dates) with them, and only for your trip.</p>
+
+      <h2 style="margin-top:32px">Cookies</h2>
+      <p style="margin-top:10px">This website does not set advertising or tracking cookies. If we add analytics later, we will update this page and ask for your consent where the law requires it.</p>
+
+      <h2 style="margin-top:32px">How long we keep it</h2>
+      <p style="margin-top:10px">We keep enquiry details for as long as we need them to reply and, if you travel with us, to run the trip and meet our legal and accounting duties. Enquiries that do not lead to a booking are deleted or anonymised after 24 months. You can ask us to delete yours sooner.</p>
+
+      <h2 style="margin-top:32px">Your choices and rights</h2>
+      <p style="margin-top:10px">You can ask us to show you the details we hold about you, correct them, delete them, or stop contacting you. If you are in India, these rights come from the Digital Personal Data Protection Act, 2023. If you are in the European Economic Area or the United Kingdom, they come from the GDPR. You can also withdraw your consent at any time. Withdrawing does not affect what we did before. Write to <a href={`mailto:${contact.email}`} style="text-decoration:underline">{contact.email}</a> and we will reply within 30 days. If you are not satisfied with our answer, you may complain to your local data protection authority.</p>
+
+      <h2 style="margin-top:32px">Children</h2>
+      <p style="margin-top:10px">This website is for adults planning travel. Please do not enter a child's own details. If a child will travel, give only their age.</p>
+
+      <h2 style="margin-top:32px">Security</h2>
+      <p style="margin-top:10px">We limit who can see enquiries and use trusted providers. No online system is completely secure, so please do not send sensitive documents by email unless we ask.</p>
+
+      <h2 style="margin-top:32px">Changes to this page</h2>
+      <p style="margin-top:10px">If we change how we use your details, we will update this page and the date at the top.</p>
+
+      <h2 style="margin-top:32px">Contact</h2>
+      <p style="margin-top:10px">LetsGoForACamp (TheyyamTrips)<br />Email: <a href={`mailto:${contact.email}`} style="text-decoration:underline">{contact.email}</a><br />WhatsApp: <a href={`https://wa.me/${contact.phone.replace(/\D/g, '')}`} style="text-decoration:underline">{contact.phone}</a></p>
+
+      <p style="margin-top:32px"><a class="btn red" href={u('enquire.html')}>Back to the enquiry form</a></p>
+    </div>
+  </main>
+  <Footer />
+</Base>
