@@ -81,8 +81,8 @@ f.addEventListener('submit',function(ev){
  f.kidsage.value=f.kids.value;
  f.specialreq.value=[f.notes.value,f.country.value&&('From: '+f.country.value),f.src.value&&('Heard about us: '+f.src.value)].filter(Boolean).join('\n');
  go.disabled=true;go.textContent='Sending…';track('enquiry_submit');
- var body=new FormData(f);body.delete('company');body.delete('tripsel');body.delete('consent');
- var id=(f.name.value.trim().slice(0,4)+'/'+f.destination.value.slice(0,4)+'/'+f.arrivaldate.value).toUpperCase();
+ var dest='Theyyam- '+f.destination.value,body=new FormData(f);body.set('destination',dest);body.delete('company');body.delete('tripsel');body.delete('consent');
+ var id=(f.name.value.trim().slice(0,4)+'/'+dest.slice(0,4)+'/'+f.arrivaldate.value).toUpperCase();
  fetch(ENDPOINT,{method:'POST',mode:'no-cors',body:body})
  .then(function(){track('enquiry_submit');location.href=SUCCESS+'?enquiryId='+encodeURIComponent(id);})
  .catch(function(){go.disabled=false;go.textContent='Send my enquiry';fail('Sorry, that did not send. Please check your connection and try again.');});
