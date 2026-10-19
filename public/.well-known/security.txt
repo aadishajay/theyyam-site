@@ -1,0 +1,4 @@
+Contact: mailto:letsgoforacamp@gmail.com
+Expires: 2027-10-19T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://theyyamtrips.com/.well-known/security.txt

@@ -5,6 +5,11 @@ import { abs, u, INDEXABLE, LANGS, LOCALE, HOME_PATH, type Lang } from '../lib/s
 import { ui } from '../i18n/ui';
 import { orgNode, websiteNode } from '../lib/schema';
 
+// Poppins is self-hosted (latin subset): no request to Google Fonts, faster first paint, nothing third-party to disclose.
+const fontCss = [400, 500, 600, 700, 800]
+  .map((w) => `@font-face{font-family:'Poppins';font-style:normal;font-weight:${w};font-display:swap;src:url(${u('assets/fonts/poppins-' + w + '.woff2')}) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}`)
+  .join('') + 'picture{display:contents}';
+
 interface Props {
   title: string;
   description: string;
@@ -71,8 +76,9 @@ const jsonld = [graph ?? [orgNode(), websiteNode(), ...ld], ...ldExtra];
   {twitter && ogImageMeta && <meta name="twitter:image:alt" content={ogImageMeta.alt} />}
   <meta name="geo.region" content="IN-KL" />
   <meta name="theme-color" content="#4A0E12" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preload" href={u('assets/fonts/poppins-400.woff2')} as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href={u('assets/fonts/poppins-800.woff2')} as="font" type="font/woff2" crossorigin />
+  <style set:html={fontCss}></style>
   {jsonld.map((g) => <script type="application/ld+json" is:inline set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': g })} />)}
   <slot name="head" />
 </head>

@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { u, abs } from '../lib/site';
+import { breadcrumb } from '../lib/schema';
+import { waLink } from '../lib/whatsapp';
+import contact from '../data/contact.json';
+import '../styles/enquire.css';
+const offices = contact.offices.filter((o) => !o.address.includes('['));
+const ld = [
+  breadcrumb([['Home', ''], ['Contact', 'contact.html']]),
+  { '@type': 'ContactPage', '@id': abs('contact.html') + '#page', url: abs('contact.html'), name: 'Contact TheyyamTrips', about: { '@id': abs('') + '#org' } },
+];
+---
+<Base title="Contact TheyyamTrips | Theyyam Tours in Kannur" description="Contact TheyyamTrips, powered by LetsGoForACamp: WhatsApp, email and our Kannur base. We reply within two working days." path="contact.html" ld={ld}>
+  <Header current="" />
+  <main id="main">
+    <div class="w" style="padding-top:40px;padding-bottom:72px;max-width:760px">
+      <h1>Contact us</h1>
+      <p style="margin-top:14px;font-size:18px">TheyyamTrips is powered by LetsGoForACamp. Message us any time and we reply within two working days. Nothing is charged until you confirm a trip.</p>
+      <div style="display:grid;gap:16px;margin-top:28px">
+        <div style="border:2px solid #1a0a08;border-radius:20px;padding:22px"><h2 style="font-size:1.25rem">WhatsApp and phone</h2><p style="margin-top:8px"><a href={waLink()} target="_blank" rel="noopener" style="text-decoration:underline">{contact.phone}</a></p></div>
+        <div style="border:2px solid #1a0a08;border-radius:20px;padding:22px"><h2 style="font-size:1.25rem">Email</h2><p style="margin-top:8px"><a href={`mailto:${contact.email}`} style="text-decoration:underline">{contact.email}</a></p></div>
+        {offices.map((o) => <div style="border:2px solid #1a0a08;border-radius:20px;padding:22px"><h2 style="font-size:1.25rem">{o.label}</h2><p style="margin-top:8px">{o.address}</p></div>)}
+      </div>
+      <p style="margin-top:28px"><a class="btn red" href={u('enquire.html')}>Plan your trip</a> <a class="btn out" href={u('about.html')} style="margin-left:8px">About us</a></p>
+    </div>
+  </main>
+  <Footer />
+</Base>

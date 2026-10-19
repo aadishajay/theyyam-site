@@ -16,7 +16,7 @@ export const GET: APIRoute = async () => {
     return `<url><loc>${abs(HOME_PATH[l])}</loc>${alts}${imgs}</url>`;
   });
   const paths = [
-    'trips.html', 'enquire.html', 'privacy.html', 'journal.html', ...posts.map((p) => `${p.id}.html`),
+    'trips.html', 'enquire.html', 'privacy.html', 'about.html', 'contact.html', 'journal.html', ...posts.map((p) => `${p.id}.html`),
     'theyyam-glossary.html', 'theyyams/', ...theyyams.map((t) => `theyyams/${t.data.slug}.html`),
   ];
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n` +

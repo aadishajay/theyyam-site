@@ -30,7 +30,7 @@ export default defineConfig({
   site,
   base,
   trailingSlash: 'ignore',
-  build: { format: 'file', inlineStylesheets: 'auto' },
+  build: { format: 'file', inlineStylesheets: 'always' },
   integrations: [dirIndex(['theyyams', 'de', 'fr', 'es'])],
   markdown: { remarkPlugins: [remarkDirective, remarkBlocks] },
 });

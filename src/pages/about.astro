@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { u, abs } from '../lib/site';
+import { breadcrumb } from '../lib/schema';
+import '../styles/enquire.css';
+const ld = [
+  breadcrumb([['Home', ''], ['About', 'about.html']]),
+  { '@type': 'AboutPage', '@id': abs('about.html') + '#page', url: abs('about.html'), name: 'About TheyyamTrips', about: { '@id': abs('') + '#org' } },
+];
+---
+<Base title="About TheyyamTrips | Theyyam Tours by LetsGoForACamp" description="TheyyamTrips is run by LetsGoForACamp from Kannur. We organise respectful, guided journeys to Theyyam rituals in North Malabar, Kerala." path="about.html" ld={ld}>
+  <Header current="" />
+  <main id="main">
+    <div class="w" style="padding-top:40px;padding-bottom:72px;max-width:760px">
+      <h1>About TheyyamTrips</h1>
+      <p style="margin-top:14px;font-size:18px">TheyyamTrips organises guided journeys to Theyyam in North Malabar, Kerala. It is run by LetsGoForACamp Travel and Innovation LLP, the company behind LetsGoForACamp, from our base in Kannur.</p>
+
+      <h2 style="margin-top:36px">How we see Theyyam</h2>
+      <p style="margin-top:10px">Theyyam is a ritual, not a performance. It lives between the human and the divine, and it is kept by families and communities who have held it for generations. We write about it, and take guests to it, with that respect. Our guests are visitors in someone else's worship, and we say so before they arrive.</p>
+
+      <h2 style="margin-top:36px">Who we are</h2>
+      <p style="margin-top:10px">Our team is from North Malabar. We have been organising Theyyam tours for over eight years and have hosted more than 500 travellers. Booked trips have 24x7 support from our team, not a call centre. A local guide is optional, and many first-time visitors choose one to explain each step.</p>
+
+      <h2 style="margin-top:36px">How we work</h2>
+      <ul style="margin:10px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px">
+        <li>Every trip is planned with you. There is no online checkout: you enquire, we reply with a suggestion and a quote, and you pay only once the rituals are confirmed.</li>
+        <li>We confirm the rituals closer to travel, because dates are set by the shrines and families, not by us.</li>
+        <li>We tell you the local rules before you go, including when photography and video are not allowed.</li>
+      </ul>
+
+      <h2 style="margin-top:36px">Our writing</h2>
+      <p style="margin-top:10px">The <a href={u('journal.html')} style="text-decoration:underline">journal</a> is written by our team and drawn from our own trips and published sources, which we list at the end of each article. If you spot a mistake, or a tradition we have described incorrectly, please <a href={u('contact.html')} style="text-decoration:underline">tell us</a>.</p>
+
+      <p style="margin-top:32px"><a class="btn red" href={u('enquire.html')}>Plan your trip</a> <a class="btn out" href={u('contact.html')} style="margin-left:8px">Contact us</a></p>
+    </div>
+  </main>
+  <Footer />
+</Base>

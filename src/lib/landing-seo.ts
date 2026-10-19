@@ -2,7 +2,7 @@ import { abs, HOME_PATH, type Lang } from './site';
 import { landingMeta } from '../i18n/landing-meta';
 import { landing } from '../i18n/landing';
 import { heroSlides } from '../data/hero';
-import { orgNode, websiteNode, breadcrumb, faqNode } from './schema';
+import { orgNode, websiteNode, faqNode } from './schema';
 
 const plain = (s: string) => s.replace(/<[^>]+>/g, '');
 
@@ -21,12 +21,11 @@ export function landingLd(lang: Lang) {
   const page = {
     '@type': 'WebPage', '@id': url + '#webpage', url, name: m.title, description: m.description, inLanguage: lang,
     isPartOf: { '@id': lang === 'en' ? abs('') : url + '#website' }, about: { '@id': orgId },
-    primaryImageOfPage: { '@id': url + '#img-0' }, breadcrumb: { '@id': url + '#crumbs' }, availableLanguage: ['en', 'de', 'fr', 'es'],
+    primaryImageOfPage: { '@id': url + '#img-0' }, availableLanguage: ['en', 'de', 'fr', 'es'],
   };
-  const crumbs = { ...breadcrumb([[m.crumb, HOME_PATH[lang]]]), '@id': url + '#crumbs' };
-  if (lang === 'en') return [[orgNode(), websiteNode(), faq], [page, crumbs, ...imgs]];
+  if (lang === 'en') return [[orgNode(), websiteNode(), faq], [page, ...imgs]];
   const org = orgNode(m.orgDescription, { inLanguage: lang });
   delete (org as any).slogan; org.knowsAbout = ['Theyyam', 'North Malabar', 'Kannur', 'Kasaragod'];
   const site = { '@type': 'WebSite', '@id': url + '#website', name: 'TheyyamTrips', url, inLanguage: lang, publisher: { '@id': orgId } };
-  return [[org, site, page, crumbs, ...imgs, { ...faq, '@id': url + '#faq', inLanguage: lang }]];
+  return [[org, site, page, ...imgs, { ...faq, '@id': url + '#faq', inLanguage: lang }]];
 }

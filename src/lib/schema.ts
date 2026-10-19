@@ -6,6 +6,11 @@ const locations = contact.offices
   .filter((o) => !o.address.includes('['))
   .map((o) => ({ '@type': 'Place', name: o.label, address: { '@type': 'PostalAddress', streetAddress: o.address, addressLocality: o.locality, addressRegion: o.region, addressCountry: o.country } }));
 
+const main = contact.offices.find((o) => !o.address.includes('['));
+const mainAddress = main
+  ? { '@type': 'PostalAddress', streetAddress: main.address, addressLocality: main.locality, addressRegion: main.region, addressCountry: main.country }
+  : undefined;
+
 export const orgNode = (description?: string, extra: Record<string, unknown> = {}) => ({
   '@type': ['TravelAgency', 'Organization'],
   '@id': abs('') + '#org',
@@ -21,6 +26,10 @@ export const orgNode = (description?: string, extra: Record<string, unknown> = {
   knowsAbout: ['Theyyam', 'North Malabar', 'Kannur', 'Kasaragod', 'Kerala ritual tradition'],
   slogan: 'A living ritual, shared with respect.',
   image: abs('assets/lgfc-og.jpg'),
+  ...(mainAddress ? { address: mainAddress } : {}),
+  ...(contact.phone && !contact.phone.includes('[') ? { telephone: contact.phone } : {}),
+  ...(contact.email && !contact.email.includes('[') ? { email: contact.email } : {}),
+  sameAs: ['https://letsgoforacamp.com', ...(contact.instagram && !contact.instagram.includes('[') ? [contact.instagram] : [])],
   ...(locations.length ? { location: locations } : {}),
   ...extra,
 });
