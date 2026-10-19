@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { u } from '../lib/site';
+import '../styles/enquire.css';
+---
+<Base title="Enquiry received | LGFC Theyyam" description="Thank you. Your Theyyam trip enquiry has been received." path="enquiry-success.html" robots="noindex">
+  <Header current="enquire" />
+  <main id="main">
+    <div class="w" style="padding-top:48px;padding-bottom:64px;max-width:720px">
+      <h1>Thank you, we have your enquiry</h1>
+      <p style="margin-top:16px;font-size:18px">A member of our North Malabar team will reply within two working days with a first suggestion. Nothing is charged and nothing is booked yet.</p>
+      <p id="idbox" hidden style="margin-top:24px;padding:18px 22px;border:2px solid #1a0a08;border-radius:16px">Your enquiry ID: <b id="eid" style="font-size:1.25rem"></b><br /><span style="font-size:14px">Please quote it in any message to us.</span></p>
+      <p style="margin-top:28px"><a class="btn red" href={u('what-is-theyyam.html')}>While you wait: what is Theyyam?</a></p>
+    </div>
+  </main>
+  <Footer />
+  <script is:inline>
+    var id=new URLSearchParams(location.search).get('enquiryId');
+    if(id&&/^[A-Za-z0-9 \/.-]{3,60}$/.test(id)){document.getElementById('eid').textContent=id;document.getElementById('idbox').hidden=false;}
+  </script>
+</Base>

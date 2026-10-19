@@ -29,13 +29,14 @@ const SITEKEY = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVR
 <div class="w lay">
 <div class="main">
 <p style="font-size:14px;margin:0 0 16px">Fields marked * are required.</p>
-<form id="enq" action={ENDPOINT} method="post" class="fm" novalidate>
+<form id="enq" action="#" method="post" class="fm" novalidate>
 <div class="f"><label for="name">Full name <span aria-hidden="true">*</span></label><input id="name" name="name" type="text" autocomplete="name" required /></div>
 <div class="f"><label for="email">Email <span aria-hidden="true">*</span></label><input id="email" name="email" type="email" autocomplete="email" required /></div>
 <div class="f"><label for="phone">WhatsApp number</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+91 …" /></div>
-<div class="f"><label for="arrivaldate">Arrival date <span aria-hidden="true">*</span></label><input id="arrivaldate" name="arrivaldate" type="date" required /></div>
-<div class="f"><label for="departuredate">Departure date <span aria-hidden="true">*</span></label><input id="departuredate" name="departuredate" type="date" required /></div>
+<div class="f"><label for="arrivaldate">Tentative arrival date <span aria-hidden="true">*</span></label><input id="arrivaldate" name="arrivaldate" type="date" required /></div>
+<div class="f"><label for="departuredate">Tentative departure date <span aria-hidden="true">*</span></label><input id="departuredate" name="departuredate" type="date" required /></div>
 <label class="full" style="grid-column:1/-1;display:flex;gap:12px;align-items:center;font-size:15px"><input type="checkbox" id="flex" style="width:24px;height:24px;flex:none;accent-color:#D7261E" /> My dates are flexible</label>
+<div class="f"><label for="destination">Destination (base town) <span aria-hidden="true">*</span></label><select id="destination" name="destination" required><option value="North Malabar">Not sure yet (North Malabar)</option><option>Kannur</option><option>Kanhangad</option><option>Thalassery</option><option>Payyannur</option></select></div>
 <div class="f"><label for="trip">Trip you are interested in</label><select id="trip" name="tripsel"><option value="">Not sure yet</option><option value="one-night">A Night at the Kavu (1 night)</option><option value="two-nights">Two Nights in Kolathunadu (2 nights)</option><option value="immersion">North Malabar Deep Immersion (3+ days)</option><option value="custom">Private or custom trip</option></select></div>
 <div class="f"><label for="adults">Number of travellers</label><input id="adults" name="adults" type="number" min="1" value="2" inputmode="numeric" /></div>
 <details class="full more" style="grid-column:1/-1;border:2px solid #1a0a08;border-radius:16px;padding:0 18px"><summary style="padding:16px 0;font-size:16px">Add more detail (optional)</summary>
@@ -46,7 +47,7 @@ const SITEKEY = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVR
 <div class="f"><label for="src">How did you hear about us?</label><input id="src" name="src" type="text" /></div>
 <div class="f full"><label for="notes">Anything we should know?</label><textarea id="notes" name="notes" placeholder="Interests, mobility needs, budget range"></textarea></div>
 </div></details>
-<input type="hidden" name="destination" /><input type="hidden" name="totalpax" /><input type="hidden" name="adultpax" /><input type="hidden" name="stayType" /><input type="hidden" name="datefixed" /><input type="hidden" name="planplaces" /><input type="hidden" name="specialreq" /><input type="hidden" name="rooms" /><input type="hidden" name="kidsage" /><input type="hidden" name="budget" /><input type="hidden" name="intent" value="estimate_first" />
+<input type="hidden" name="totalpax" /><input type="hidden" name="adultpax" /><input type="hidden" name="stayType" /><input type="hidden" name="datefixed" /><input type="hidden" name="planplaces" /><input type="hidden" name="specialreq" /><input type="hidden" name="rooms" /><input type="hidden" name="kidsage" /><input type="hidden" name="budget" /><input type="hidden" name="intent" value="estimate_first" />
 <div aria-hidden="true" style="position:absolute;left:-9999px"><label>Leave this empty <input type="text" name="company" tabindex="-1" autocomplete="off" /></label></div>
 <label class="full" style="grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;font-size:14px"><input type="checkbox" name="consent" required style="width:24px;height:24px;flex:none;margin-top:2px;accent-color:#D7261E" /> I agree to LGFC contacting me about this enquiry. We never share your details. See [PRIVACY POLICY].</label>
 {SITEKEY && <div class="g-recaptcha" data-sitekey={SITEKEY} style="grid-column:1/-1"></div>}
@@ -55,7 +56,7 @@ const SITEKEY = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVR
 </form>
 <div id="sent" hidden tabindex="-1" style="padding:28px;border:2px solid #1a0a08;border-radius:20px"><h2 style="font-size:1.6rem">Thank you, we have your enquiry</h2><p style="margin-top:12px">A member of our North Malabar team will reply within two working days with a first suggestion. Nothing is charged and nothing is booked yet.</p><p id="review" hidden style="margin-top:12px;font-weight:600">Review build: nothing was sent. The live site will deliver your enquiry to our team.</p><p style="margin-top:16px"><a class="btn red" href={u("what-is-theyyam.html")}>While you wait: what is Theyyam?</a></p></div>
 {SITEKEY && <script is:inline src="https://www.google.com/recaptcha/api.js" async defer></script>}
-<script is:inline define:vars={{ live: !!SITEKEY }}>
+<script is:inline define:vars={{ live: !!SITEKEY, ENDPOINT, SUCCESS: u('enquiry-success.html') }}>
 (function(){
 var f=document.getElementById('enq'),err=document.getElementById('err'),go=document.getElementById('go');
 window.dataLayer=window.dataLayer||[];function track(e){window.dataLayer.push({event:e});}
@@ -76,7 +77,6 @@ f.addEventListener('submit',function(ev){
  if(!live)return fail('Review build: the form is not connected yet (reCAPTCHA key missing), so nothing was sent.');
  if(!window.grecaptcha||!grecaptcha.getResponse())return fail('Please tick "I\'m not a robot".');
  var n=Math.max(1,parseInt(f.adults.value,10)||1),trip=f.tripsel.options[f.tripsel.selectedIndex].text;
- f.destination.value='Theyyam, North Malabar';
  f.totalpax.value=n;f.adultpax.value=n;f.rooms.value=Math.ceil(n/2);
  f.stayType.value=f.style.value;
  f.datefixed.value=f.flex.checked?'No, dates are flexible':'Yes';
@@ -84,7 +84,11 @@ f.addEventListener('submit',function(ev){
  f.kidsage.value=f.kids.value;
  f.specialreq.value=[f.notes.value,f.country.value&&('From: '+f.country.value),f.src.value&&('Heard about us: '+f.src.value)].filter(Boolean).join('\n');
  go.disabled=true;go.textContent='Sending…';track('enquiry_submit');
- f.submit();
+ var body=new FormData(f);body.delete('company');body.delete('tripsel');body.delete('consent');
+ var id=(f.name.value.trim().slice(0,4)+'/'+f.destination.value.slice(0,4)+'/'+f.arrivaldate.value).toUpperCase();
+ fetch(ENDPOINT,{method:'POST',mode:'no-cors',redirect:'manual',body:body})
+ .then(function(){track('enquiry_submit');location.href=SUCCESS+'?enquiryId='+encodeURIComponent(id);})
+ .catch(function(){go.disabled=false;go.textContent='Send my enquiry';if(window.grecaptcha)grecaptcha.reset();fail('Sorry, that did not send. Please check your connection and try again.');});
 });
 })();
 </script>

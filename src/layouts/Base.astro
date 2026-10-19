@@ -28,10 +28,12 @@ interface Props {
   wrap?: boolean;
   /** load the Theyyam search (English UI) */
   search?: boolean;
+  /** force a robots value (e.g. noindex for thank-you pages) */
+  robots?: string;
 }
 const {
   title, description, path, lang = 'en', ogType = 'website', ogImage = 'assets/lgfc-og.jpg',
-  ogImageMeta, twitter = false, ld = [], graph, ldExtra = [], hreflang = false, wrap = true, search = true,
+  ogImageMeta, twitter = false, ld = [], graph, ldExtra = [], hreflang = false, wrap = true, search = true, robots,
 } = Astro.props;
 const t = ui[lang];
 const url = abs(path);
@@ -45,7 +47,7 @@ const jsonld = [graph ?? [orgNode(), websiteNode(), ...ld], ...ldExtra];
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>{title}</title>
   <meta name="description" content={description} />
-  <meta name="robots" content={INDEXABLE ? 'index,follow' : 'noindex,nofollow'} />
+  <meta name="robots" content={robots ?? (INDEXABLE ? 'index,follow' : 'noindex,nofollow')} />
   <link rel="canonical" href={url} />
   {hreflang && LANGS.map((l) => <link rel="alternate" hreflang={l} href={abs(HOME_PATH[l])} />)}
   {hreflang && <link rel="alternate" hreflang="x-default" href={abs('')} />}
