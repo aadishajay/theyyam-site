@@ -1,9 +1,9 @@
 {
-  "note": "Contact details used by the footer and the structured data. Fill the [PLACEHOLDERS]. Offices appear in this order. Entries still in [brackets] are not put into the structured data.",
+  "note": "Contact details used by the footer and the structured data. Fill the [PLACEHOLDERS]. Leave instagram empty to hide it. Offices appear in this order. Entries still in [brackets] are not put into the structured data.",
   "offices": [
     {
       "label": "Kannur base",
-      "address": "[KANNUR ADDRESS]",
+      "address": "TheyyamTrips, Anjarakandy, Mamba PO, Kerala 670613",
       "locality": "Kannur",
       "region": "Kerala",
       "country": "IN",
@@ -11,14 +11,14 @@
     },
     {
       "label": "Registered office",
-      "address": "[REGISTERED OFFICE ADDRESS], Bengaluru",
-      "locality": "Bengaluru",
-      "region": "Karnataka",
+      "address": "LetsGoForACamp, Muppathadam PO, Aluva, Kerala 683110",
+      "locality": "Aluva",
+      "region": "Kerala",
       "country": "IN",
       "key": "registered"
     }
   ],
   "phone": "+91 7829230956",
   "email": "letsgoforacamp@gmail.com",
-  "instagram": "[INSTAGRAM]"
+  "instagram": ""
 }

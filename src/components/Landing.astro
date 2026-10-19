@@ -21,7 +21,8 @@ const t = landing[lang];
 const m = landingMeta[lang];
 const n = ui[lang];
 const blocks = landingLd(lang);
-const regChips = ['LetsGoForACamp Travel and Innovation LLP', '[TOURISM REGISTRATION NO.]', '[MEMBER OF TOURISM ASSOCIATION]'];
+// Add '[TOURISM REGISTRATION NO.]'-style chips here once the numbers exist; bracketed entries are hidden until then.
+const regChips = ['LetsGoForACamp Travel and Innovation LLP'].filter((c) => !c.startsWith('['));
 type K = keyof typeof t;
 const snap: { img: string; alt: K; tag: K; h: K; p: K }[] = [
   { img: 'blog/theyyam-etiquette.jpg', alt: 'trip1alt', tag: 'trip1tag', h: 'trip1h', p: 'trip1p' },
