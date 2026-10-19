@@ -3,7 +3,7 @@
   "offices": [
     {
       "label": "Kannur base",
-      "address": "TheyyamTrips, Kavinmoola, Anjarakkandy, Mamba PO, Kerala 670611",
+      "address": "TheyyamTrips, Kavinmoola, Anjarakkandy, Mamba PO 670611, Kannur, Kerala",
       "locality": "Kannur",
       "region": "Kerala",
       "country": "IN",
@@ -11,7 +11,7 @@
     },
     {
       "label": "Registered office",
-      "address": "LetsGoForACamp, Muppathadam PO, Aluva, Kerala 683110",
+      "address": "LetsGoForACamp, Muppathadam PO 683110, Aluva, Kerala",
       "locality": "Aluva",
       "region": "Kerala",
       "country": "IN",
