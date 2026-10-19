@@ -5,17 +5,33 @@ const { current } = Astro.props;
 const short: Record<Lang, string> = { en: 'EN', de: 'DE', fr: 'FR', es: 'ES' };
 const full: Record<Lang, string> = { en: 'English', de: 'Deutsch', fr: 'Français', es: 'Español' };
 ---
-<div class="lang" role="navigation" aria-label="Language">
-  {LANGS.map((l) =>
-    l === current ? (
-      <span aria-current="true">{short[l]}</span>
-    ) : (
-      <a href={u(HOME_PATH[l] || 'index.html')} hreflang={l} lang={l} title={full[l]}>{short[l]}</a>
-    )
-  )}
-</div>
+<details class="lang">
+  <summary aria-label={`Language: ${full[current]}`}><span>{short[current]}</span></summary>
+  <ul role="list">
+    {LANGS.map((l) => (
+      <li>
+        {l === current
+          ? <span class="cur" aria-current="true">{full[l]}</span>
+          : <a href={u(HOME_PATH[l] || 'index.html')} hreflang={l} lang={l}>{full[l]}</a>}
+      </li>
+    ))}
+  </ul>
+</details>
 <style>
-  .lang { display: flex; gap: 10px; font-size: 13px; font-weight: 600; margin: 0 24px 0 auto; }
-  .lang a { color: #1a0a08; text-decoration: none; }
-  .lang span { font-weight: 800; }
+  .lang { position: relative; font-size: 14px; font-weight: 600; border-bottom: 0; }
+  .lang summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; border: 2px solid #1a0a08; border-radius: 999px; background: #fff; color: #1a0a08; }
+  .lang summary::-webkit-details-marker { display: none; }
+  .lang summary::after { content: ''; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translateY(-2px); }
+  .lang[open] summary::after { transform: rotate(-135deg) translateY(-2px); }
+  .lang ul { position: absolute; left: 0; top: calc(100% + 6px); z-index: 30; margin: 0; padding: 6px; list-style: none; min-width: 150px; background: #fff; border: 2px solid #1a0a08; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,.15); }
+  .lang li a, .lang li .cur { display: flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: 10px; color: #1a0a08; text-decoration: none; }
+  .lang li a:hover { background: #f4eeee; }
+  .lang li .cur { font-weight: 800; color: #D7261E; }
+  /* desktop: the dropdown sits at the right of the menu */
+  @media (min-width: 1024px) { .lang ul { left: auto; right: 0; } }
 </style>
+<script is:inline>
+(function(){var d=document.querySelector('details.lang');if(!d)return;
+document.addEventListener('click',function(e){if(d.open&&!d.contains(e.target))d.open=false;});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&d.open){d.open=false;d.querySelector('summary').focus();}});})();
+</script>

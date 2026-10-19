@@ -17,9 +17,8 @@ const faq = lang === 'en' ? u('index.html') + '#faq' : '#faq';
 const cur = (k: string) => (current === k ? { 'aria-current': 'page', style: 'color:#D7261E' } : {});
 const homeLabel = lang === 'en' ? 'index.html' : '';
 ---
-<header class="hd"><div class="w">
+<header class={switcher ? 'hd has-lang' : 'hd'}><div class="w">
   <a class="lg" href={home}>LGFC Theyyam</a>
-  {switcher && <LangSwitcher current={lang} />}
   <nav class="nv" aria-label={t.main}>
     <a href={u('trips.html')} {...cur('trips')}>{t.trips}</a>
     <a href={u('theyyams/')} {...cur('theyyams')}>{t.theyyams}</a>
@@ -27,6 +26,7 @@ const homeLabel = lang === 'en' ? 'index.html' : '';
     <a href={faq}>{t.faq}</a>
     <a class="btn red" href={u('enquire.html')}>{t.enquire}</a>
   </nav>
+  {switcher && <LangSwitcher current={lang} />}
   <details class="mm"><summary>{t.menu}</summary><div>
     <a href={u('trips.html')}>{t.trips}</a>
     <a href={u('theyyams/')}>{t.theyyams}</a>
@@ -35,3 +35,14 @@ const homeLabel = lang === 'en' ? 'index.html' : '';
     <a href={u('enquire.html')}>{t.enquire}</a>
   </div></details>
 </div></header>
+<style is:global>
+  .hd .mm { border-bottom: 0; }
+  /* landing pages: language dropdown. Below 1024px it gets its own row under the site name; from 1024px it sits right of the menu. */
+  @media (max-width: 1023px) {
+    .hd.has-lang .w { flex-wrap: wrap; height: auto; padding-top: 8px; padding-bottom: 10px; row-gap: 4px; }
+    .hd.has-lang .lg { margin-right: auto; }
+    .hd.has-lang .lang { order: 1; flex: 0 0 100%; }
+  }
+  @media (min-width: 768px) { .hd.has-lang .nv { margin-left: auto; } }
+  @media (min-width: 1024px) { .hd.has-lang .lang { margin-left: 24px; } }
+</style>
