@@ -9,8 +9,6 @@ import '../styles/enquire.css';
 // Form handler (Cloudflare Worker, POST /submit writes to Notion and emails the guest). The reCAPTCHA v2 site key is public;
 // set PUBLIC_RECAPTCHA_SITE_KEY at build time. The key must allow this site's domain.
 const ENDPOINT = 'https://lgfc_custom_trip_form_handler.letsgoforacamp.workers.dev/submit';
-// Google's published reCAPTCHA test key (always passes, shows a testing banner). Replace with the real key before launch.
-const SITEKEY = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRexYx0Hjq2DB5sTa5T3KfXf';
 ---
 <Base
   title="Enquire About a Theyyam Tour | LGFC Theyyam"
@@ -47,16 +45,14 @@ const SITEKEY = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVR
 <div class="f"><label for="src">How did you hear about us?</label><input id="src" name="src" type="text" /></div>
 <div class="f full"><label for="notes">Anything we should know?</label><textarea id="notes" name="notes" placeholder="Interests, mobility needs, budget range"></textarea></div>
 </div></details>
-<input type="hidden" name="totalpax" /><input type="hidden" name="adultpax" /><input type="hidden" name="stayType" /><input type="hidden" name="datefixed" /><input type="hidden" name="planplaces" /><input type="hidden" name="specialreq" /><input type="hidden" name="rooms" /><input type="hidden" name="kidsage" /><input type="hidden" name="budget" /><input type="hidden" name="intent" value="estimate_first" />
+<input type="hidden" name="totalpax" /><input type="hidden" name="adultpax" /><input type="hidden" name="stayType" /><input type="hidden" name="datefixed" /><input type="hidden" name="planplaces" /><input type="hidden" name="specialreq" /><input type="hidden" name="rooms" /><input type="hidden" name="kidsage" /><input type="hidden" name="budget" /><input type="hidden" name="intent" value="estimate_first" /><input type="hidden" name="g-recaptcha-response" value="not-used" />
 <div aria-hidden="true" style="position:absolute;left:-9999px"><label>Leave this empty <input type="text" name="company" tabindex="-1" autocomplete="off" /></label></div>
 <label class="full" style="grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;font-size:14px"><input type="checkbox" name="consent" required style="width:24px;height:24px;flex:none;margin-top:2px;accent-color:#D7261E" /> I agree to LGFC contacting me about this enquiry. We never share your details. See [PRIVACY POLICY].</label>
-{SITEKEY && <div class="g-recaptcha" data-sitekey={SITEKEY} style="grid-column:1/-1"></div>}
 <p id="err" role="alert" hidden style="grid-column:1/-1;color:#b00020;font-weight:600"></p>
 <div style="grid-column:1/-1"><button id="go" class="btn" type="submit" style="width:100%;max-width:320px">Send my enquiry</button><p style="font-size:14px;margin-top:10px;opacity:.8">No payment now. We reply within two working days.</p></div>
 </form>
 <div id="sent" hidden tabindex="-1" style="padding:28px;border:2px solid #1a0a08;border-radius:20px"><h2 style="font-size:1.6rem">Thank you, we have your enquiry</h2><p style="margin-top:12px">A member of our North Malabar team will reply within two working days with a first suggestion. Nothing is charged and nothing is booked yet.</p><p id="review" hidden style="margin-top:12px;font-weight:600">Review build: nothing was sent. The live site will deliver your enquiry to our team.</p><p style="margin-top:16px"><a class="btn red" href={u("what-is-theyyam.html")}>While you wait: what is Theyyam?</a></p></div>
-{SITEKEY && <script is:inline src="https://www.google.com/recaptcha/api.js" async defer></script>}
-<script is:inline define:vars={{ live: !!SITEKEY, ENDPOINT, SUCCESS: u('enquiry-success.html') }}>
+<script is:inline define:vars={{ ENDPOINT, SUCCESS: u('enquiry-success.html') }}>
 (function(){
 var f=document.getElementById('enq'),err=document.getElementById('err'),go=document.getElementById('go');
 window.dataLayer=window.dataLayer||[];function track(e){window.dataLayer.push({event:e});}
@@ -74,8 +70,6 @@ f.addEventListener('submit',function(ev){
  if(!f.arrivaldate.value||!f.departuredate.value)return fail('Please choose an arrival and departure date. Approximate is fine, tick "My dates are flexible".',f.arrivaldate.value?f.departuredate:f.arrivaldate);
  if(f.departuredate.value<f.arrivaldate.value)return fail('Departure cannot be before arrival.',f.departuredate);
  if(!f.consent.checked)return fail('Please tick the consent box.',f.consent);
- if(!live)return fail('Review build: the form is not connected yet (reCAPTCHA key missing), so nothing was sent.');
- if(!window.grecaptcha||!grecaptcha.getResponse())return fail('Please tick "I\'m not a robot".');
  var n=Math.max(1,parseInt(f.adults.value,10)||1),trip=f.tripsel.options[f.tripsel.selectedIndex].text;
  f.totalpax.value=n;f.adultpax.value=n;f.rooms.value=Math.ceil(n/2);
  f.stayType.value=f.style.value;
@@ -88,7 +82,7 @@ f.addEventListener('submit',function(ev){
  var id=(f.name.value.trim().slice(0,4)+'/'+f.destination.value.slice(0,4)+'/'+f.arrivaldate.value).toUpperCase();
  fetch(ENDPOINT,{method:'POST',mode:'no-cors',redirect:'manual',body:body})
  .then(function(){track('enquiry_submit');location.href=SUCCESS+'?enquiryId='+encodeURIComponent(id);})
- .catch(function(){go.disabled=false;go.textContent='Send my enquiry';if(window.grecaptcha)grecaptcha.reset();fail('Sorry, that did not send. Please check your connection and try again.');});
+ .catch(function(){go.disabled=false;go.textContent='Send my enquiry';fail('Sorry, that did not send. Please check your connection and try again.');});
 });
 })();
 </script>
