@@ -6,8 +6,7 @@ import { u } from '../lib/site';
 import { breadcrumb } from '../lib/schema';
 import '../styles/enquire.css';
 
-// Form handler (Cloudflare Worker, POST /submit writes to Notion and emails the guest). The reCAPTCHA v2 site key is public;
-// set PUBLIC_RECAPTCHA_SITE_KEY at build time. The key must allow this site's domain.
+// Form handler (Cloudflare Worker, POST /submit writes to Notion and emails the guest). No captcha widget; see the README.
 const ENDPOINT = 'https://lgfc_custom_trip_form_handler.letsgoforacamp.workers.dev/submit';
 ---
 <Base
