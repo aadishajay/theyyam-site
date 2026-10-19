@@ -99,3 +99,7 @@ For launch: `SITE=https://your-domain.com BASE=/ INDEXABLE=1 npm run deploy`.
 Fill the placeholders (`[PHONE]`, `[EMAIL]`, `[INSTAGRAM]`, `[ADDRESS]`, registration no., rating, association,
 testimonial, author and date), set `ENDPOINT` in `src/pages/enquire.astro`, pick a domain, and build with the launch
 variables above. Have a knowledgeable person review the Theyyam content and the German, French and Spanish copy.
+
+## Enquiry form
+
+`src/pages/enquire.astro` posts natively (form POST) to the Cloudflare Worker `https://lgfc_custom_trip_form_handler.letsgoforacamp.workers.dev/submit`, which writes to Notion and emails the guest. The worker requires a reCAPTCHA v2 token: set `PUBLIC_RECAPTCHA_SITE_KEY` (public site key, domain must be allowed) when building. Without it the form shows a review-mode message and sends nothing. The worker redirects to the letsgoforacamp.com success page. Never commit worker secrets (Notion and SendGrid keys) to this repo.
