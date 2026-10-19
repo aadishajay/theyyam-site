@@ -48,6 +48,7 @@ const ENDPOINT = 'https://lgfc_custom_trip_form_handler.letsgoforacamp.workers.d
 <input type="hidden" name="totalpax" /><input type="hidden" name="adultpax" /><input type="hidden" name="stayType" /><input type="hidden" name="datefixed" /><input type="hidden" name="planplaces" /><input type="hidden" name="specialreq" /><input type="hidden" name="rooms" /><input type="hidden" name="kidsage" /><input type="hidden" name="budget" /><input type="hidden" name="intent" value="estimate_first" /><input type="hidden" name="g-recaptcha-response" value="not-used" />
 <div aria-hidden="true" style="position:absolute;left:-9999px"><label>Leave this empty <input type="text" name="company" tabindex="-1" autocomplete="off" /></label></div>
 <label class="full" style="grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;font-size:14px"><input type="checkbox" name="consent" required style="width:24px;height:24px;flex:none;margin-top:2px;accent-color:#D7261E" /> I agree to LGFC contacting me about this enquiry. We never share your details. See [PRIVACY POLICY].</label>
+<div class="f" style="grid-column:1/-1;max-width:320px"><label for="mathq">Quick check: what is <span id="mq">…</span>? <span aria-hidden="true">*</span></label><input id="mathq" type="text" inputmode="numeric" autocomplete="off" required /></div>
 <p id="err" role="alert" hidden style="grid-column:1/-1;color:#b00020;font-weight:600"></p>
 <div style="grid-column:1/-1"><button id="go" class="btn" type="submit" style="width:100%;max-width:320px">Send my enquiry</button><p style="font-size:14px;margin-top:10px;opacity:.8">No payment now. We reply within two working days.</p></div>
 </form>
@@ -61,6 +62,7 @@ if(t){var o=f.querySelector('#trip option[value="'+t.replace(/[^a-z-]/g,'')+'"]'
 var today=new Date().toISOString().slice(0,10);f.arrivaldate.min=today;f.departuredate.min=today;
 f.arrivaldate.addEventListener('change',function(){if(f.arrivaldate.value){f.departuredate.min=f.arrivaldate.value;if(!f.departuredate.value||f.departuredate.value<f.arrivaldate.value)f.departuredate.value=f.arrivaldate.value;}});
 var started=false;f.addEventListener('input',function(){if(!started){started=true;track('enquiry_start');}});
+var ans=0;function newQ(){var a=2+Math.floor(Math.random()*8),b=2+Math.floor(Math.random()*8);ans=a+b;document.getElementById('mq').textContent=a+' + '+b;}newQ();
 function fail(m,el){err.textContent=m;err.hidden=false;if(el)el.focus();}
 f.addEventListener('submit',function(ev){
  ev.preventDefault();err.hidden=true;
@@ -70,6 +72,7 @@ f.addEventListener('submit',function(ev){
  if(!f.arrivaldate.value||!f.departuredate.value)return fail('Please choose an arrival and departure date. Approximate is fine, tick "My dates are flexible".',f.arrivaldate.value?f.departuredate:f.arrivaldate);
  if(f.departuredate.value<f.arrivaldate.value)return fail('Departure cannot be before arrival.',f.departuredate);
  if(!f.consent.checked)return fail('Please tick the consent box.',f.consent);
+ if(parseInt(f.mathq.value,10)!==ans){newQ();f.mathq.value='';return fail('That answer is not right. Please try the new sum.',f.mathq);}
  var n=Math.max(1,parseInt(f.adults.value,10)||1),trip=f.tripsel.options[f.tripsel.selectedIndex].text;
  f.totalpax.value=n;f.adultpax.value=n;f.rooms.value=Math.ceil(n/2);
  f.stayType.value=f.style.value;
