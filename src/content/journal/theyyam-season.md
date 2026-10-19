@@ -61,7 +61,7 @@ Hotter and more humid, with rituals running into the pre-monsoon heat. The crowd
 
 ## How to choose
 
-Tell us your travel month, how long you have and whether you are travelling with children or elders. We will suggest the right base town and pace. [Start an enquiry](enquire.html).
+Tell us your tentative travel dates, how long you have and whether you are travelling with children or elders. We will suggest the right base town and pace. [Start an enquiry](enquire.html).
 
 ## Quick answers
 

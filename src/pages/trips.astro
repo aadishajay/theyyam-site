@@ -36,15 +36,15 @@ const includes = [
   { h: 'Good to know', items: ['Rituals run late into the night', 'Modest dress is expected', 'Rituals confirmed before you pay in full'] },
 ];
 const steps = [
-  ['Tell us your month and group', 'A few details through the form or on WhatsApp. It takes two minutes.'],
+  ['Tell us your tentative dates and group', 'A few details through the form or on WhatsApp. It takes two minutes.'],
   ['We reply within two working days', 'A trip suggestion and a quote, planned around your dates and how you like to travel.'],
   ['We confirm the rituals', 'Rituals are confirmed closer to travel, and you pay only once they are.'],
   ['You travel, we look after you', 'Stay, transfers and a local guide if you want one, with our team on call.'],
 ];
 const faqs = [
-  ['How much does a trip cost?', 'Every trip is planned around your dates, group and stay, so we quote on request. Send us your month and group size and we reply within two working days. Nothing is charged until you confirm.'],
+  ['How much does a trip cost?', 'Every trip is planned around your dates, group and stay, so we quote on request. Send us your tentative dates and group size and we reply within two working days. Nothing is charged until you confirm.'],
   ['Do I need a guide?', 'No. A local guide is optional. Many first-time visitors choose one because rituals are often family occasions, and a guide explains each step and helps you take part respectfully.'],
-  ['Can I choose my dates?', 'Theyyam season runs from late October to May. Tell us your month and we suggest the best weeks, then confirm the rituals closer to travel.'],
+  ['Can I choose my dates?', 'Theyyam season runs from late October to May. Give us tentative dates, flexible is fine, and we suggest the best weeks, then confirm the rituals closer to travel.'],
   ['Can I join a group or travel privately?', 'Both. You can join a small group, or travel privately with friends or family.'],
   ['Can I take photos or video?', 'Not always. Many shrines ban photography and video, some for the whole ritual. Your guide tells you the rules at each place, and we suggest you simply be present.'],
   ['Is it suitable for children and older travellers?', 'Yes, with planning. Rituals run late and involve standing, so we adjust the pace and seating.'],
@@ -92,7 +92,7 @@ ld.push({ '@type': 'FAQPage', mainEntity: faqs.map(([q, a]) => ({ '@type': 'Ques
     <section class="sec"><div class="w">
       <h2 style="margin-bottom:28px">How it works</h2>
       <ol class="steps">{steps.map(([h, p], i) => <li><span class="n">{i + 1}</span><div><h3>{h}</h3><p>{p}</p></div></li>)}</ol>
-      <p style="margin-top:28px"><a class="btn red" href={u('enquire.html')}>Start with your month and group</a></p>
+      <p style="margin-top:28px"><a class="btn red" href={u('enquire.html')}>Start with your dates and group</a></p>
     </div></section>
 
     <section class="sec" style="background:#FFB400"><div class="w">
@@ -120,7 +120,7 @@ ld.push({ '@type': 'FAQPage', mainEntity: faqs.map(([q, a]) => ({ '@type': 'Ques
       {faqs.map(([q, a]) => <details class="qa"><summary>{q}</summary><p>{a}</p></details>)}
     </div></section>
 
-    <CtaBand title="Not sure which trip fits?" text="Tell us your month and group. We will suggest the right one." label="Enquire about a trip" />
+    <CtaBand title="Not sure which trip fits?" text="Tell us your tentative dates and group. We will suggest the right one." label="Enquire about a trip" />
   </main>
   <div class="bar"><a class="btn red" href={u('enquire.html')}>Get a quote</a></div>
   <Footer />
