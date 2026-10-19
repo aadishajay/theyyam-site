@@ -10,7 +10,7 @@ RewriteRule ^(.*)$ https://theyyamtrips.com/$1 [R=301,L]
 
 # --- security headers ---
 <IfModule mod_headers.c>
-  Header always set Strict-Transport-Security "max-age=31536000"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
@@ -19,13 +19,13 @@ RewriteRule ^(.*)$ https://theyyamtrips.com/$1 [R=301,L]
   Header always set Cross-Origin-Resource-Policy "same-site"
 </IfModule>
 
-# --- caching: hashed build files for a year, other assets a month, pages revalidate ---
+# --- caching: images, fonts and hashed build files for a year (rename an image file when you replace it), css/js a month, pages revalidate ---
 <IfModule mod_expires.c>
   ExpiresActive On
-  ExpiresByType image/jpeg "access plus 1 month"
-  ExpiresByType image/png "access plus 1 month"
-  ExpiresByType image/webp "access plus 1 month"
-  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
   ExpiresByType font/woff2 "access plus 1 year"
   ExpiresByType text/css "access plus 1 month"
   ExpiresByType application/javascript "access plus 1 month"

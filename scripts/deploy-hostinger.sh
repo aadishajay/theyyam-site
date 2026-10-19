@@ -7,7 +7,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 SITE=https://theyyamtrips.com BASE=/ npm run build
 node scripts/check-placeholders.mjs
-scripts/make-webp.sh
+scripts/make-webp.py
 node scripts/picturefy.mjs
 rsync -az --delete -e "ssh -p 65002 -o BatchMode=yes" dist/ u444028149@217.21.90.3:~/domains/theyyamtrips.com/public_html/
 echo "uploaded dist/ to theyyamtrips.com"
