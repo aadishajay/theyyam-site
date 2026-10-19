@@ -1,4 +1,5 @@
 ---
+import { waLink } from '../lib/whatsapp';
 import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -68,7 +69,7 @@ const reg = contact.offices.find((o) => o.key === 'registered');
       <p style="margin-top:10px">If we change how we use your details, we will update this page and the date at the top.</p>
 
       <h2 style="margin-top:32px">Contact</h2>
-      <p style="margin-top:10px">LetsGoForACamp (TheyyamTrips)<br />Email: <a href={`mailto:${contact.email}`} style="text-decoration:underline">{contact.email}</a><br />WhatsApp: <a href={`https://wa.me/${contact.phone.replace(/\D/g, '')}`} style="text-decoration:underline">{contact.phone}</a></p>
+      <p style="margin-top:10px">LetsGoForACamp (TheyyamTrips)<br />Email: <a href={`mailto:${contact.email}`} style="text-decoration:underline">{contact.email}</a><br />WhatsApp: <a href={waLink()} style="text-decoration:underline">{contact.phone}</a></p>
 
       <p style="margin-top:32px"><a class="btn red" href={u('enquire.html')}>Back to the enquiry form</a></p>
     </div>

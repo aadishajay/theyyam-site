@@ -1,4 +1,5 @@
 ---
+import { waLink } from '../lib/whatsapp';
 import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -97,7 +98,7 @@ f.addEventListener('submit',function(ev){
 <h2>What happens next</h2>
 <ol style="margin:16px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:10px"><li><b>We read your enquiry</b> and match it to the season.</li><li><b>You get a proposal</b> in two working days.</li><li><b>We confirm the rituals</b> closer to travel, then you pay.</li></ol>
 <hr style="border:0;border-top:2px solid #1a0a08;margin:22px 0" />
-<h3>Prefer to talk?</h3><p style="margin-top:6px">WhatsApp: <a href={`https://wa.me/${contact.phone.replace(/\D/g, '')}`}>{contact.phone}</a><br />Email: <a href={`mailto:${contact.email}`}>{contact.email}</a></p><p style="margin-top:10px;font-size:14px">8+ years organising Theyyam tours · 500+ explorers hosted · 24x7 support on booked trips. Replies come from our North Malabar team, not a call centre.</p>
+<h3>Prefer to talk?</h3><p style="margin-top:6px">WhatsApp: <a href={waLink()}>{contact.phone}</a><br />Email: <a href={`mailto:${contact.email}`}>{contact.email}</a></p><p style="margin-top:10px;font-size:14px">8+ years organising Theyyam tours · 500+ explorers hosted · 24x7 support on booked trips. Replies come from our North Malabar team, not a call centre.</p>
 </div>
 </aside>
 </div>
