@@ -27,6 +27,6 @@ export function landingLd(lang: Lang) {
   if (lang === 'en') return [[orgNode(), websiteNode(), faq], [page, crumbs, ...imgs]];
   const org = orgNode(m.orgDescription, { inLanguage: lang });
   delete (org as any).slogan; org.knowsAbout = ['Theyyam', 'North Malabar', 'Kannur', 'Kasaragod'];
-  const site = { '@type': 'WebSite', '@id': url + '#website', name: 'LGFC Theyyam', url, inLanguage: lang, publisher: { '@id': orgId } };
+  const site = { '@type': 'WebSite', '@id': url + '#website', name: 'TheyyamTrips', url, inLanguage: lang, publisher: { '@id': orgId } };
   return [[org, site, page, crumbs, ...imgs, { ...faq, '@id': url + '#faq', inLanguage: lang }]];
 }

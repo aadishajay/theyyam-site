@@ -1,5 +1,5 @@
 ---
-title: "Is Theyyam a Dance? No, It Is a Ritual | LGFC Theyyam"
+title: "Is Theyyam a Dance? No, It Is a Ritual | TheyyamTrips"
 h1: "Is Theyyam a dance? No, it is a ritual"
 crumb: "Is Theyyam a dance?"
 description: "Many sites call Theyyam a dance or a show. For the families who keep it, it is worship. Here is the difference, and the right words to use."

@@ -1,5 +1,5 @@
 ---
-title: "Attire and craft: how a Theyyam’s attire is made | LGFC Theyyam"
+title: "Attire and craft: how a Theyyam’s attire is made | TheyyamTrips"
 h1: "Attire and craft: how a Theyyam’s attire is made"
 crumb: "Attire and craft: how a Theyyam’s attire is made"
 description: "How Theyyam attire and the face are made in North Kerala: face painting, headdress, palm-leaf skirts and the hands that craft them."

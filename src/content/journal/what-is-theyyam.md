@@ -1,5 +1,5 @@
 ---
-title: "What is Theyyam? A First-Timer’s Guide to Kerala’s Ritual | LGFC Theyyam"
+title: "What is Theyyam? A First-Timer’s Guide to Kerala’s Ritual | TheyyamTrips"
 h1: "What is Theyyam? A first-timer’s guide to Kerala’s living ritual"
 crumb: "What is Theyyam?"
 description: "What Theyyam is, who keeps it, what you will see and how to be a good guest at a ritual in North Malabar, Kerala."

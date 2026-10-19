@@ -1,5 +1,5 @@
 ---
-title: "The steps of a Theyyam: thottam, vellattam, purappadu and more explained | LGFC Theyyam"
+title: "The steps of a Theyyam: thottam, vellattam, purappadu and more explained | TheyyamTrips"
 h1: "The steps of a Theyyam: thottam, vellattam, purappadu and more explained"
 crumb: "The steps of a Theyyam"
 description: "The stages of a Theyyam ritual in order, with meanings: aniyara, thottam, vellattam, mudi, purappadu, kalasham, kuri and more, in plain English."

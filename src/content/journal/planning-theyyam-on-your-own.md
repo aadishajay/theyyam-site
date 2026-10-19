@@ -1,5 +1,5 @@
 ---
-title: "Why Theyyam is hard to plan on your own | LGFC Theyyam"
+title: "Why Theyyam is hard to plan on your own | TheyyamTrips"
 h1: "Why Theyyam is hard to plan on your own"
 crumb: "Why Theyyam is hard to plan on your own"
 description: "Why seeing a Theyyam ritual in North Kerala is hard to plan alone: local timings, late nights, access and etiquette, and how a guide helps."

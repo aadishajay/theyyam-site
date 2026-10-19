@@ -1,5 +1,5 @@
 ---
-title: "Kantara and Theyyam: What the Film Shows and What It Does Not | LGFC Theyyam"
+title: "Kantara and Theyyam: What the Film Shows and What It Does Not | TheyyamTrips"
 h1: "Kantara and Theyyam: what the film shows and what it does not"
 crumb: "Kantara and Theyyam"
 description: "Kantara shows Bhoota Kola, a ritual closely related to Theyyam. What Panjurli and Guliga are, how they connect to North Malabar, and what a film cannot show."

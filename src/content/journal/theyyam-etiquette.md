@@ -1,5 +1,5 @@
 ---
-title: "Theyyam etiquette: do’s and don’ts for visitors | LGFC Theyyam"
+title: "Theyyam etiquette: do’s and don’ts for visitors | TheyyamTrips"
 h1: "Theyyam etiquette: do’s and don’ts for visitors"
 crumb: "Theyyam etiquette for visitors"
 description: "How to behave at a Theyyam ritual in North Kerala: dress, footwear, where to stand, blessings and offerings, and when to ask your guide."

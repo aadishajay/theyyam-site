@@ -1,4 +1,4 @@
-# LGFC Theyyam website
+# TheyyamTrips website
 
 Culture-led, inquiry-only site for LGFC's guided Theyyam trips (Kannur and Kasaragod, Kerala). Built with
 [Astro](https://astro.build) as a static site; review copy on GitHub Pages: https://aadishajay.github.io/theyyam-site/

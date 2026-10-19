@@ -9,9 +9,10 @@ const locations = contact.offices
 export const orgNode = (description?: string, extra: Record<string, unknown> = {}) => ({
   '@type': ['TravelAgency', 'Organization'],
   '@id': abs('') + '#org',
-  name: 'LGFC Theyyam',
+  name: 'TheyyamTrips',
   legalName: 'LetsGoForACamp Travel and Innovation LLP',
   alternateName: 'letsgoforacamp',
+  logo: abs('assets/logo-theyyamtrips.svg'),
   url: abs(''),
   description:
     description ??
@@ -26,7 +27,7 @@ export const orgNode = (description?: string, extra: Record<string, unknown> = {
 
 export const websiteNode = () => ({
   '@type': 'WebSite',
-  name: 'LGFC Theyyam',
+  name: 'TheyyamTrips',
   url: abs(''),
   publisher: { '@id': abs('') + '#org' },
 });

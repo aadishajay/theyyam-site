@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200"
+     height="300"
+     viewBox="0 0 1200 300">
+
+  <title>TheyyamTrips Logo (white, for dark backgrounds)</title>
+  <desc>
+    TheyyamTrips wordmark with a minimalist,
+    traditional Theyyam-inspired ornamental symbol.
+  </desc>
+
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&amp;display=swap');
+
+      .brand-name {
+        font-family: 'Poppins', sans-serif;
+        font-size: 104px;
+        font-weight: 700;
+        letter-spacing: -4px;
+        fill: #FFFFFF;
+      }
+
+      .symbol {
+        fill: #FFFFFF;
+      }
+
+      .cutout {
+        fill: none;
+        stroke: #FFFFFF;
+      }
+    </style>
+  </defs>
+
+  <!-- Theyyam-inspired ornamental arch -->
+  <g id="theyyam-symbol"
+     transform="translate(70, 20)"
+     class="symbol">
+
+    <!-- Outer ceremonial rays -->
+    <g id="rays">
+      <path d="M 52,195 L 25,205 L 51,213 Z"/>
+      <path d="M 57,160 L 29,163 L 54,178 Z"/>
+      <path d="M 69,126 L 43,121 L 64,143 Z"/>
+      <path d="M 88,96 L 66,83 L 80,111 Z"/>
+      <path d="M 112,71 L 96,51 L 101,81 Z"/>
+      <path d="M 140,53 L 130,28 L 126,60 Z"/>
+      <path d="M 171,43 L 168,16 L 154,46 Z"/>
+      <path d="M 201,40 L 208,14 L 186,42 Z"/>
+      <path d="M 230,45 L 244,22 L 219,47 Z"/>
+    </g>
+
+    <!-- Main curved headdress bands -->
+    <path d="
+      M 49,214
+      A 174,174 0 0,1 245,38
+      L 245,57
+      A 155,155 0 0,0 68,214
+      Z
+    "/>
+
+    <path d="
+      M 92,214
+      A 132,132 0 0,1 245,76
+      L 245,92
+      A 116,116 0 0,0 108,214
+      Z
+    "/>
+
+    <path d="
+      M 133,214
+      A 91,91 0 0,1 245,116
+      L 245,132
+      A 74,74 0 0,0 149,214
+      Z
+    "/>
+
+    <!-- Dotted ornamental band -->
+    <g id="ornamental-dots">
+      <circle cx="83" cy="187" r="7"/>
+      <circle cx="87" cy="161" r="7"/>
+      <circle cx="97" cy="137" r="7"/>
+      <circle cx="111" cy="116" r="7"/>
+      <circle cx="128" cy="97" r="7"/>
+      <circle cx="148" cy="82" r="7"/>
+      <circle cx="170" cy="69" r="7"/>
+      <circle cx="194" cy="60" r="7"/>
+      <circle cx="220" cy="55" r="7"/>
+    </g>
+
+    <!-- Hanging ceremonial ornament -->
+    <path d="M 78,211 L 78,237"
+          fill="none"
+          stroke="#FFFFFF"
+          stroke-width="7"
+          stroke-linecap="round"/>
+
+    <circle cx="78" cy="244" r="7"/>
+
+    <circle cx="78" cy="267" r="24"
+            fill="none"
+            stroke="#FFFFFF"
+            stroke-width="9"/>
+
+    <circle cx="78" cy="267" r="8"
+            fill="#FFFFFF"/>
+
+  </g>
+
+  <!-- Wordmark -->
+  <text x="355"
+        y="184"
+        class="brand-name">theyyamtrips</text>
+
+</svg>

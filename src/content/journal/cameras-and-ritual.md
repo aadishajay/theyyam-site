@@ -1,5 +1,5 @@
 ---
-title: "Cameras and ritual: why some Theyyams allow no photos or video | LGFC Theyyam"
+title: "Cameras and ritual: why some Theyyams allow no photos or video | TheyyamTrips"
 h1: "Cameras and ritual: why some Theyyams allow no photos or video"
 crumb: "Cameras and ritual at Theyyam"
 description: "Why photography and video are not allowed at some Theyyam rituals in North Kerala, and how to be a respectful guest with a phone."

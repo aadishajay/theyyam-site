@@ -1,4 +1,5 @@
 ---
+import Logo from './Logo.astro';
 import { u, HOME_PATH, type Lang } from '../lib/site';
 import { ui } from '../i18n/ui';
 import LangSwitcher from './LangSwitcher.astro';
@@ -18,7 +19,7 @@ const cur = (k: string) => (current === k ? { 'aria-current': 'page', style: 'co
 const homeLabel = lang === 'en' ? 'index.html' : '';
 ---
 <header class={switcher ? 'hd has-lang' : 'hd'}><div class="w">
-  <a class="lg" href={home}>LGFC Theyyam</a>
+  <a class="lg" href={home} aria-label="TheyyamTrips home"><Logo height={46} /></a>
   <nav class="nv" aria-label={t.main}>
     <a href={u('trips.html')} {...cur('trips')}>{t.trips}</a>
     <a href={u('theyyams/')} {...cur('theyyams')}>{t.theyyams}</a>

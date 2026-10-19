@@ -1,5 +1,5 @@
 ---
-title: "Theyyam season: the best months to visit North Malabar | LGFC Theyyam"
+title: "Theyyam season: the best months to visit North Malabar | TheyyamTrips"
 h1: "Theyyam season: the best months to visit North Malabar"
 crumb: "Theyyam season in North Malabar"
 description: "When is the Theyyam season in Kerala? The season runs from late October to May. What each part of it feels like and how to choose your months."

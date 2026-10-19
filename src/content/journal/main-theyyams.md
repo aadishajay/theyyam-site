@@ -1,5 +1,5 @@
 ---
-title: "Muthappan, Pottan and Vishnumoorthi: the main Theyyams | LGFC Theyyam"
+title: "Muthappan, Pottan and Vishnumoorthi: the main Theyyams | TheyyamTrips"
 h1: "Muthappan, Pottan and Vishnumoorthi: the main Theyyams"
 crumb: "Muthappan, Pottan and Vishnumoorthi"
 description: "A guide to three well-known Theyyam forms of North Malabar: Muthappan, Pottan and Vishnumoorthi. Who they are and what they mean."
