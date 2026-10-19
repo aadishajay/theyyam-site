@@ -9,6 +9,7 @@ import CtaBand from '../components/CtaBand.astro';
 import { trips } from '../data/trips';
 import { getEntry } from 'astro:content';
 import { u, abs } from '../lib/site';
+import { waLink } from '../lib/whatsapp';
 import { breadcrumb } from '../lib/schema';
 import '../styles/trips.css';
 
@@ -34,6 +35,21 @@ const includes = [
   { h: 'Not included', items: ['Flights to Kannur or Mangaluru', 'Travel insurance', 'Personal spending'] },
   { h: 'Good to know', items: ['Rituals run late into the night', 'Modest dress is expected', 'Rituals confirmed before you pay in full'] },
 ];
+const steps = [
+  ['Tell us your month and group', 'A few details through the form or on WhatsApp. It takes two minutes.'],
+  ['We reply within two working days', 'A trip suggestion and a quote, planned around your dates and how you like to travel.'],
+  ['We confirm the rituals', 'Rituals are confirmed closer to travel, and you pay only once they are.'],
+  ['You travel, we look after you', 'Stay, transfers and a local guide if you want one, with our team on call.'],
+];
+const faqs = [
+  ['How much does a trip cost?', 'Every trip is planned around your dates, group and stay, so we quote on request. Send us your month and group size and we reply within two working days. Nothing is charged until you confirm.'],
+  ['Do I need a guide?', 'No. A local guide is optional. Many first-time visitors choose one because rituals are often family occasions, and a guide explains each step and helps you take part respectfully.'],
+  ['Can I choose my dates?', 'Theyyam season runs from late October to May. Tell us your month and we suggest the best weeks, then confirm the rituals closer to travel.'],
+  ['Can I join a group or travel privately?', 'Both. You can join a small group, or travel privately with friends or family.'],
+  ['Can I take photos or video?', 'Not always. Many shrines ban photography and video, some for the whole ritual. Your guide tells you the rules at each place, and we suggest you simply be present.'],
+  ['Is it suitable for children and older travellers?', 'Yes, with planning. Rituals run late and involve standing, so we adjust the pace and seating.'],
+];
+ld.push({ '@type': 'FAQPage', mainEntity: faqs.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) });
 ---
 <Base
   title="Theyyam Tour Packages in North Kerala | TheyyamTrips"
@@ -47,23 +63,37 @@ const includes = [
       <Breadcrumb items={[['Home', 'index.html'], ['Guided trips']]} light />
       <h1>Guided Theyyam trips in Kerala</h1>
       <p style="font-size:18px;margin-top:20px;max-width:640px;opacity:.92">Three ways to experience Theyyam in North Malabar, each with an optional local guide. Season runs late October to May. Rituals are confirmed with you closer to travel.</p>
+      <div class="cta-row"><a class="btn" href={u('enquire.html')}>Get a quote</a><a class="btn ghost" href={waLink()} target="_blank" rel="noopener">Ask on WhatsApp</a></div>
+      <p class="reassure">No payment now · We reply within two working days · Guide optional</p>
       <div class="chips"><span>Group or private</span><span>Guide optional</span><span>Stay + transfers</span><span>Custom itineraries</span></div>
     </div><div class="kal"></div></section>
 
+    <section class="sec" style="padding-bottom:0"><div class="w">
+      <h2>Which trip is right for you?</h2>
+      <ul class="pick">{trips.map((t) => <li><a href={`#${t.id}`}><b>{t.name}</b><span>{t.length} · {t.bestFor}</span></a></li>)}</ul>
+    </div></section>
+
     <section class="sec"><div class="w" style="display:flex;flex-direction:column;gap:32px">
       {trips.map((t) => (
-        <article class="tr"><img src={u('assets/' + t.img)} alt={t.alt} width={t.width} height={t.height} /><div class="b">
+        <article class="tr" id={t.id}><img src={u('assets/' + t.img)} alt={t.alt} width={t.width} height={t.height} /><div class="b">
           <div><span class="tag">{t.length}</span><span class="tag">{t.base}</span><span class="tag">{t.level}</span></div>
           <h2 style="font-size:clamp(1.8rem,6vw,2.6rem)">{t.name}</h2>
           <p style="margin-top:12px">{t.blurb}</p>
           <ul>{t.bullets.map((b) => <li>{b}</li>)}</ul>
-          <div class="pr"><div><small>Price</small><div style="font-weight:800;font-size:22px">On request</div></div><a class="btn red" href={u(`enquire.html?trip=${t.id}`)}>Enquire about {t.name}</a></div>
+          <div class="pr"><a class="btn red" href={u(`enquire.html?trip=${t.id}`)}>Get a quote for this trip</a><a class="btn out" href={waLink(`Hi TheyyamTrips, I would like to know more about "${t.name}" (${t.length}).`)} target="_blank" rel="noopener">Ask on WhatsApp</a></div>
+          <p class="reassure dk">Quote on request · No payment now · Reply in two working days</p>
         </div></article>
       ))}
     </div></section>
 
     <TrustStrip line="Run by natives of North Malabar · Hosted like family" />
     <TwoWays />
+
+    <section class="sec"><div class="w">
+      <h2 style="margin-bottom:28px">How it works</h2>
+      <ol class="steps">{steps.map(([h, p], i) => <li><span class="n">{i + 1}</span><div><h3>{h}</h3><p>{p}</p></div></li>)}</ol>
+      <p style="margin-top:28px"><a class="btn red" href={u('enquire.html')}>Start with your month and group</a></p>
+    </div></section>
 
     <section class="sec" style="background:#FFB400"><div class="w">
       <h2 style="margin-bottom:28px">What every trip includes</h2>
@@ -85,7 +115,13 @@ const includes = [
       </div></section>
     )}
 
+    <section class="sec"><div class="w" style="max-width:820px">
+      <h2 style="margin-bottom:24px">Questions before you enquire</h2>
+      {faqs.map(([q, a]) => <details class="qa"><summary>{q}</summary><p>{a}</p></details>)}
+    </div></section>
+
     <CtaBand title="Not sure which trip fits?" text="Tell us your month and group. We will suggest the right one." label="Enquire about a trip" />
   </main>
+  <div class="bar"><a class="btn red" href={u('enquire.html')}>Get a quote</a></div>
   <Footer />
 </Base>

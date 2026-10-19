@@ -7,6 +7,8 @@ export interface Trip {
   duration?: string;
   base: string;
   level: string;
+  /** one line: who this trip suits (shown in the chooser at the top of the trips page) */
+  bestFor: string;
   blurb: string;
   bullets: string[];
   img: string; // under public/assets/
@@ -20,21 +22,21 @@ export interface Trip {
 // Three programmes: one night, two nights and a deeper immersion of three or more days.
 export const trips: Trip[] = [
   {
-    id: 'one-night', name: 'A Night at the Kavu', length: '1 night', duration: 'P2D', base: 'Base: Kannur', level: 'First encounter',
+    id: 'one-night', name: 'A Night at the Kavu', length: '1 night', duration: 'P2D', base: 'Base: Kannur', level: 'First encounter', bestFor: 'You are short on time or want to try one ritual night first.',
     blurb: 'Your first Theyyam in a single night. An evening at a village shrine, the ritual through the night and a slow morning after, with an optional guide who explains each step.',
     bullets: ['1 ritual night, local guide optional', 'A short, easy way in for first-timers', 'Stay and private transfers'],
     img: 'blog/theyyam-etiquette.jpg', alt: 'A village shrine at night with a flagstaff of palm leaves and marigold garlands', width: 1200, height: 675,
     itinerary: 'Kannur, North Malabar, Kerala',
   },
   {
-    id: 'two-nights', name: 'Two Nights in Kolathunadu', length: '2 nights', duration: 'P3D', base: 'Base: Kannur', level: 'Beginners',
+    id: 'two-nights', name: 'Two Nights in Kolathunadu', length: '2 nights', duration: 'P3D', base: 'Base: Kannur', level: 'Beginners', bestFor: 'It is your first visit and you want to see the ritual and the region without rushing.',
     blurb: 'Time to see more. The ritual night, a slow cultural day of weaving, food and coast, and time to rest between late finishes. Kolathunadu is the old name of the Kannur region.',
     bullets: ['1 to 2 ritual nights, depending on the season', '1 day of weaving, food and coast', 'Boutique stay, private transfers'],
     img: 'blog/what-is-theyyam.jpg', alt: 'Close portrait of a Theyyam with a yellow painted face, silver crown and flower garlands', width: 1200, height: 675,
     itinerary: 'Kannur, North Malabar, Kerala',
   },
   {
-    id: 'immersion', name: 'North Malabar Deep Immersion', length: '3+ days', base: 'Bases: Kannur, Kanhangad, Thalassery', level: 'Enthusiasts and craft lovers',
+    id: 'immersion', name: 'North Malabar Deep Immersion', length: '3+ days', base: 'Bases: Kannur, Kanhangad, Thalassery', level: 'Enthusiasts and craft lovers', bestFor: 'You want to go beyond the ritual night: the families, the makers and several nights across North Malabar.',
     blurb: 'For travellers who want to go deeper. Three or more days across the district line: several ritual nights, a visit with a family that keeps the Theyyam, and the people behind the ritual, the maker of the attire, a musician and a weaver.',
     bullets: ['3 or more days, 3 to 4 ritual nights', 'Time with a family that keeps the Theyyam', 'Meet the attire maker, a musician and a weaver', 'Smaller group and a slower pace'],
     img: 'blog/attire-and-craft.jpg', alt: 'A craftsman weaving yellow palm fibre for Theyyam attire', width: 1200, height: 675,
