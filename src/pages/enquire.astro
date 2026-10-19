@@ -9,7 +9,8 @@ import '../styles/enquire.css';
 // Form handler (Cloudflare Worker, POST /submit writes to Notion and emails the guest). The reCAPTCHA v2 site key is public;
 // set PUBLIC_RECAPTCHA_SITE_KEY at build time. The key must allow this site's domain.
 const ENDPOINT = 'https://lgfc_custom_trip_form_handler.letsgoforacamp.workers.dev/submit';
-const SITEKEY = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY || '';
+// Google's published reCAPTCHA test key (always passes, shows a testing banner). Replace with the real key before launch.
+const SITEKEY = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRexYx0Hjq2DB5sTa5T3KfXf';
 ---
 <Base
   title="Enquire About a Theyyam Tour | LGFC Theyyam"

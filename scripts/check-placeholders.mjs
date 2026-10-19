@@ -10,6 +10,7 @@ const walk = (d) => {
     if (statSync(p).isDirectory()) walk(p);
     else if (f.endsWith('.html')) {
       const text = readFileSync(p, 'utf8').replace(/<script[\s\S]*?<\/script>/g, '');
+      if (text.includes('6LeIxAcTAAAAAJcZVRexYx0Hjq2DB5sTa5T3KfXf')) hits.set('[RECAPTCHA TEST KEY, set PUBLIC_RECAPTCHA_SITE_KEY]', (hits.get('[RECAPTCHA TEST KEY, set PUBLIC_RECAPTCHA_SITE_KEY]') ?? new Set()).add(p.replace('dist/', '')));
       for (const m of text.matchAll(re)) hits.set(m[0], (hits.get(m[0]) ?? new Set()).add(p.replace('dist/', '')));
     }
   }
